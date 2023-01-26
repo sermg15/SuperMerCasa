@@ -2,6 +2,8 @@
 **Integrantes del grupo:**
 - Sergio Martínez González
 - Ignacio Sainz de la Maza Martín
+- Mario García Barrero
+
 - **Descripción de la temática**:
   - Tienda online de un supermercado. 
 
@@ -15,7 +17,7 @@
 
 - **Funcionalidad privada** (Funcionalidades después del registro):
 
-  - Ver carrito. 
+  - Gestionar carrito(ver carrito, añadir productos, eliminar productos, etc). 
   - Ver el historial de compras. 
   - Realizar seguimiento del pedido.
   - Admministrar perfil con información del usuario. 
