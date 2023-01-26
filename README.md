@@ -1,5 +1,7 @@
 **Nombre: SuperMerCasa**
-
+**Integrantes del grupo:**
+- Sergio Martínez González
+- Ignacio Sainz de la Maza Martín
 - **Descripción de la temática**:
   - Tienda online de un supermercado. 
 
@@ -35,3 +37,4 @@
     - Actualización de las ofertas cada cierto tiempo. 
     - Envío de correos de confirmación de login, pedidos realizados y nuevas ofertas. 
     - Actualización de la información de seguimiento de los pedidos. 
+
