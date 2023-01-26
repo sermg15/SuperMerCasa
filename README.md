@@ -1,8 +1,9 @@
 **Nombre: SuperMerCasa**
-**Integrantes del grupo:**
-- Sergio Martínez González
-- Ignacio Sainz de la Maza Martín
-- Mario García Barrero
+
+- **Integrantes del grupo:**
+   - Sergio Martínez González
+   - Ignacio Sainz de la Maza Martín
+   - Mario García Barrero
 
 - **Descripción de la temática**:
   - Tienda online de un supermercado. 
