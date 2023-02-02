@@ -41,3 +41,5 @@
     - Envío de correos de confirmación de login, pedidos realizados y nuevas ofertas. 
     - Actualización de la información de seguimiento de los pedidos. 
 
+- **Diagrama de navegación**:
+![Mapa mental](https://user-images.githubusercontent.com/104427191/216313017-6aeacfba-ecbe-4bc7-9eca-2fe28769f5d4.png)
