@@ -9,7 +9,7 @@ public class ControladorHistorial {
 
     @GetMapping("/historial")
     public String historialPedidos(Model model){
-
+        model.addAttribute("name", "Pedro");
         return "historialPedidos";
     }
 }
