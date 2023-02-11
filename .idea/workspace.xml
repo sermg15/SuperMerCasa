@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorPerfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorPerfil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/perfilUsuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -98,7 +98,7 @@
       <workItem from="1675167779570" duration="1809000" />
       <workItem from="1675939504872" duration="2429000" />
       <workItem from="1675943032324" duration="89000" />
-      <workItem from="1676145597981" duration="3492000" />
+      <workItem from="1676145597981" duration="3651000" />
     </task>
     <servers />
   </component>
