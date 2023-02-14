@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ControladorPerfil {
     @GetMapping("/perfilusuario")
-    public String PerfilUsuario(Model model, @RequestParam String name, @RequestParam String surname, @RequestParam String email, @RequestParam String direction){
+    public String PerfilUsuario(Model model){
 
         //Usuario user = request.getUser();
 
-        model.addAttribute("name", name);
-        model.addAttribute("surname", surname);
-        model.addAttribute("email", email);
-        model.addAttribute("direction", direction);
+        model.addAttribute("name", "Sergio");
+        model.addAttribute("surname", "Martinez");
+        model.addAttribute("email", "sergio@ejemplo.com");
+        model.addAttribute("direction", "Calle Ejemplo, 3");
 
         return "perfilUsuario";
     }
