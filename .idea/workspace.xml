@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="">
+    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/AtencionAlCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/AtencionAlCliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/inicio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/historialPedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/historialPedidos.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675942739711</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente">
+      <created>1676377888289</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676377888289</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +129,7 @@
     <MESSAGE value="Páginas y controladores Ignacio" />
     <MESSAGE value="static" />
     <MESSAGE value="cambios historial" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios historial" />
+    <MESSAGE value="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente" />
   </component>
 </project>
