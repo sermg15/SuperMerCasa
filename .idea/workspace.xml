@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorAtencionCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorCategorias.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/categorias.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorPerfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorPerfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/Carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/Carrito.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/AtencionAlCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/AtencionAlCliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/inicio.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +36,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2L5jIWCq4mDDQ06m1FKIMTUNfPK" />
+  <component name="ProjectId" id="2LUwJtypjhcSVPkqmng0H7Chrpl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,50 +53,35 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/CUARTO/Segundo Cuatri/Desarrollo de Aplicaciones Distribuidas/SuperMerCasa&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Universidad/CUARTO/2º Cuatrimestre/DAD/proyecto/SuperMerCasa/SuperMerCasa/src/main/resources/static&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;75d478183de47fc35393cfb8d4580c2f&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Universidad\CUARTO\2º Cuatrimestre\DAD\proyecto\SuperMerCasa\SuperMerCasa\src\main\resources\static" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="SuperMerCasaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="SuperMerCasaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="SuperMerCasa" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.supermercasa.SuperMerCasaApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.supermercasa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.SuperMerCasaApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="" />
-      <created>1675167767478</created>
+      <changelist id="36615e02-f1f8-4719-865c-a3c6ffb808b4" name="Changes" comment="" />
+      <created>1675938906173</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675167767478</updated>
@@ -104,22 +90,38 @@
       <workItem from="1675943032324" duration="89000" />
       <workItem from="1676145597981" duration="3651000" />
       <workItem from="1676328054248" duration="2160000" />
-      <workItem from="1676369413887" duration="2550000" />
     </task>
+    <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
+      <created>1675942223502</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675942223502</updated>
+    </task>
+    <task id="LOCAL-00002" summary="static">
+      <created>1675942372248</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675942372248</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cambios historial">
+      <created>1675942739711</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675942739711</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Páginas y controladores Ignacio" />
+    <MESSAGE value="static" />
+    <MESSAGE value="cambios historial" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios historial" />
   </component>
 </project>
