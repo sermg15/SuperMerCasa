@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="HistorialPedidos Final">
+    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Cambios Fondos y mejoras">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/AtencionAlCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/AtencionAlCliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/carrito.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/categorias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/contacto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/historialPedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/historialPedidos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/inicio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/loginRegister.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/ofertas.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/ofertas.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/perfilUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/perfilUsuario.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/producto.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/producto.html" afterDir="false" />
@@ -66,6 +68,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;75d478183de47fc35393cfb8d4580c2f&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -98,6 +101,7 @@
       <workItem from="1676145597981" duration="3651000" />
       <workItem from="1676328054248" duration="2160000" />
       <workItem from="1676451631116" duration="1351000" />
+      <workItem from="1676541482672" duration="5448000" />
     </task>
     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
       <created>1675942223502</created>
@@ -134,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676379444030</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Cambios Fondos y mejoras">
+      <created>1676541728495</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676541728495</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +157,7 @@
     <MESSAGE value="cambios historial" />
     <MESSAGE value="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente" />
     <MESSAGE value="HistorialPedidos Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="HistorialPedidos Final" />
+    <MESSAGE value="Cambios Fondos y mejoras" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios Fondos y mejoras" />
   </component>
 </project>
