@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente">
+    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="HistorialPedidos Final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/AtencionAlCliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/AtencionAlCliente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/categorias.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/contacto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/historialPedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/historialPedidos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/ofertas.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/ofertas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/perfilUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/perfilUsuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/producto.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/producto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/registroLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/registroLogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/seguimientoPedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/seguimientoPedidos.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +87,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="36615e02-f1f8-4719-865c-a3c6ffb808b4" name="Changes" comment="" />
+      <changelist id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="HistorialPedidos Final" />
       <created>1675938906173</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -90,6 +97,7 @@
       <workItem from="1675943032324" duration="89000" />
       <workItem from="1676145597981" duration="3651000" />
       <workItem from="1676328054248" duration="2160000" />
+      <workItem from="1676451631116" duration="1351000" />
     </task>
     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
       <created>1675942223502</created>
@@ -119,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676377888289</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="HistorialPedidos Final">
+      <created>1676379444030</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676379444030</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +145,7 @@
     <MESSAGE value="static" />
     <MESSAGE value="cambios historial" />
     <MESSAGE value="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente" />
+    <MESSAGE value="HistorialPedidos Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="HistorialPedidos Final" />
   </component>
 </project>
