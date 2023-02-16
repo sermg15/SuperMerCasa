@@ -11,32 +11,43 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String name;
-    private String surname;
+    private String nombreUsuario;
     private String email;
+
+    private String contraseña;
     private String direcction;
 
-    public Usuario(String name, String surname, String email, String direction){
-        this.name = name;
-        this.surname = surname;
+    public Usuario(long id, String nombreUsuario, String email, String direction, String contraseña){
+
+        this.id = id;
+        this.nombreUsuario = nombreUsuario;
+        this.contraseña = contraseña;
         this.email = email;
         this.direcction = direction;
     }
 
-    public String getName() {
-        return name;
+    public long getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public String getEmail() {

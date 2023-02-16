@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Blob;
 
 @Entity
 public class Producto {
@@ -15,11 +16,21 @@ public class Producto {
     private String name;
     private int stock;
 
-    public Producto(long id, String name, int stock){
+    private String descripcion;
+    private String precio;
+    private Blob imagen;
+
+    public Producto(long id, String name, int stock, String descripcion, String precio, Blob imagen){
+
         this.id = id;
         this.name = name;
+        this.descripcion = descripcion;
         this.stock = stock;
+        this.precio = precio;
+        this.imagen = imagen;
     }
+
+
 
     public Producto() {
 
@@ -47,6 +58,26 @@ public class Producto {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public String getDescripcion() { return descripcion; }
+
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+
+    public String getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+
+    public Blob getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Blob imagen) {
+        this.imagen = imagen;
     }
 }
 
