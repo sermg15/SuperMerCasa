@@ -17,6 +17,8 @@ public class Usuario {
     private String contraseña;
     private String direcction;
 
+    public Usuario(){}
+
     public Usuario(long id, String nombreUsuario, String email, String direction, String contraseña){
 
         this.id = id;
