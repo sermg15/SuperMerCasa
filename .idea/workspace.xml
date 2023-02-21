@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Cambios Fondos y mejoras">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_13_06_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_13_06__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_18__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_18__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_29__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorProducto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +93,7 @@
       <workItem from="1676890479937" duration="3589000" />
       <workItem from="1677000151302" duration="1305000" />
       <workItem from="1677008177430" duration="1715000" />
-      <workItem from="1677010139698" duration="797000" />
+      <workItem from="1677010139698" duration="1078000" />
     </task>
     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
       <created>1675942223502</created>
