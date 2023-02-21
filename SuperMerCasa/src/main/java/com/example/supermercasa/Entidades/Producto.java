@@ -1,9 +1,6 @@
 package com.example.supermercasa.Entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Blob;
 
 @Entity
@@ -18,6 +15,8 @@ public class Producto {
 
     private String descripcion;
     private String precio;
+
+    @Lob
     private Blob imagen;
 
     public Producto(long id, String name, int stock, String descripcion, String precio, Blob imagen){
