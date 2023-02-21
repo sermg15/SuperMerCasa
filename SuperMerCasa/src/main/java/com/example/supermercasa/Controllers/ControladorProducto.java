@@ -25,10 +25,28 @@ public class ControladorProducto {
 
     @PostConstruct
     public void init() {
+
+        //Ofertas
         repositorioProducto.save(new Producto(1, "Carne de Res", 10, "Carne de vacuno con altas propiedades proteicas", "12.99", "/images/imgCarneOFERTA.jpg"));
         repositorioProducto.save(new Producto(2, "Platanos de Canarias", 50, "Platano 100% Canario extraido de las mejores plantaciones", "3.5", "/images/imgPlatanosOFERTA.jpg"));
         repositorioProducto.save(new Producto(3, "Detergente LimpiaFull", 15, "El mejor detergente para tu ropa, olor suave y agradble", "4.99", "/images/imgDetergenteOFERTA.jpg"));
 
+        //Panaderia y reposteria
+
+
+        //Carnes y Pescados
+
+
+        //Frutas y Verduras
+
+
+        //Bebidas
+
+
+        //Productos de limpieza
+
+
+        //Congelados
     }
 
     @GetMapping ("/producto")
