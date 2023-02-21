@@ -1,11 +1,11 @@
 package com.example.supermercasa.Entidades;
 
-import com.example.supermercasa.Repositorios.RepositorioProducto;
+import com.example.supermercasa.Repositorios.RepositorioOferta;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.sql.Blob;
-import com.example.supermercasa.Repositorios.RepositorioProducto;
+import com.example.supermercasa.Repositorios.RepositorioOferta;
 @Entity
 public class Producto {
 

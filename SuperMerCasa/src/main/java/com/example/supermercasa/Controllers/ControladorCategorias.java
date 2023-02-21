@@ -1,29 +1,45 @@
 package com.example.supermercasa.Controllers;
 
+import com.example.supermercasa.Repositorios.RepositorioOferta;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ControladorCategorias {
+
+    @Autowired
+    private RepositorioOferta repositorioOferta;
     @GetMapping("/categoria")
-    public String Categorias(Model model) {
+    public String Categorias(Model model,String cat, long id1, long id2, long id3, long id4) {
 
-        model.addAttribute("categoría", "(Nombre de la categoría)");
+        model.addAttribute("categoria", cat);
 
-        model.addAttribute("producto1", "(imagen)");
-        model.addAttribute("producto2", "(imagen)");
-        model.addAttribute("producto3", "(imagen)");
-        model.addAttribute("producto4", "(imagen)");
+        if(repositorioOferta.findById(id1).isPresent()){
+            model.addAttribute("producto1",repositorioOferta.findById(id1).get().getImagen());
+            model.addAttribute("nombre1", repositorioOferta.findById(id1).get().getName());
+            model.addAttribute("precio1", repositorioOferta.findById(id1).get().getPrecio());
+        }
 
-        model.addAttribute("nombre1", "(producto a)");
-        model.addAttribute("nombre2", "(producto b)");
-        model.addAttribute("nombre3", "(producto c)");
-        model.addAttribute("nombre4", "(producto d)");
+        if(repositorioOferta.findById(id2).isPresent()){
+            model.addAttribute("producto2",repositorioOferta.findById(id2).get().getImagen());
+            model.addAttribute("nombre2", repositorioOferta.findById(id2).get().getName());
+            model.addAttribute("precio2", repositorioOferta.findById(id2).get().getPrecio());
+        }
 
-        model.addAttribute("precio1", "(precio)");
-        model.addAttribute("precio2", "(precio)");
-        model.addAttribute("precio3", "(precio)");
-        model.addAttribute("precio4", "(precio)");
+        if(repositorioOferta.findById(id3).isPresent()){
+            model.addAttribute("producto3",repositorioOferta.findById(id3).get().getImagen());
+            model.addAttribute("nombre3", repositorioOferta.findById(id3).get().getName());
+            model.addAttribute("precio3", repositorioOferta.findById(id3).get().getPrecio());
+        }
+
+        if(repositorioOferta.findById(id4).isPresent()){
+            model.addAttribute("producto4",repositorioOferta.findById(id4).get().getImagen());
+            model.addAttribute("nombre4", repositorioOferta.findById(id4).get().getName());
+            model.addAttribute("precio4", repositorioOferta.findById(id4).get().getPrecio());
+        }
+
+
 
         return "categorias";
     }
