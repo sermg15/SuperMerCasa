@@ -1,10 +1,14 @@
 package com.example.supermercasa.Entidades;
 
+import com.example.supermercasa.Repositorios.RepositorioProducto;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.sql.Blob;
-
+import com.example.supermercasa.Repositorios.RepositorioProducto;
 @Entity
 public class Producto {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,10 +20,9 @@ public class Producto {
     private String descripcion;
     private String precio;
 
-    @Lob
-    private Blob imagen;
+    private String imagen;
 
-    public Producto(long id, String name, int stock, String descripcion, String precio, Blob imagen){
+    public Producto(long id, String name, int stock, String descripcion, String precio, String imagen){
 
         this.id = id;
         this.name = name;
@@ -71,11 +74,11 @@ public class Producto {
         this.precio = precio;
     }
 
-    public Blob getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(Blob imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 }
