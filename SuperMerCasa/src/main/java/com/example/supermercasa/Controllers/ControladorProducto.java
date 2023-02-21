@@ -58,9 +58,17 @@ public class ControladorProducto {
 
 
         //Productos de limpieza
-
+        repositorioProducto.save(new Producto(20, "Cepillo rotador", 10, "Cepillo para limpieza facial", "15.99", "/images/cepilloLimpiezaCara.jpg"));
+        repositorioProducto.save(new Producto(21, "Champú Magic", 50, "Champú especial para deportistas", "3.5", "/images/champuDeportistas.jpg"));
+        repositorioProducto.save(new Producto(22, "Lociones PielSana", 15, "Lociones especiales para el cuidado de la piel", "20", "/images/locionesPiel.jpg"));
+        repositorioProducto.save(new Producto(23, "Papel Sudoku", 50, "Ppapel higiénico con dibujos de sudoku", "2.35", "/images/papelHigienicoSudoku.jpg"));
 
         //Congelados
+        repositorioProducto.save(new Producto(23, "Patatas fritas", 10, "Patatas fritas para calentar al horno (1 kg)", "3.60", "/images/patatasFritas.jpg"));
+        repositorioProducto.save(new Producto(24, "Piza cuatro quesos", 50, "Pizza cuatro quesos calidad gourmet", "6.99", "/images/pizzaCuatroQuesos.jpg"));
+        repositorioProducto.save(new Producto(25, "Alitas barbacoa", 15, "Alitas de pollo con salsa barocoa (12 piezas)", "5.50", "/images/alitasBarbacoa.jpg"));
+        repositorioProducto.save(new Producto(26, "Polos de naranja", 50, "Caja de 12 polos helados sabor naranja", "4.25", "/images/poloHelado.jpg"));
+
     }
 
     @GetMapping ("/producto")

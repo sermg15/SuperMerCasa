@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Cambios Fondos y mejoras">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_13_06_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_13_06__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_18_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_18__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_29_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_29__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/static/images/ImagenSupermercadoInicio.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/static/images/SuperOut1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/static/images/SuperOut2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/static/images/SuperOut3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_13_06_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_13_06__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_18__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_18__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_29__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/centrosFisicos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/ofertas.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/ofertas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/producto.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/producto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorProducto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,9 +70,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Universidad\CUARTO\2º Cuatrimestre\DAD\proyecto\SuperMerCasa\SuperMerCasa\src\main\resources\static" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Universidad\CUARTO\2º Cuatrimestre\DAD\proyecto\SuperMerCasa\SuperMerCasa\src\main\resources\static\images" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="SuperMerCasaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -107,7 +96,9 @@
       <workItem from="1676451631116" duration="1351000" />
       <workItem from="1676541482672" duration="5448000" />
       <workItem from="1676890479937" duration="3589000" />
-      <workItem from="1676976989685" duration="4810000" />
+      <workItem from="1677000151302" duration="1305000" />
+      <workItem from="1677008177430" duration="1715000" />
+      <workItem from="1677010139698" duration="797000" />
     </task>
     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
       <created>1675942223502</created>
