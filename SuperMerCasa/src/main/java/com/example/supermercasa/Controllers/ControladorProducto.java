@@ -44,9 +44,17 @@ public class ControladorProducto {
         repositorioProducto.save(new Producto(11, "Filetes de pollo", 30, "Filetes de pollo  cortados en finas lonchas, sin conservantes", "5.99", "/images/pollo.jpg"));
 
         //Frutas y Verduras
+        repositorioProducto.save(new Producto(12, "Manzanas Golden", 10, "Pieza de 200gr aprox. ", "1.45", "/images/imgManzanas.jpg"));
+        repositorioProducto.save(new Producto(13, "Naranjas de Mesa", 50, "Naranjas de Valencia. Malla de 3 kg. Producto Nacional", "4.15", "/images/imgNaranjas.jpg"));
+        repositorioProducto.save(new Producto(14, "Tomates de Rama", 15, "Bandeja de 1 kg aproximado. Ideal para ensaladas.", "3.10", "/images/imgTomate.jpg"));
+        repositorioProducto.save(new Producto(15, "Judías Verdes", 15, "Bolsa de medio kilo. Preparadas para cocer.", "2.10", "/images/imgJudias.jpg"));
 
 
         //Bebidas
+        repositorioProducto.save(new Producto(16, "Agua Mineral Bezoya", 15, "Agua de mineralización débil. 1.5L", "0.99", "/images/imgAgua.jpg"));
+        repositorioProducto.save(new Producto(17, "Coca-Cola", 15, "Bebida refrescante gaseosa. Pack de 6 latas.", "2.19", "/images/imgCocaCola.jpg"));
+        repositorioProducto.save(new Producto(18, "Fanta Naranja", 15, "Bebida refrescante. Sabor Naranja. Pack de 6 latas.", "1.99", "/images/imgFanta.jpg"));
+        repositorioProducto.save(new Producto(19, "Cerveza Peroni", 15, "Cerveza italiana procedente de la región del Lacio. 5.5% alc. ", "4.99", "/images/imgCerveza.jpg"));
 
 
         //Productos de limpieza
