@@ -59,7 +59,7 @@ public class ControladorProducto {
 
         //Productos de limpieza
         repositorioOferta.save(new Producto(20, "Cepillo rotador", 10, "Cepillo para limpieza facial", "15.99", "/images/cepilloLimpiezaCara.jpg"));
-        repositorioOferta.save(new Producto(21, "Champú Magic", 50, "Champú especial para deportistas", "3.5", "/images/champuDeportistas.jpg"));
+        repositorioOferta.save(new Producto(21, "Champú Magic", 50, "Champú especial para deportistas", "3.5", "/images/champuDeportistas.png"));
         repositorioOferta.save(new Producto(22, "Lociones PielSana", 15, "Lociones especiales para el cuidado de la piel", "20", "/images/locionesPiel.jpg"));
         repositorioOferta.save(new Producto(23, "Papel Sudoku", 50, "Ppapel higiénico con dibujos de sudoku", "2.35", "/images/papelHigienicoSudoku.jpg"));
 
