@@ -24,10 +24,11 @@ public class Categoria {
 
     public Categoria(){}
 
-    public Categoria (String nombre, List<Producto> productos){
+    public Categoria (String nombre, Producto productos){
+
         this.nombre = nombre;
         this.productos = new ArrayList<>();
-        this.productos = productos;
+        this.productos.add(productos);
     }
 
     public long getId() {
