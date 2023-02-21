@@ -45,5 +45,6 @@
 ![Mapa mental](https://user-images.githubusercontent.com/104427191/216313017-6aeacfba-ecbe-4bc7-9eca-2fe28769f5d4.png)
 
 - **Diagrama entidad-relación**:
-![Entidad-Relacion](https://user-images.githubusercontent.com/64080266/218726118-f2326664-9d98-427e-81f4-0fb35f24ab0b.png)
+![Diagrama en blanco (4)](https://user-images.githubusercontent.com/64080266/220427299-b4921096-acc6-4b43-a748-01882968d1e7.png)
+
 
