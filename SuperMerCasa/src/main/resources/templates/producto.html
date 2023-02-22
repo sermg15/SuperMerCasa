@@ -8,12 +8,31 @@
 <body style="background-color:rgb(39, 69, 42);text-align: center; color: white">
     <h1 style="text-align: center;"><strong>{{producto}}</strong><strong></strong></h1>
     <hr />
-    <h3 style="text-align: center;"><form action="http://localhost:8080/ofertas"><button type="submit">Volver atras</button></form></h3>
     <h1 style="text-align: center;"><img src="{{imagen}}" width="400" height="400" alt="" /></h1>
     <h2 style="text-align: center;"><strong>{{precio}}&euro; </strong></h2>
     <p style="text-align: center;">{{descripcion}}</p>
-    <p style="text-align: center;"><button>-</button> <strong> 1 </strong> <button type="button">+</button></p>
+    <p style="text-align: center;"><button id="restar">-</button> <strong><span id="numero">1</span></strong> <button id="sumar" type="button">+</button></p>
+    <!--<button id="restar">-</button>
+    <p><span id="numero">0</span></p>
+    <button id="sumar">+</button>-->
     <p style="text-align: center;"><button type="button">A&ntilde;adir a la cesta</button></p>
     <p style="text-align: center;"><button name="home"><a href="/">Inicio</a></button></p>
+
+    <script>
+        let numero = 1;
+        const numSpan = document.getElementById("numero");
+
+        document.getElementById("sumar").addEventListener("click", function() {
+            numero++;
+            numSpan.textContent = numero;
+        });
+
+        document.getElementById("restar").addEventListener("click", function() {
+            if(numero > 1){
+                numero--;
+                numSpan.textContent = numero;
+            }
+        });
+    </script>
 </body>
 </html>

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.PostConstruct;
-import java.util.List;
+import java.util.*;
 
 
 @Controller
@@ -67,33 +67,31 @@ public class CatOfertProdController {
 
     }
 
-    public List<Long> ids;
+    public List<Long> ids = new ArrayList<Long>();
 
     @GetMapping("/producto")
     public String Producto(Model model, @RequestParam long id){
 
-
-        if(repositorioOferta.findById(id).isPresent()){
-            model.addAttribute("producto",repositorioOferta .findById(id).get().getName());
-            model.addAttribute("precio", repositorioOferta.findById(id).get().getPrecio());
-            model.addAttribute("titulo", repositorioOferta.findById(id).get().getName());
-            model.addAttribute("descripcion", repositorioOferta.findById(id).get().getDescripcion());
-            model.addAttribute("imagen", repositorioOferta.findById(id).get().getImagen());
+        long prod = ids.get((int)id);
+        if(repositorioOferta.findById(prod).isPresent()){
+            model.addAttribute("producto",repositorioOferta .findById(prod).get().getName());
+            model.addAttribute("precio", repositorioOferta.findById(prod).get().getPrecio());
+            model.addAttribute("titulo", repositorioOferta.findById(prod).get().getName());
+            model.addAttribute("descripcion", repositorioOferta.findById(prod).get().getDescripcion());
+            model.addAttribute("imagen", repositorioOferta.findById(prod).get().getImagen());
         }
-
-
-
 
         return "producto";
     }
 
 
 
-
-
     @GetMapping("/categoria")
     public String Categorias(Model model,String cat, long id1, long id2, long id3, long id4) {
 
+        if(!ids.isEmpty()){
+            ids.clear();
+        }
         model.addAttribute("categoria", cat);
 
 
@@ -126,15 +124,19 @@ public class CatOfertProdController {
         ids.add(id3);
         ids.add(id4);
 
-
         return "categorias";
     }
-
 
     @GetMapping("/ofertas")
     public String ofertas(Model model){
 
+        if(!ids.isEmpty()){
+            ids.clear();
+        }
 
+        ids.add((long) 1);
+        ids.add((long) 2);
+        ids.add((long) 3);
 
         return "ofertas";
     }
