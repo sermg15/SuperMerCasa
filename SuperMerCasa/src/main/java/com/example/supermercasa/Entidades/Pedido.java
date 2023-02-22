@@ -17,14 +17,17 @@ public class Pedido {
     @ManyToOne
     private Usuario user;
 
+    private String estado;
+
     public Pedido(){}
 
-    public Pedido(long id, Producto productos, Usuario user){
+    public Pedido(long id, Producto productos, Usuario user, String estado){
 
         this.id = id;
         this.productos = new ArrayList<>();
         this.productos.add(productos);
         this.user = user;
+        this.estado = estado;
 
     }
 
@@ -50,5 +53,17 @@ public class Pedido {
 
     public void setUser(Usuario user) {
         this.user = user;
+    }
+
+    public String getEstado(){
+        return estado;
+    }
+
+    public void setEstado(String estado){
+        this.estado = estado;
+    }
+
+    public void cambiarEstado (String estado){
+        this.estado = estado;
     }
 }

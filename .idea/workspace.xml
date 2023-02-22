@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Cambio Controladores">
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/UserLogSignController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Repositorios/RepositorioUsuario.java" afterDir="false" />
+    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Cambios Fondos y mejoras">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorPerfil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorRegistroLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/UserLogSignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/UserLogSignController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Pedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Repositorios/RepositorioUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Repositorios/RepositorioUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/registroLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/registroLogin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +21,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -63,8 +61,6 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;75d478183de47fc35393cfb8d4580c2f&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -73,9 +69,6 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Universidad\CUARTO\2º Cuatrimestre\DAD\proyecto\SuperMerCasa\SuperMerCasa\src\main\resources\static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Universidad\CUARTO\2º Cuatrimestre\DAD\proyecto\SuperMerCasa\SuperMerCasa\src\main\resources\static\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -103,12 +96,11 @@
       <workItem from="1676451631116" duration="1351000" />
       <workItem from="1676541482672" duration="5448000" />
       <workItem from="1676890479937" duration="3589000" />
-      <workItem from="1676976989685" duration="4810000" />
-      <workItem from="1677000833968" duration="7926000" />
-      <workItem from="1677056568132" duration="4754000" />
-      <workItem from="1677065357169" duration="242000" />
-      <workItem from="1677085826802" duration="337000" />
-      <workItem from="1677086179233" duration="4225000" />
+      <workItem from="1677000151302" duration="1305000" />
+      <workItem from="1677008177430" duration="1715000" />
+      <workItem from="1677010139698" duration="1078000" />
+      <workItem from="1677059361981" duration="1100000" />
+      <workItem from="1677090601611" duration="5218000" />
     </task>
     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
       <created>1675942223502</created>
@@ -152,42 +144,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676541728495</updated>
     </task>
-    <task id="LOCAL-00007" summary="Fixed ofertas.html">
-      <created>1677003970326</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1677003970326</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Frutas Verduras y Bebidas">
-      <created>1677010738051</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1677010738051</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Categorías Semifuncionales">
-      <created>1677013968806</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1677013968806</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Cambio Controladores">
-      <created>1677085913658</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1677085913658</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Cambio Controladores">
-      <created>1677086011237</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1677086011237</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,10 +157,6 @@
     <MESSAGE value="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente" />
     <MESSAGE value="HistorialPedidos Final" />
     <MESSAGE value="Cambios Fondos y mejoras" />
-    <MESSAGE value="Fixed ofertas.html" />
-    <MESSAGE value="Frutas Verduras y Bebidas" />
-    <MESSAGE value="Categorías Semifuncionales" />
-    <MESSAGE value="Cambio Controladores" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio Controladores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios Fondos y mejoras" />
   </component>
 </project>
