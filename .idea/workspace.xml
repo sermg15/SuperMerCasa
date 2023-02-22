@@ -7,10 +7,8 @@
     <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Cambios Fondos y mejoras">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/UserLogSignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/UserLogSignController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Pedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Repositorios/RepositorioUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Repositorios/RepositorioUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/registroLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/registroLogin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +98,7 @@
       <workItem from="1677008177430" duration="1715000" />
       <workItem from="1677010139698" duration="1078000" />
       <workItem from="1677059361981" duration="1100000" />
-      <workItem from="1677090601611" duration="5218000" />
+      <workItem from="1677090601611" duration="5732000" />
     </task>
     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
       <created>1675942223502</created>

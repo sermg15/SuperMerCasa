@@ -1036,5 +1036,338 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
+    <table id="299" parent="292" name="carrito">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="300" parent="292" name="carrito_lista_productos">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="301" parent="292" name="categoria">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="302" parent="292" name="categoria_productos">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="303" parent="292" name="hibernate_sequence">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="304" parent="292" name="ofertas">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="305" parent="292" name="ofertas_productos">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="306" parent="292" name="pedido">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="307" parent="292" name="pedido_productos">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="308" parent="292" name="producto">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="309" parent="292" name="usuario">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="310" parent="299" name="id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="311" parent="299" name="user_id">
+      <DasType>bigint|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="312" parent="299" name="FKp8xp8tujv05amud3tvh0swg19">
+      <ColNames>user_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>usuario</RefTableName>
+    </foreign-key>
+    <index id="313" parent="299" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="314" parent="299" name="FKp8xp8tujv05amud3tvh0swg19">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="315" parent="299" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="316" parent="300" name="carrito_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="317" parent="300" name="lista_productos_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="318" parent="300" name="FKgww7up4smr4t2v6gk599thog9">
+      <ColNames>carrito_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>carrito</RefTableName>
+    </foreign-key>
+    <foreign-key id="319" parent="300" name="FKmrwtr9r2t6s932nanre79u8yc">
+      <ColNames>lista_productos_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>producto</RefTableName>
+    </foreign-key>
+    <index id="320" parent="300" name="UK_aik5fmu1bo91fovo5qfs56mb0">
+      <ColNames>lista_productos_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="321" parent="300" name="FKgww7up4smr4t2v6gk599thog9">
+      <ColNames>carrito_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="322" parent="300" name="UK_aik5fmu1bo91fovo5qfs56mb0">
+      <UnderlyingIndexName>UK_aik5fmu1bo91fovo5qfs56mb0</UnderlyingIndexName>
+    </key>
+    <column id="323" parent="301" name="id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="324" parent="301" name="nombre">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <index id="325" parent="301" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="326" parent="301" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="327" parent="302" name="categoria_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="328" parent="302" name="productos_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="329" parent="302" name="FKbbg1fda8exnsh8rbx2r8399xk">
+      <ColNames>categoria_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>categoria</RefTableName>
+    </foreign-key>
+    <foreign-key id="330" parent="302" name="FKt7dre0uo1s0h24iqg8d3qh16b">
+      <ColNames>productos_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>producto</RefTableName>
+    </foreign-key>
+    <index id="331" parent="302" name="UK_mkteyg4p8ugjph362shh10kda">
+      <ColNames>productos_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="332" parent="302" name="FKbbg1fda8exnsh8rbx2r8399xk">
+      <ColNames>categoria_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="333" parent="302" name="UK_mkteyg4p8ugjph362shh10kda">
+      <UnderlyingIndexName>UK_mkteyg4p8ugjph362shh10kda</UnderlyingIndexName>
+    </key>
+    <column id="334" parent="303" name="next_val">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="335" parent="304" name="id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <index id="336" parent="304" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="337" parent="304" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="338" parent="305" name="ofertas_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="339" parent="305" name="productos_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="340" parent="305" name="FK64cwfxs0y2wapsn2bqfnk8v2j">
+      <ColNames>ofertas_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>ofertas</RefTableName>
+    </foreign-key>
+    <foreign-key id="341" parent="305" name="FKck0utx5rby7rojxw01i9e3o0l">
+      <ColNames>productos_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>producto</RefTableName>
+    </foreign-key>
+    <index id="342" parent="305" name="UK_6sccv6ij7ye2io3psh88pf5xf">
+      <ColNames>productos_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="343" parent="305" name="FK64cwfxs0y2wapsn2bqfnk8v2j">
+      <ColNames>ofertas_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="344" parent="305" name="UK_6sccv6ij7ye2io3psh88pf5xf">
+      <UnderlyingIndexName>UK_6sccv6ij7ye2io3psh88pf5xf</UnderlyingIndexName>
+    </key>
+    <column id="345" parent="306" name="id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="346" parent="306" name="estado">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="347" parent="306" name="user_id">
+      <DasType>bigint|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="348" parent="306" name="FKrfl7hanr633isps0k9lmj678i">
+      <ColNames>user_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>usuario</RefTableName>
+    </foreign-key>
+    <index id="349" parent="306" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="350" parent="306" name="FKrfl7hanr633isps0k9lmj678i">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="351" parent="306" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="352" parent="307" name="pedido_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="353" parent="307" name="productos_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="354" parent="307" name="FKv1xsxti8g695nhdlbdluwo88">
+      <ColNames>pedido_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>pedido</RefTableName>
+    </foreign-key>
+    <foreign-key id="355" parent="307" name="FK9q00p33elayx84wl4im8ehr4x">
+      <ColNames>productos_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>producto</RefTableName>
+    </foreign-key>
+    <index id="356" parent="307" name="FKv1xsxti8g695nhdlbdluwo88">
+      <ColNames>pedido_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="357" parent="307" name="FK9q00p33elayx84wl4im8ehr4x">
+      <ColNames>productos_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="358" parent="308" name="id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="359" parent="308" name="descripcion">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="360" parent="308" name="imagen">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="361" parent="308" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="362" parent="308" name="precio">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="363" parent="308" name="stock">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="364" parent="308" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="365" parent="308" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="366" parent="309" name="id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="367" parent="309" name="contraseña">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="368" parent="309" name="direction">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="369" parent="309" name="email">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="370" parent="309" name="nombre_usuario">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <index id="371" parent="309" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="372" parent="309" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

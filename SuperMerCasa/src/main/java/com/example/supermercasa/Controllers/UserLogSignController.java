@@ -15,11 +15,11 @@ public class UserLogSignController {
 
     @Autowired
     public RepositorioUsuario repositorioUsuario;
-    public int users_id=0;
+    public long users_id=0;
 
     @PostConstruct
     public void init(){
-        repositorioUsuario.save(new Usuario(0, "Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", "1234"));
+        repositorioUsuario.save(new Usuario((long) 0, "Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", "1234"));
     }
 
     @GetMapping("/perfilusuario")
@@ -35,10 +35,9 @@ public class UserLogSignController {
     }
 
     int numusuarios = 1;
-    @GetMapping("/registroLogin")
+    @GetMapping("/registroLogin1")
     public String RegistroLogin(Model model, @RequestParam String registername, @RequestParam String registerpassword, @RequestParam String email, @RequestParam String direction){
 
-        model.addAttribute("mensaje", "");
 
         if (!repositorioUsuario.findById(users_id).isPresent()){
             repositorioUsuario.save(new Usuario(numusuarios,registername, email, direction, registerpassword));
@@ -47,6 +46,13 @@ public class UserLogSignController {
         }else{
             model.addAttribute("mensaje", "USUARIO YA REGISTRADO");
         }
+
+        return "registroLogin";
+    }
+
+    @GetMapping ("/registroLogin")
+    public String RegistroLogin(Model model){
+        model.addAttribute("mensaje", "");
 
         return "registroLogin";
     }
