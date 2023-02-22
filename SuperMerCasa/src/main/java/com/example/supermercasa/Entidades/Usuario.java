@@ -9,19 +9,17 @@ import javax.persistence.Id;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
+    private long iden;
     private String nombreUsuario;
     private String email;
-
     private String contraseña;
     private String direction;
 
     public Usuario(){}
 
-    public Usuario(long id, String nombreUsuario, String email, String direction, String contraseña){
+    public Usuario(long iden, String nombreUsuario, String email, String direction, String contraseña){
 
-        this.id = id;
+        this.iden = iden;
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
         this.email = email;
@@ -29,11 +27,11 @@ public class Usuario {
     }
 
     public long getId() {
-        return id;
+        return iden;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.iden = id;
     }
 
     public String getNombreUsuario() {
