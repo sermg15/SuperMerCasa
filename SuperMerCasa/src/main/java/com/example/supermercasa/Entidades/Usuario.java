@@ -15,7 +15,7 @@ public class Usuario {
     private String email;
 
     private String contraseña;
-    private String direcction;
+    private String direction;
 
     public Usuario(){}
 
@@ -25,7 +25,7 @@ public class Usuario {
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
         this.email = email;
-        this.direcction = direction;
+        this.direction = direction;
     }
 
     public long getId() {
@@ -61,10 +61,10 @@ public class Usuario {
     }
 
     public String getDirecction() {
-        return direcction;
+        return direction;
     }
 
     public void setDirecction(String direction) {
-        this.direcction = direcction;
+        this.direction = direction;
     }
 }
