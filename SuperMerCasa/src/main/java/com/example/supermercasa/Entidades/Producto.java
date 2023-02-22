@@ -22,6 +22,8 @@ public class Producto {
 
     private String imagen;
 
+
+
     public Producto(long id, String name, int stock, String descripcion, String precio, String imagen){
 
         this.id = id;
@@ -30,6 +32,7 @@ public class Producto {
         this.stock = stock;
         this.precio = precio;
         this.imagen = imagen;
+
     }
 
 
@@ -81,5 +84,7 @@ public class Producto {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+
+
 }
 
