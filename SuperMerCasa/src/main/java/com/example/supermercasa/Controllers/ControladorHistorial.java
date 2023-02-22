@@ -1,15 +1,19 @@
 package com.example.supermercasa.Controllers;
 
+import com.example.supermercasa.Entidades.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import com.example.supermercasa.Repositorios.RepositorioUsuario;
 
 @Controller
 public class ControladorHistorial {
 
     @GetMapping("/historial")
     public String historialPedidos(Model model){
-        model.addAttribute("name", "Pedro");
+
+        model.addAttribute("name", "Juan");
 
 
         model.addAttribute("pedido1", "(NumPedido)");
