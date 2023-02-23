@@ -35,9 +35,9 @@ public class ControladorCarrito {
     }
 
     @PostMapping("/addProducto")
-    public String addProducto(Model model){
+    public String addProducto(Model model, @RequestParam long prod_id, @RequestParam String username){
 
-        /*producto = repositorioOferta.findById(prod_id).get();
+        producto = repositorioOferta.findById(prod_id).get();
 
         user = repositorioUsuario.findByNombreUsuario(username).get(0);
 
@@ -47,7 +47,7 @@ public class ControladorCarrito {
         else{
             carrito.getListaProductos().add(producto);
             repositorioCarrito.save(carrito);
-        }*/
+        }
         return "carrito";
     }
 }
