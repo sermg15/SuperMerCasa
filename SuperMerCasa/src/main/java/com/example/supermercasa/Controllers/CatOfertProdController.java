@@ -73,12 +73,15 @@ public class CatOfertProdController {
     public String Producto(Model model, @RequestParam long id){
 
         long prod = ids.get((int)id);
-        if(repositorioOferta.findById(prod).isPresent()){
-            model.addAttribute("producto",repositorioOferta .findById(prod).get().getName());
-            model.addAttribute("precio", repositorioOferta.findById(prod).get().getPrecio());
-            model.addAttribute("titulo", repositorioOferta.findById(prod).get().getName());
-            model.addAttribute("descripcion", repositorioOferta.findById(prod).get().getDescripcion());
-            model.addAttribute("imagen", repositorioOferta.findById(prod).get().getImagen());
+        Optional <Producto> productoOptional = repositorioOferta.findById(prod);
+        if(productoOptional.isPresent()){
+            Producto p = productoOptional.get();
+            model.addAttribute("producto",p.getName());
+            model.addAttribute("precio", p.getPrecio());
+            model.addAttribute("titulo", p.getName());
+            model.addAttribute("descripcion", p.getDescripcion());
+            model.addAttribute("imagen", p.getImagen());
+            model.addAttribute("id", p.getId());
         }
 
         return "producto";

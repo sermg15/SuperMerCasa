@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Avances Carrito">
+    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Cambios Fondos y mejoras">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorCarrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorCarrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/producto.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/producto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/CatOfertProdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/CatOfertProdController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +98,7 @@
       <workItem from="1677010139698" duration="1078000" />
       <workItem from="1677059361981" duration="1100000" />
       <workItem from="1677090601611" duration="5732000" />
-      <workItem from="1677145977908" duration="1342000" />
+      <workItem from="1677147171154" duration="2813000" />
     </task>
     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
       <created>1675942223502</created>
@@ -143,14 +142,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676541728495</updated>
     </task>
-    <task id="LOCAL-00007" summary="Avances Carrito">
-      <created>1677109250237</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1677109250237</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +155,6 @@
     <MESSAGE value="Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente" />
     <MESSAGE value="HistorialPedidos Final" />
     <MESSAGE value="Cambios Fondos y mejoras" />
-    <MESSAGE value="Avances Carrito" />
-    <option name="LAST_COMMIT_MESSAGE" value="Avances Carrito" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios Fondos y mejoras" />
   </component>
 </project>

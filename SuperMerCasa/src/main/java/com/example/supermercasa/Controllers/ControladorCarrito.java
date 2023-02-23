@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -34,10 +35,10 @@ public class ControladorCarrito {
         return "carrito";
     }
 
-    @PostMapping("/addProducto")
-    public String addProducto(Model model, @RequestParam long prod_id, @RequestParam String username){
+    @PostMapping("/addProducto/{id}")
+    public String addProducto(Model model, @PathVariable long id){
 
-        producto = repositorioOferta.findById(prod_id).get();
+        producto = repositorioOferta.findById(id).get();
 
         user = repositorioUsuario.findByNombreUsuario(username).get(0);
 
