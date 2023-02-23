@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface RepositorioCarrito extends JpaRepository<Carrito,Integer> {
-    Carrito findByUser(String user);
+    Carrito findByUser(long id);
 }

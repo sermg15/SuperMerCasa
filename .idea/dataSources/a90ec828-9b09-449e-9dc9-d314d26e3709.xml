@@ -998,7 +998,6 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
     <schema id="289" parent="1" name="mysql">
-      <Grants>user|||mysql.session|localhost|SELECT|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="290" parent="1" name="performance_schema">
@@ -1008,10 +1007,9 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="smc">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
     <schema id="293" parent="1" name="sys">
-      <Grants>sys_config|||mysql.sys|localhost|SELECT|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="294" parent="1" name="world">
@@ -1038,60 +1036,60 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </user>
     <table id="299" parent="292" name="carrito">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="300" parent="292" name="carrito_lista_productos">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="301" parent="292" name="categoria">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="302" parent="292" name="categoria_productos">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="303" parent="292" name="hibernate_sequence">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="304" parent="292" name="ofertas">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="305" parent="292" name="ofertas_productos">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="306" parent="292" name="pedido">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="307" parent="292" name="pedido_productos">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="308" parent="292" name="producto">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="309" parent="292" name="usuario">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <column id="310" parent="299" name="id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="311" parent="299" name="user_id">
+    <column id="311" parent="299" name="user_iden">
       <DasType>bigint|0s</DasType>
       <Position>2</Position>
     </column>
-    <foreign-key id="312" parent="299" name="FKp8xp8tujv05amud3tvh0swg19">
-      <ColNames>user_id</ColNames>
-      <RefColNames>id</RefColNames>
+    <foreign-key id="312" parent="299" name="FKc1l60941ia03bd419ky4u8udy">
+      <ColNames>user_iden</ColNames>
+      <RefColNames>iden</RefColNames>
       <RefTableName>usuario</RefTableName>
     </foreign-key>
     <index id="313" parent="299" name="PRIMARY">
@@ -1099,8 +1097,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="314" parent="299" name="FKp8xp8tujv05amud3tvh0swg19">
-      <ColNames>user_id</ColNames>
+    <index id="314" parent="299" name="FKc1l60941ia03bd419ky4u8udy">
+      <ColNames>user_iden</ColNames>
       <Type>btree</Type>
     </index>
     <key id="315" parent="299" name="PRIMARY">
@@ -1251,13 +1249,13 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="347" parent="306" name="user_id">
+    <column id="347" parent="306" name="user_iden">
       <DasType>bigint|0s</DasType>
       <Position>3</Position>
     </column>
-    <foreign-key id="348" parent="306" name="FKrfl7hanr633isps0k9lmj678i">
-      <ColNames>user_id</ColNames>
-      <RefColNames>id</RefColNames>
+    <foreign-key id="348" parent="306" name="FK88s7xi2et934y2hoxi14s9cpy">
+      <ColNames>user_iden</ColNames>
+      <RefColNames>iden</RefColNames>
       <RefTableName>usuario</RefTableName>
     </foreign-key>
     <index id="349" parent="306" name="PRIMARY">
@@ -1265,8 +1263,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="350" parent="306" name="FKrfl7hanr633isps0k9lmj678i">
-      <ColNames>user_id</ColNames>
+    <index id="350" parent="306" name="FK88s7xi2et934y2hoxi14s9cpy">
+      <ColNames>user_iden</ColNames>
       <Type>btree</Type>
     </index>
     <key id="351" parent="306" name="PRIMARY">
@@ -1338,7 +1336,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="366" parent="309" name="id">
+    <column id="366" parent="309" name="iden">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1360,7 +1358,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>5</Position>
     </column>
     <index id="371" parent="309" name="PRIMARY">
-      <ColNames>id</ColNames>
+      <ColNames>iden</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>

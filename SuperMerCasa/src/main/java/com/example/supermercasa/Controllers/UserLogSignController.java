@@ -17,6 +17,9 @@ public class UserLogSignController {
     public RepositorioUsuario repositorioUsuario;
     public long users_id;
 
+    public long getId(){
+        return users_id;
+    }
     @PostConstruct
     public void init(){
         repositorioUsuario.save(new Usuario( 1, "Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", "1234"));

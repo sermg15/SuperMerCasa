@@ -15,7 +15,7 @@ import java.util.*;
 @Controller
 public class CatOfertProdController {
 
-
+    public long prod;
     @Autowired
     private RepositorioOferta repositorioOferta;
 
@@ -72,7 +72,7 @@ public class CatOfertProdController {
     @GetMapping("/producto")
     public String Producto(Model model, @RequestParam long id){
 
-        long prod = ids.get((int)id);
+        prod = ids.get((int)id);
         Optional <Producto> productoOptional = repositorioOferta.findById(prod);
         if(productoOptional.isPresent()){
             Producto p = productoOptional.get();

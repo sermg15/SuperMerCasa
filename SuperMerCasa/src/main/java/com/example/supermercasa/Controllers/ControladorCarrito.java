@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Controller
 public class ControladorCarrito {
 
@@ -37,18 +39,19 @@ public class ControladorCarrito {
 
     @PostMapping("/addProducto/{id}")
     public String addProducto(Model model, @PathVariable long id){
+//        model.addAttribute("id",id);
+       /* producto = repositorioOferta.findById(id).get();
 
-        producto = repositorioOferta.findById(id).get();
-
-        user = repositorioUsuario.findByNombreUsuario(username).get(0);
-
-        if(repositorioCarrito.findByUser(username)==null){
-            repositorioCarrito.save(new Carrito(user,producto));
-        }
-        else{
-            carrito.getListaProductos().add(producto);
-            repositorioCarrito.save(carrito);
-        }
+        user = repositorioUsuario.findById(28L).get();
+        Optional<Carrito> c = repositorioCarrito.findById(29);
+//        if(repositorioCarrito.findByUser(user.getId())==null){
+//            repositorioCarrito.save(new Carrito(user,producto));
+//        }
+//        else{
+//            carrito.getListaProductos().add(producto);
+//            repositorioCarrito.save(carrito);
+//        }
+        repositorioCarrito.save(new Carrito(user,producto));*/
         return "carrito";
     }
 }

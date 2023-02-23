@@ -9,15 +9,15 @@
 
     <h1 style="text-align: center;"><strong>{{producto}}</strong><strong></strong></h1>
     <hr />
-    <h1 style="text-align: center;"><img src="{{imagen}}" width="400" height="400" alt="" /></h1>
+    <h1 style="text-align: center;"><img src="{{imagen}}" width="400" height="350" alt="" /></h1>
     <h2 style="text-align: center;"><strong>{{precio}}&euro; </strong></h2>
     <p style="text-align: center;">{{descripcion}}</p>
     <p style="text-align: center;"><button id="restar">-</button> <strong><span id="numero">1</span></strong> <button id="sumar" type="button">+</button></p>
     <!--<button id="restar">-</button>
     <p><span id="numero">0</span></p>
     <button id="sumar">+</button>-->
-    <form method="POST" action="/addProducto">
-    <p style="text-align: center;"><button name="home"><a href="/carrito">Añadir al carrito</a></button></p></form>
+
+    <p style="text-align: center;"><button name="home"><a href="/addProducto/{{id}}">Añadir al carrito</a></button></p></form>
     <p style="text-align: center;"><button name="home"><a href="/">Inicio</a></button></p>
 
     <script>
