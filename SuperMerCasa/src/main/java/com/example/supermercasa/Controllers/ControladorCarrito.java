@@ -27,7 +27,7 @@ public class ControladorCarrito {
     private RepositorioUsuario repositorioUsuario;
 
     Carrito carrito;
-    Usuario user;
+    //Usuario user;
     Producto producto;
 
     @GetMapping("/carrito")
@@ -37,21 +37,21 @@ public class ControladorCarrito {
         return "carrito";
     }
 
-    @PostMapping("/addProducto/{id}")
+    @GetMapping("/addProducto/{id}")
     public String addProducto(Model model, @PathVariable long id){
-//        model.addAttribute("id",id);
-       /* producto = repositorioOferta.findById(id).get();
 
-        user = repositorioUsuario.findById(28L).get();
-        Optional<Carrito> c = repositorioCarrito.findById(29);
-//        if(repositorioCarrito.findByUser(user.getId())==null){
-//            repositorioCarrito.save(new Carrito(user,producto));
-//        }
-//        else{
-//            carrito.getListaProductos().add(producto);
-//            repositorioCarrito.save(carrito);
-//        }
-        repositorioCarrito.save(new Carrito(user,producto));*/
+        producto = repositorioOferta.findById(id).get();
+
+        Optional <Usuario> user = repositorioUsuario.findById(28L).get();
+        Carrito c = repositorioCarrito.findByUser(user.getId());
+        if(repositorioCarrito.findByUser(user.getId())==null){
+            repositorioCarrito.save(new Carrito(user,producto));
+        }
+       else{
+            carrito.getListaProductos().add(producto);
+            repositorioCarrito.save(carrito);
+        }
+        repositorioCarrito.save(new Carrito(user,producto));
         return "carrito";
     }
 }
