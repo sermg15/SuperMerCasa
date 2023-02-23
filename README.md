@@ -50,6 +50,26 @@
 - **Diagrama UML**:
 ![UML Fase 2](https://user-images.githubusercontent.com/64080266/220762074-7db54351-c93d-43a1-9667-bfaebd397db5.png)
 
-
+- **Capturas de pantalla**
+ - Página principal: página de inicio donde se ofrecen todas las opciones al usuario, y se ofrecen las distintas categorías de productos.
+  ![image](https://user-images.githubusercontent.com/79744800/220876031-fcab4e26-b8c0-45d6-9bf9-208821caafc0.png)
+ - Categorías: página con el título de la categoría y distintos productos.
+  ![image](https://user-images.githubusercontent.com/79744800/220876146-3051bdb5-b758-462f-8309-a842887d02df.png)
+ - Productos: página con el nombre del producto, una fotografía, descripción, selección de la cantidad, botón para añadir al carrito, y botón para la vuelta al inicio.
+  ![image](https://user-images.githubusercontent.com/79744800/220876247-2aff8ce9-8451-4109-a4a2-dcd1b065a70d.png)
+ - Login/Register: página para registrar y loguearse con un usuario.
+  ![image](https://user-images.githubusercontent.com/79744800/220876315-4ec384a4-4de3-4637-b8c2-795b22b531f3.png)
+ - Centros físicos: página que muestra tres fotografías y mapas de los distintos supermercados físicos.
+  ![image](https://user-images.githubusercontent.com/79744800/220876415-08556d96-928a-4b78-8ad3-eb2c2677caa6.png)
+ - Opciones de contacto: página con opciones de contacto como teléfono, mail, etc.
+  ![image](https://user-images.githubusercontent.com/79744800/220876489-0e04834f-1995-46a7-a8f3-b9d17dd99fbc.png)
+ - FAQ: página para consultar dudas frecuentes.
+  ![image](https://user-images.githubusercontent.com/79744800/220876542-1e948e87-27db-424b-80ac-cd55383d4902.png)
+ - Seguimiento de pedidos: página para consultar el estado del proceso del pedido y su envío.
+  ![image](https://user-images.githubusercontent.com/79744800/220876590-dc3d3bda-eaa9-44a6-91fb-11dace74e1e6.png)
+ - Historial de pedidios: página en la que se consultan pedidos anteriores.
+  ![image](https://user-images.githubusercontent.com/79744800/220876640-46b9a9d3-63d6-4639-affe-49261a825fb1.png)
+ - Carrito: página con listado de productos añadidos al carrito.
+  ![image](https://user-images.githubusercontent.com/79744800/220876698-fa9f09fb-2c4a-492c-80f8-6bbad9018bbc.png)
 
 
