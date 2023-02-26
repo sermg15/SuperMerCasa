@@ -36,7 +36,13 @@ public class ControladorCarrito {
     @GetMapping("/carrito")
     public String Carrito(Model model) {
 
-        model.addAttribute("producto",repositorioCarrito.findAll());
+        List<Producto> l = carrito.getListaProductos();
+        List<String> s = new ArrayList<>();
+        l.add(producto);
+        for(int i = 0; i < l.size(); i++){
+            s.add(l.get(i).getName());
+        }
+        model.addAttribute("productos", s);
         return "carrito";
     }
 

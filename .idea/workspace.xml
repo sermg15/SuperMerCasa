@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment=",">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a90ec828-9b09-449e-9dc9-d314d26e3709/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a90ec828-9b09-449e-9dc9-d314d26e3709/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_18_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_18__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_29_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2023_12_29__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorCarrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorCarrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/carrito.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/carrito.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +105,7 @@
       <workItem from="1677059361981" duration="1100000" />
       <workItem from="1677090601611" duration="5732000" />
       <workItem from="1677147171154" duration="2813000" />
+      <workItem from="1677453803243" duration="646000" />
     </task>
     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
       <created>1675942223502</created>
