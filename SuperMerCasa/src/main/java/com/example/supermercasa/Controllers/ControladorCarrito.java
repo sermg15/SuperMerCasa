@@ -37,12 +37,16 @@ public class ControladorCarrito {
     public String Carrito(Model model) {
 
         List<Producto> l = carrito.getListaProductos();
-        List<String> s = new ArrayList<>();
-        l.add(producto);
+        List<String> prod = new ArrayList<>();
+        List<String> prec = new ArrayList<>();
+
         for(int i = 0; i < l.size(); i++){
-            s.add(l.get(i).getName());
+            prod.add(l.get(i).getName());
+            prec.add(l.get(i).getPrecio());
         }
-        model.addAttribute("productos", s);
+
+        model.addAttribute("productos", prod);
+        model.addAttribute("precios", prec);
         return "carrito";
     }
 
