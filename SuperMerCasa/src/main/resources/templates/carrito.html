@@ -12,27 +12,20 @@
   <tr>
     <td style="width: 33.3333%;"><strong>Productos </strong></td>
     <td style="width: 33.3333%;"><strong>Cantidad</strong></td>
-    <td style="width: 33.3333%;"><strong>Precio por unidad</strong></td>
+    <td style="width: 33.3333%;"><strong>Precio total del producto</strong></td>
   </tr>
   <tr>
-<!--    <td style="width: 33.3333%;">producto</td>-->
-
-  </tr>
-  {{#nombres}}
-    <td style="width: 33.3333%;"><strong>{{nombre}} </strong></td>
-  {{/nombres}}
-  {{#cantidades}}
+    <td style="width: 33.3333%;"><strong>{{productos}}</strong></td>
     <td style="width: 33.3333%;"><strong>{{cantidad}}</strong></td>
-  {{/cantidades}}
-  {{#precios}}
-    <td style="width: 33.3333%;"><strong>{{precio}}</strong></td>
-  {{/precios}}
+    <td style="width: 33.3333%;"><strong>{{precios}}</strong></td>
   </tr>
+
+  <tr>
+<!--    <td style="width: 33.3333%;">producto</td>-->
   </tbody>
 </table>
-<p><strong>Precio total: <span style="color: #ffffff; font-size: larger">suma&euro;</span></strong></p>
+<p><strong>Precio total: <span style="color: #ffffff; font-size: larger">{{precioTotal}}&euro;</span></strong></p>
 <p style="text-align: center;"><button name="home"><a href="/">Inicio</a></button></p>
 
-<h1>{{hola}}</h1>
 </body>
 </html>

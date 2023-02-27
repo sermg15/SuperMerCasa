@@ -50,9 +50,12 @@ public class ControladorCarrito {
         return "carrito";
     }
 
-    List<Integer> c = new ArrayList<>();
     List<String> s = new ArrayList<>();
     List<String> p = new ArrayList<>();
+    List<Integer> c = new ArrayList<>();
+
+    float precioTotal;
+    float precioAux;
 
     @GetMapping("/addProducto/{id}")
     public String addProducto(Model model, @PathVariable long id, @RequestParam int cantidad){
@@ -60,38 +63,43 @@ public class ControladorCarrito {
         producto = repositorioOferta.findById(id).get();
 
         Optional<Usuario> user = repositorioUsuario.findById(28L);
+        String precioAuxString = "";
 
         if(carrito == null){
-            repositorioCarrito.save(new Carrito(user.get(),producto, cantidad, producto.getPrecio(), producto.getName()));
+            repositorioCarrito.save(new Carrito(user.get(),producto));
             carrito = repositorioCarrito.findByUser(user.get());
+            precioAux = Float.parseFloat(producto.getPrecio()) * cantidad;
+            precioAuxString += precioAux;
+            c.add(cantidad);
+            s.add(producto.getName());
+            p.add(precioAuxString);
+            precioTotal = precioAux;
 
-            model.addAttribute("productos", carrito.getListaProductos().get(0).getName());
-            model.addAttribute("precios",carrito.getListaProductos().get(0).getPrecio());
-            model.addAttribute("cantidad", cantidad);
-            model.addAttribute("hola", "IF");
+            model.addAttribute("productos", s.get(0));
+            model.addAttribute("precios", p.get(0));
+            model.addAttribute("cantidad", c.get(0));
+            model.addAttribute("precioTotal", precioTotal);
+
         }
        else{
-
-            model.addAttribute("hola", "ELSE");
             List<Producto> l = carrito.getListaProductos();
 
+            precioAux = Float.parseFloat(producto.getPrecio()) * cantidad;
+            precioAuxString += precioAux;
+
             l.add(producto);
-            s.add(l.get(l.size() - 1).getName());
-            p.add(l.get(l.size() - 1).getPrecio());
+
+            s.add(producto.getName());
+            p.add(precioAuxString);
+
             c.add(cantidad);
 
-            model.addAttribute("nombres", s);
-            model.addAttribute("precios", p);
-            model.addAttribute("cantidades", c);
+            precioTotal += precioAux;
 
-//            for(int i = 0; i < l.size(); i++){
-//                s.add(l.get(i).getName());
-//                p.add(l.get(i).getPrecio());
-//            }
-
-//            model.addAttribute("productos", s);
-//            model.addAttribute("precios",p);
-//            model.addAttribute("cantidad", c);
+            model.addAttribute("productos", s);
+            model.addAttribute("precios",p);
+            model.addAttribute("cantidad", c);
+            model.addAttribute("precioTotal", precioTotal);
 
             repositorioCarrito.findByUser(user.get()).setListaProductos(l);
             repositorioCarrito.flush();
