@@ -39,6 +39,7 @@ public class ControladorCarrito {
         List<Producto> l = carrito.getListaProductos();
         List<String> prod = new ArrayList<>();
         List<String> prec = new ArrayList<>();
+        List<String> cant = new ArrayList<>();
 
         for(int i = 0; i < l.size(); i++){
             prod.add(l.get(i).getName());
@@ -47,30 +48,41 @@ public class ControladorCarrito {
 
         model.addAttribute("productos", prod);
         model.addAttribute("precios", prec);
+        model.addAttribute("cantidades",cant);
         return "carrito";
     }
 
-    @GetMapping("/addProducto/{id}")
-    public String addProducto(Model model, @PathVariable long id){
+    @GetMapping("/addProducto/{id}/{cantidad}")
+    public String addProducto(Model model, @PathVariable long id, @PathVariable int cantidad){
 
         producto = repositorioOferta.findById(id).get();
 
         Optional<Usuario> user = repositorioUsuario.findById(28L);
-
+        /*int myId = (int)id;
         carrito = repositorioCarrito.findByUser(user.get());
+        carrito.getListaProductos().get(myId).setCantidad(cantidad);*/
         if(carrito == null){
             repositorioCarrito.save(new Carrito(user.get(),producto));
             carrito = repositorioCarrito.findByUser(user.get());
+
             model.addAttribute("productos", carrito.getListaProductos().get(0).getName());
+            model.addAttribute("precios",carrito.getListaProductos().get(0).getPrecio());
+            model.addAttribute("cantidades",cantidad);
         }
        else{
             List<Producto> l = carrito.getListaProductos();
             List<String> s = new ArrayList<>();
+            List<String> p = new ArrayList<>();
+            List<Integer> c = new ArrayList<>();
             l.add(producto);
             for(int i = 0; i < l.size(); i++){
                 s.add(l.get(i).getName());
+                p.add(l.get(i).getPrecio());
+                c.add(l.get(i).getCantidad());
             }
             model.addAttribute("productos", s);
+            model.addAttribute("precios",p);
+            model.addAttribute("cantidades",c);
             repositorioCarrito.findByUser(user.get()).setListaProductos(l);
             repositorioCarrito.flush();
        }

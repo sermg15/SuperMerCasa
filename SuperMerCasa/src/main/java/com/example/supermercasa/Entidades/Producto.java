@@ -16,6 +16,7 @@ public class Producto {
 
     private String name;
     private int stock;
+    private int cantidad;
 
     private String descripcion;
     private String precio;
@@ -24,7 +25,7 @@ public class Producto {
 
 
 
-    public Producto(long id, String name, int stock, String descripcion, String precio, String imagen){
+    public Producto(long id, String name, int stock, String descripcion, String precio, String imagen, int cantidad){
 
         this.id = id;
         this.name = name;
@@ -32,6 +33,7 @@ public class Producto {
         this.stock = stock;
         this.precio = precio;
         this.imagen = imagen;
+        this.cantidad = cantidad;
 
     }
 
@@ -85,6 +87,8 @@ public class Producto {
         this.imagen = imagen;
     }
 
+    public int getCantidad(){return cantidad;}
+    public void setCantidad(int cantidad){this.cantidad=cantidad;}
 
 }
 
