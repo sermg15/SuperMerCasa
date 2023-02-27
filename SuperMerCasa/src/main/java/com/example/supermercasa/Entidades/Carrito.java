@@ -17,6 +17,10 @@ public class Carrito {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    private int cantidad;
+    private String precio;
+    private String nombre;
+
     @OneToMany
     private List<Producto> listaProductos;
 
@@ -29,10 +33,14 @@ public class Carrito {
         this.user = user;
         this.listaProductos = new ArrayList<>();
     }
-    public Carrito (Usuario user, Producto product){
+    public Carrito (Usuario user, Producto product, int cantidad, String precio, String nombre){
         this.user = user;
         this.listaProductos = new ArrayList<>();
         this.listaProductos.add(product);
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.nombre = nombre;
+
     }
 
     public long getId() {
@@ -52,4 +60,5 @@ public class Carrito {
     public void setListaProductos (List<Producto> listaProductos) {this.listaProductos = listaProductos;}
 
     public void añadirProducto (Producto producto) {this.listaProductos.add(producto);}
+
 }

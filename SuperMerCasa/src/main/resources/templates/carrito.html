@@ -6,25 +6,33 @@
 </head>
 <body style="background-color:rgb(39, 69, 42);text-align: center; color: white">
 <h1>Carrito</h1>
+<!--<h2>id</h2>-->
+<table style="border-collapse: collapse; width: 82.6705%; height: 82px;" border="1.5"; align="center">
+  <tbody>
+  <tr>
+    <td style="width: 33.3333%;"><strong>Productos </strong></td>
+    <td style="width: 33.3333%;"><strong>Cantidad</strong></td>
+    <td style="width: 33.3333%;"><strong>Precio por unidad</strong></td>
+  </tr>
+  <tr>
+<!--    <td style="width: 33.3333%;">producto</td>-->
 
-<table style="border-collapse: collapse; width: 80.9659%; height: 93px; margin: 0 auto;" border="1">
-    <tbody>
-    <tr>
-        <td style="width: 33.3333%; text-align: center;">Productos</td>
-        <td style="width: 33.3333%; text-align: center;">Precios</td>
-        <td style="width: 33.3333%; text-align: center;">Cantidad</td>
-    </tr>
-    <tr>
-        <td style="width: 33.3333%; text-align: center;">{{#productos}}<li>{{productos}}<li>{{/productos}}</td>
-        <td style="width: 33.3333%; text-align: center;">{{#precios}}<li>{{precios}}<li>{{/precios}}</td>
-        <td style="width: 33.3333%; text-align: center;">{{#cantidades}}<li>{{cantidades}}<li>{{/cantidades}}</td>
-    </tr>
-    </tbody>
+  </tr>
+  {{#nombres}}
+    <td style="width: 33.3333%;"><strong>{{nombre}} </strong></td>
+  {{/nombres}}
+  {{#cantidades}}
+    <td style="width: 33.3333%;"><strong>{{cantidad}}</strong></td>
+  {{/cantidades}}
+  {{#precios}}
+    <td style="width: 33.3333%;"><strong>{{precio}}</strong></td>
+  {{/precios}}
+  </tr>
+  </tbody>
 </table>
-<h2>{{#productos}}{{/productos}}</h2>
 <p><strong>Precio total: <span style="color: #ffffff; font-size: larger">suma&euro;</span></strong></p>
 <p style="text-align: center;"><button name="home"><a href="/">Inicio</a></button></p>
 
-
+<h1>{{hola}}</h1>
 </body>
 </html>

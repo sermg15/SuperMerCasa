@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class ControladorCarrito {
@@ -52,37 +50,49 @@ public class ControladorCarrito {
         return "carrito";
     }
 
-    @GetMapping("/addProducto/{id}/{cantidad}")
-    public String addProducto(Model model, @PathVariable long id, @PathVariable int cantidad){
+    List<Integer> c = new ArrayList<>();
+    List<String> s = new ArrayList<>();
+    List<String> p = new ArrayList<>();
+
+    @GetMapping("/addProducto/{id}")
+    public String addProducto(Model model, @PathVariable long id, @RequestParam int cantidad){
 
         producto = repositorioOferta.findById(id).get();
 
         Optional<Usuario> user = repositorioUsuario.findById(28L);
-        /*int myId = (int)id;
-        carrito = repositorioCarrito.findByUser(user.get());
-        carrito.getListaProductos().get(myId).setCantidad(cantidad);*/
+
         if(carrito == null){
-            repositorioCarrito.save(new Carrito(user.get(),producto));
+            repositorioCarrito.save(new Carrito(user.get(),producto, cantidad, producto.getPrecio(), producto.getName()));
             carrito = repositorioCarrito.findByUser(user.get());
 
             model.addAttribute("productos", carrito.getListaProductos().get(0).getName());
             model.addAttribute("precios",carrito.getListaProductos().get(0).getPrecio());
-            model.addAttribute("cantidades",cantidad);
+            model.addAttribute("cantidad", cantidad);
+            model.addAttribute("hola", "IF");
         }
        else{
+
+            model.addAttribute("hola", "ELSE");
             List<Producto> l = carrito.getListaProductos();
-            List<String> s = new ArrayList<>();
-            List<String> p = new ArrayList<>();
-            List<Integer> c = new ArrayList<>();
+
             l.add(producto);
-            for(int i = 0; i < l.size(); i++){
-                s.add(l.get(i).getName());
-                p.add(l.get(i).getPrecio());
-                c.add(l.get(i).getCantidad());
-            }
-            model.addAttribute("productos", s);
-            model.addAttribute("precios",p);
-            model.addAttribute("cantidades",c);
+            s.add(l.get(l.size() - 1).getName());
+            p.add(l.get(l.size() - 1).getPrecio());
+            c.add(cantidad);
+
+            model.addAttribute("nombres", s);
+            model.addAttribute("precios", p);
+            model.addAttribute("cantidades", c);
+
+//            for(int i = 0; i < l.size(); i++){
+//                s.add(l.get(i).getName());
+//                p.add(l.get(i).getPrecio());
+//            }
+
+//            model.addAttribute("productos", s);
+//            model.addAttribute("precios",p);
+//            model.addAttribute("cantidad", c);
+
             repositorioCarrito.findByUser(user.get()).setListaProductos(l);
             repositorioCarrito.flush();
        }
