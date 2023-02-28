@@ -48,7 +48,7 @@
 ![220427299-b4921096-acc6-4b43-a748-01882968d1e7](https://user-images.githubusercontent.com/64080266/220580722-e7f7e92c-7245-4d4a-af7e-5bee2926c37f.png)
 
 - **Diagrama UML**:
-![UML Fase 2](https://user-images.githubusercontent.com/64080266/220762074-7db54351-c93d-43a1-9667-bfaebd397db5.png)
+![UML Fase 2]![SuperMerCasaDiagram](https://user-images.githubusercontent.com/79744800/221853493-8cde46da-1051-4e3f-aadc-947fb6ac973b.png)
 
 - **Capturas de pantalla**
  - Página principal: página de inicio donde se ofrecen todas las opciones al usuario, y se ofrecen las distintas categorías de productos.
