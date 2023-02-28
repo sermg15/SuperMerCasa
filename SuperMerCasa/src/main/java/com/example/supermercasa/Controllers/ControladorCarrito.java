@@ -72,7 +72,7 @@ public class ControladorCarrito {
             repositorioCarrito.save(new Carrito(user.get(),producto));
             carrito = repositorioCarrito.findByUser(user.get());
             precioAux = Float.parseFloat(producto.getPrecio()) * cantidad;
-            precioAuxString += precioAux;
+            precioAuxString += decimalFormat.format(precioAux);
             c.add(cantidad);
             s.add(producto.getName());
             p.add(precioAuxString);
@@ -81,14 +81,14 @@ public class ControladorCarrito {
             model.addAttribute("productos", s.get(0));
             model.addAttribute("precios", p.get(0));
             model.addAttribute("cantidad", c.get(0));
-            model.addAttribute("precioTotal", precioTotal);
+            model.addAttribute("precioTotal", decimalFormat.format(precioTotal));
 
         }
        else{
             List<Producto> l = carrito.getListaProductos();
 
             precioAux = Float.parseFloat(producto.getPrecio()) * cantidad;
-            precioAuxString += precioAux;
+            precioAuxString += decimalFormat.format(precioAux);
 
             l.add(producto);
 
