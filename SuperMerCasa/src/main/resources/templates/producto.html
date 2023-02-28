@@ -37,7 +37,7 @@
         });
         var pag = "";
         document.getElementById("carrito").addEventListener("click", function() {
-            pag = "/addProducto/{{id}}?cantidad=" + numSpan.textContent;
+            pag = "/addProducto/{{id}}?comprado=&cantidad=" + numSpan.textContent;
             location.href=pag;
         });
     </script>

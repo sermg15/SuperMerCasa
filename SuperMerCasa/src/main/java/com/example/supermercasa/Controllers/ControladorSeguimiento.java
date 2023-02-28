@@ -27,28 +27,24 @@ public class ControladorSeguimiento {
     RepositorioPedido repositorioPedido;
 
     Carrito carrito;
+    Pedido pedido;
 
-    @GetMapping("/addSeguimiento")
-    public String addSeguimiento(Model model){
-
-        Optional<Usuario> user = repositorioUsuario.findById(28L);
-        carrito = repositorioCarrito.findByUser(user.get());
-
-        List<Producto> productos = carrito.getListaProductos();
-        repositorioPedido.save(new Pedido(1,productos,user.get(),"Recibido"));
-
-        repositorioCarrito.deleteById(carrito.getId());
-        model.addAttribute("estado",repositorioPedido.findById(30L).get().getEstado());
-
-
-
-        return "seguimientoPedidos";
-    }
 
     @GetMapping("/seguimiento")
     public String Seguimiento(Model model){
 
-        model.addAttribute("estado","Pedido no encontrado");
+        Optional<Usuario> user = repositorioUsuario.findById(28L);
+        pedido = repositorioPedido.findByUser(user.get());
+
+        if(pedido == null){
+            model.addAttribute("id", "NO HAY PEDIDOS");
+            model.addAttribute("estado","Pedido no encontrado");
+
+        }else{
+
+            model.addAttribute("id", pedido.getId());
+            model.addAttribute("estado",pedido.getEstado());
+        }
 
         return "seguimientoPedidos";
     }

@@ -12,7 +12,7 @@ public class Pedido {
     private long id;
 
     @ManyToMany
-    private List<Producto> productos;
+    private List<Producto> productos = new ArrayList<>();
 
     @ManyToOne
     private Usuario user;
@@ -24,8 +24,7 @@ public class Pedido {
     public Pedido(long id, List<Producto> productos, Usuario user, String estado){
 
         this.id = id;
-        this.productos = new ArrayList<>();
-        this.productos = productos;
+        this.productos.addAll(productos);
         this.user = user;
         this.estado = estado;
 

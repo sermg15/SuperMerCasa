@@ -1,10 +1,12 @@
 package com.example.supermercasa.Controllers;
 
 import com.example.supermercasa.Entidades.Carrito;
+import com.example.supermercasa.Entidades.Pedido;
 import com.example.supermercasa.Entidades.Producto;
 import com.example.supermercasa.Entidades.Usuario;
 import com.example.supermercasa.Repositorios.RepositorioCarrito;
 import com.example.supermercasa.Repositorios.RepositorioOferta;
+import com.example.supermercasa.Repositorios.RepositorioPedido;
 import com.example.supermercasa.Repositorios.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ReactiveAdapterRegistry;
@@ -27,14 +29,18 @@ public class ControladorCarrito {
     private RepositorioCarrito repositorioCarrito;
     @Autowired
     private RepositorioUsuario repositorioUsuario;
+    @Autowired
+    private RepositorioPedido repositorioPedido;
 
     Carrito carrito;
     //Usuario user;
     Producto producto;
 
+    Pedido pedido;
+
 
     @GetMapping("/carrito")
-    public String Carrito(Model model) {
+    public String Carrito(Model model, @RequestParam String comprado) {
 
         Optional<Usuario> user = repositorioUsuario.findById(28L);
         carrito = repositorioCarrito.findByUser(user.get());
@@ -45,12 +51,14 @@ public class ControladorCarrito {
             model.addAttribute("precios","");
             model.addAttribute("cantidad", "");
             model.addAttribute("precioTotal", "0");
+            model.addAttribute("comprado", "");
         }else{
 
             model.addAttribute("productos", carrito.getNombreProductos());
             model.addAttribute("precios", carrito.getPreciosProductos());
             model.addAttribute("cantidad", carrito.getCantidadProductos());
             model.addAttribute("precioTotal", precioTotal);
+            model.addAttribute("comprado", comprado);
         }
 
         return "carrito";
@@ -65,6 +73,7 @@ public class ControladorCarrito {
 
         Optional<Usuario> user = repositorioUsuario.findById(28L);
         producto = repositorioOferta.findById(id).get();
+        carrito = repositorioCarrito.findByUser(user.get());
 
         if(carrito == null){
 
@@ -80,6 +89,7 @@ public class ControladorCarrito {
             model.addAttribute("precios", carrito.getPreciosProductos());
             model.addAttribute("cantidad", carrito.getCantidadProductos());
             model.addAttribute("precioTotal", precioTotal);
+            model.addAttribute("comprado", "");
 
         }
        else{
@@ -96,7 +106,39 @@ public class ControladorCarrito {
             model.addAttribute("precios", carrito.getPreciosProductos());
             model.addAttribute("cantidad", carrito.getCantidadProductos());
             model.addAttribute("precioTotal", precioTotal);
+            model.addAttribute("comprado", "");
        }
+        return "carrito";
+    }
+    @GetMapping("/addSeguimiento")
+    public String addSeguimiento(Model model, @RequestParam String comprado){
+
+        Optional<Usuario> user = repositorioUsuario.findById(28L);
+        carrito = repositorioCarrito.findByUser(user.get());
+
+        if(carrito == null){
+
+            model.addAttribute("productos", "");
+            model.addAttribute("precios","");
+            model.addAttribute("cantidad", "");
+            model.addAttribute("precioTotal", "0");
+            model.addAttribute("comprado", "NO HAY PRODUCTOS SUFICIENTES PARA REALIZAR UN PEDIDO");
+
+        }else{
+            repositorioPedido.save(new Pedido(1, carrito.getListaProductos(), user.get(),"Recibido"));
+            //pedido = repositorioPedido.findByUser(user.get());
+
+            repositorioCarrito.deleteById(carrito.getId());
+
+            model.addAttribute("productos", "");
+            model.addAttribute("precios","");
+            model.addAttribute("cantidad", "");
+            model.addAttribute("precioTotal", "0");
+            model.addAttribute("comprado", comprado);
+
+        }
+
+
         return "carrito";
     }
 }
