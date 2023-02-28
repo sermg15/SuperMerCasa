@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 @Controller
@@ -56,6 +57,8 @@ public class ControladorCarrito {
 
     float precioTotal;
     float precioAux;
+
+    DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
     @GetMapping("/addProducto/{id}")
     public String addProducto(Model model, @PathVariable long id, @RequestParam int cantidad){
@@ -99,7 +102,7 @@ public class ControladorCarrito {
             model.addAttribute("productos", s);
             model.addAttribute("precios",p);
             model.addAttribute("cantidad", c);
-            model.addAttribute("precioTotal", precioTotal);
+            model.addAttribute("precioTotal", decimalFormat.format(precioTotal));
 
             repositorioCarrito.findByUser(user.get()).setListaProductos(l);
             repositorioCarrito.flush();
