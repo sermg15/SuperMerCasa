@@ -16,10 +16,6 @@ public class Carrito {
     private long id;
 
     @ElementCollection
-    private List<String> nombreProductos = new ArrayList<>();
-    @ElementCollection
-    private List<Double> preciosProductos = new ArrayList<>();
-    @ElementCollection
     private List<Integer> cantidadProductos = new ArrayList<>();
 
     @OneToMany
@@ -38,8 +34,6 @@ public class Carrito {
         this.user = user;
         listaProductos = new ArrayList<>();
         this.listaProductos.add(producto);
-        preciosProductos.add(producto.getPrecio());
-        nombreProductos.add(producto.getName());
         cantidadProductos.add(cantidad);
     }
 
@@ -61,25 +55,7 @@ public class Carrito {
 
     public void aniadirProducto (Producto producto, int cantidad) {
         this.listaProductos.add(producto);
-        this.nombreProductos.add(producto.getName());
-        this.preciosProductos.add(producto.getPrecio());
         this.cantidadProductos.add(cantidad);
-    }
-
-    public List<String> getNombreProductos() {
-        return nombreProductos;
-    }
-
-    public void setNombreProductos(List<String> nombreProductos) {
-        this.nombreProductos = nombreProductos;
-    }
-
-    public List<Double> getPreciosProductos() {
-        return preciosProductos;
-    }
-
-    public void setPreciosProductos(List<Double> preciosProductos) {
-        this.preciosProductos = preciosProductos;
     }
 
     public List<Integer> getCantidadProductos() {

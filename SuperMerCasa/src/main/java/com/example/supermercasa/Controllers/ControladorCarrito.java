@@ -36,9 +36,6 @@ public class ControladorCarrito {
     //Usuario user;
     Producto producto;
 
-    Pedido pedido;
-
-
     @GetMapping("/carrito")
     public String Carrito(Model model, @RequestParam String comprado) {
 
@@ -47,15 +44,15 @@ public class ControladorCarrito {
 
         if(carrito == null){
 
-            model.addAttribute("productos", "");
-            model.addAttribute("precios","");
+            model.addAttribute("productos", null);
+            model.addAttribute("precios", null);
             model.addAttribute("cantidad", "");
             model.addAttribute("precioTotal", "0");
             model.addAttribute("comprado", "");
         }else{
 
-            model.addAttribute("productos", carrito.getNombreProductos());
-            model.addAttribute("precios", carrito.getPreciosProductos());
+            model.addAttribute("productos", carrito.getListaProductos());
+            model.addAttribute("precios", carrito.getListaProductos());
             model.addAttribute("cantidad", carrito.getCantidadProductos());
             model.addAttribute("precioTotal", precioTotal);
             model.addAttribute("comprado", comprado);
@@ -63,7 +60,6 @@ public class ControladorCarrito {
 
         return "carrito";
     }
-
 
 
     double precioTotal;
@@ -85,8 +81,8 @@ public class ControladorCarrito {
             precioTotal = producto.getPrecio() * cantidad;
             precioTotal = (double)Math.round(precioTotal * 100) / 100;
 
-            model.addAttribute("productos", carrito.getNombreProductos());
-            model.addAttribute("precios", carrito.getPreciosProductos());
+            model.addAttribute("productos", carrito.getListaProductos());
+            model.addAttribute("precios", carrito.getListaProductos());
             model.addAttribute("cantidad", carrito.getCantidadProductos());
             model.addAttribute("precioTotal", precioTotal);
             model.addAttribute("comprado", "");
@@ -102,8 +98,8 @@ public class ControladorCarrito {
             precioTotal += producto.getPrecio() * cantidad;
             precioTotal = (double)Math.round(precioTotal * 100) / 100;
 
-            model.addAttribute("productos", carrito.getNombreProductos());
-            model.addAttribute("precios", carrito.getPreciosProductos());
+            model.addAttribute("productos", carrito.getListaProductos());
+            model.addAttribute("precios", carrito.getListaProductos());
             model.addAttribute("cantidad", carrito.getCantidadProductos());
             model.addAttribute("precioTotal", precioTotal);
             model.addAttribute("comprado", "");
@@ -118,26 +114,24 @@ public class ControladorCarrito {
 
         if(carrito == null){
 
-            model.addAttribute("productos", "");
-            model.addAttribute("precios","");
+            model.addAttribute("productos", null);
+            model.addAttribute("precios",null);
             model.addAttribute("cantidad", "");
             model.addAttribute("precioTotal", "0");
             model.addAttribute("comprado", "NO HAY PRODUCTOS SUFICIENTES PARA REALIZAR UN PEDIDO");
 
         }else{
             repositorioPedido.save(new Pedido(1, carrito.getListaProductos(), user.get(),"Recibido"));
-            //pedido = repositorioPedido.findByUser(user.get());
 
             repositorioCarrito.deleteById(carrito.getId());
 
-            model.addAttribute("productos", "");
-            model.addAttribute("precios","");
+            model.addAttribute("productos", null);
+            model.addAttribute("precios",null);
             model.addAttribute("cantidad", "");
             model.addAttribute("precioTotal", "0");
             model.addAttribute("comprado", comprado);
 
         }
-
 
         return "carrito";
     }
