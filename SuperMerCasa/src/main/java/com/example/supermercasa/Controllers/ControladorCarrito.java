@@ -32,28 +32,23 @@ public class ControladorCarrito {
     //Usuario user;
     Producto producto;
 
-    @GetMapping("/carrito")
-    public String Carrito(Model model) {
-
-        List<Producto> l = carrito.getListaProductos();
-        List<String> prod = new ArrayList<>();
-        List<String> prec = new ArrayList<>();
-        List<String> cant = new ArrayList<>();
-
-        for(int i = 0; i < l.size(); i++){
-            prod.add(l.get(i).getName());
-            prec.add(l.get(i).getPrecio());
-        }
-
-        model.addAttribute("productos", prod);
-        model.addAttribute("precios", prec);
-        model.addAttribute("cantidades",cant);
-        return "carrito";
-    }
-
     List<String> s = new ArrayList<>();
     List<String> p = new ArrayList<>();
     List<Integer> c = new ArrayList<>();
+
+    @GetMapping("/carrito")
+    public String Carrito(Model model) {
+
+        //List<Producto> l = carrito.getListaProductos();
+
+        model.addAttribute("productos", s);
+        model.addAttribute("precios",p);
+        model.addAttribute("cantidad", c);
+        model.addAttribute("precioTotal", decimalFormat.format(precioTotal));
+        return "carrito";
+    }
+
+
 
     float precioTotal;
     float precioAux;

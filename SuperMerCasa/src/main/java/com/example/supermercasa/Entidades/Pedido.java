@@ -21,11 +21,11 @@ public class Pedido {
 
     public Pedido(){}
 
-    public Pedido(long id, Producto productos, Usuario user, String estado){
+    public Pedido(long id, List<Producto> productos, Usuario user, String estado){
 
         this.id = id;
         this.productos = new ArrayList<>();
-        this.productos.add(productos);
+        this.productos = productos;
         this.user = user;
         this.estado = estado;
 

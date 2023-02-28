@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.sql.Blob;
+import java.util.List;
+import com.example.supermercasa.Entidades.Carrito;
 import com.example.supermercasa.Repositorios.RepositorioOferta;
 @Entity
 public class Producto {
@@ -32,6 +34,7 @@ public class Producto {
         this.stock = stock;
         this.precio = precio;
         this.imagen = imagen;
+
 
     }
 

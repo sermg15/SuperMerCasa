@@ -1,9 +1,7 @@
 package com.example.supermercasa.Entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Usuario {
@@ -14,6 +12,8 @@ public class Usuario {
     private String email;
     private String contraseña;
     private String direction;
+   /* @OneToMany
+    private List<Carrito> carritos;*/
 
     public Usuario(){}
 
@@ -24,6 +24,7 @@ public class Usuario {
         this.contraseña = contraseña;
         this.email = email;
         this.direction = direction;
+        //this.carritos= carritos;
     }
 
     public long getId() {
@@ -65,6 +66,8 @@ public class Usuario {
     public void setDirecction(String direction) {
         this.direction = direction;
     }
+
+
 
 
 }
