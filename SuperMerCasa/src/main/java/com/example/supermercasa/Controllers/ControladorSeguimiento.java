@@ -26,12 +26,18 @@ public class ControladorSeguimiento {
     @Autowired
     RepositorioPedido repositorioPedido;
 
+    Carrito carrito;
+
     @GetMapping("/addSeguimiento")
     public String addSeguimiento(Model model){
 
         Optional<Usuario> user = repositorioUsuario.findById(28L);
-        List<Producto> productos = repositorioCarrito.findByUser(user.get()).getListaProductos();
+        carrito = repositorioCarrito.findByUser(user.get());
+
+        List<Producto> productos = carrito.getListaProductos();
         repositorioPedido.save(new Pedido(1,productos,user.get(),"Recibido"));
+
+        repositorioCarrito.deleteById(carrito.getId());
         model.addAttribute("estado",repositorioPedido.findById(30L).get().getEstado());
 
 
