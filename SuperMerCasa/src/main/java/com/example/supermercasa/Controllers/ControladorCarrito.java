@@ -32,77 +32,71 @@ public class ControladorCarrito {
     //Usuario user;
     Producto producto;
 
-    List<String> s = new ArrayList<>();
-    List<String> p = new ArrayList<>();
-    List<Integer> c = new ArrayList<>();
 
     @GetMapping("/carrito")
     public String Carrito(Model model) {
 
-        //List<Producto> l = carrito.getListaProductos();
+        Optional<Usuario> user = repositorioUsuario.findById(28L);
+        carrito = repositorioCarrito.findByUser(user.get());
 
-        model.addAttribute("productos", s);
-        model.addAttribute("precios",p);
-        model.addAttribute("cantidad", c);
-        model.addAttribute("precioTotal", decimalFormat.format(precioTotal));
+        if(carrito == null){
+
+            model.addAttribute("productos", "");
+            model.addAttribute("precios","");
+            model.addAttribute("cantidad", "");
+            model.addAttribute("precioTotal", "0");
+        }else{
+
+            model.addAttribute("productos", carrito.getNombreProductos());
+            model.addAttribute("precios", carrito.getPreciosProductos());
+            model.addAttribute("cantidad", carrito.getCantidadProductos());
+            model.addAttribute("precioTotal", precioTotal);
+        }
+
         return "carrito";
     }
 
 
 
-    float precioTotal;
-    float precioAux;
-
-    DecimalFormat decimalFormat = new DecimalFormat("#.##");
+    double precioTotal;
 
     @GetMapping("/addProducto/{id}")
     public String addProducto(Model model, @PathVariable long id, @RequestParam int cantidad){
 
+        Optional<Usuario> user = repositorioUsuario.findById(28L);
         producto = repositorioOferta.findById(id).get();
 
-        Optional<Usuario> user = repositorioUsuario.findById(28L);
-        String precioAuxString = "";
-
         if(carrito == null){
-            repositorioCarrito.save(new Carrito(user.get(),producto));
-            carrito = repositorioCarrito.findByUser(user.get());
-            precioAux = Float.parseFloat(producto.getPrecio()) * cantidad;
-            precioAuxString += decimalFormat.format(precioAux);
-            c.add(cantidad);
-            s.add(producto.getName());
-            p.add(precioAuxString);
-            precioTotal = precioAux;
 
-            model.addAttribute("productos", s.get(0));
-            model.addAttribute("precios", p.get(0));
-            model.addAttribute("cantidad", c.get(0));
-            model.addAttribute("precioTotal", decimalFormat.format(precioTotal));
+            precioTotal = 0;
+
+            repositorioCarrito.save(new Carrito(user.get(),producto, cantidad));
+            carrito = repositorioCarrito.findByUser(user.get());
+
+            precioTotal = producto.getPrecio() * cantidad;
+            precioTotal = (double)Math.round(precioTotal * 100) / 100;
+
+            model.addAttribute("productos", carrito.getNombreProductos());
+            model.addAttribute("precios", carrito.getPreciosProductos());
+            model.addAttribute("cantidad", carrito.getCantidadProductos());
+            model.addAttribute("precioTotal", precioTotal);
 
         }
        else{
-            List<Producto> l = carrito.getListaProductos();
 
-            precioAux = Float.parseFloat(producto.getPrecio()) * cantidad;
-            precioAuxString += decimalFormat.format(precioAux);
-
-            l.add(producto);
-
-            s.add(producto.getName());
-            p.add(precioAuxString);
-
-            c.add(cantidad);
-
-            precioTotal += precioAux;
-
-            model.addAttribute("productos", s);
-            model.addAttribute("precios",p);
-            model.addAttribute("cantidad", c);
-            model.addAttribute("precioTotal", decimalFormat.format(precioTotal));
-
-            repositorioCarrito.findByUser(user.get()).setListaProductos(l);
+            repositorioCarrito.findByUser(user.get()).aniadirProducto(producto, cantidad);
             repositorioCarrito.flush();
-       }
 
+            carrito = repositorioCarrito.findByUser(user.get());
+
+            precioTotal += producto.getPrecio() * cantidad;
+            precioTotal = (double)Math.round(precioTotal * 100) / 100;
+
+            model.addAttribute("productos", carrito.getNombreProductos());
+            model.addAttribute("precios", carrito.getPreciosProductos());
+            model.addAttribute("cantidad", carrito.getCantidadProductos());
+            model.addAttribute("precioTotal", precioTotal);
+       }
         return "carrito";
     }
 }
