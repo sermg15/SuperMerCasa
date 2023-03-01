@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RepositorioOferta extends JpaRepository<Producto, Long> {
 
+    Producto getProductoByName(String nombre);
 }

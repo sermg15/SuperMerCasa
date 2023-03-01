@@ -1,0 +1,27 @@
+</head>
+<body style="background-color:rgb(39, 69, 42); text-align: center; color: white">
+<h1>Nuevo Producto</h1>
+<hr/>
+<h1>Añadir un producto</h1>
+<form action="nuevoProducto">
+  <p>
+    <label for="nameProd">Nombre del producto:</label>
+    <input id="nameProd" name="nameProd" type="text"/><br/><br/>
+
+    <label for="description">Descripci&oacute;n del producto:</label>
+    <textarea id="description" name="description"></textarea><br/><br/>
+
+    <label for="price">Precio:</label>
+    <input id="price" name="price" type="text"/><br/><br/>
+
+    <label for="nstock">Stock:</label>
+    <input id="nstock" name="nstock" type="number"/><br/><br/>
+
+    <input type="submit" value="Crear producto"/>
+  </p>
+
+  <h2>{{mensajeAddProd}}</h2>
+</form>
+
+</body>
+</html>
