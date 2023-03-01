@@ -35,6 +35,7 @@ public class ControladorCarrito {
     Carrito carrito;
     //Usuario user;
     Producto producto;
+    Pedido pedido;
 
     @GetMapping("/carrito")
     public String Carrito(Model model, @RequestParam String comprado) {
@@ -112,6 +113,7 @@ public class ControladorCarrito {
         Optional<Usuario> user = repositorioUsuario.findById(28L);
         carrito = repositorioCarrito.findByUser(user.get());
 
+
         if(carrito == null){
 
             model.addAttribute("productos", null);
@@ -122,7 +124,7 @@ public class ControladorCarrito {
 
         }else{
             repositorioPedido.save(new Pedido(1, carrito.getListaProductos(), user.get(),"Recibido"));
-
+            user.get().getPedidos().add(repositorioPedido.findByUser(user.get()));
             repositorioCarrito.deleteById(carrito.getId());
 
             model.addAttribute("productos", null);

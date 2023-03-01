@@ -10,6 +10,25 @@
 
   <h3 style="text-align: center;"><span style="text-decoration: underline;"><strong>ESTADO DEL ENV&Iacute;O</strong></span></h3>
   <p style="text-align: center;">{{estado}}</span></p>
+
+  <table style="border-collapse: collapse; width: 82.6705%; height: 82px;" border="1.5"; align="center";>
+      <tbody>
+      <tr>
+          <td style="width: 50%;"><strong>Productos </strong></td>
+<!--          <td style="width: 50%;"><strong>Cantidad</strong></td>-->
+          <td style="width: 50%;"><strong>Precio por unidad</strong></td>
+      </tr>
+      <tr>
+          <td style="width: 50%; text-align: center;"><strong>{{#productos}}<ul>{{name}}</ul>{{/productos}}</strong></td>
+<!--          <td style="width: 33.3333%; text-align: center;"><strong>{{#cantidad}}<ul>{{.}}</ul>{{/cantidad}}</strong></td>-->
+          <td style="width: 50%; text-align: center;"><strong>{{#precios}}<ul>{{precio}}</ul>{{/precios}}</strong></td>
+      </tr>
+
+      <tr>
+          <!--    <td style="width: 33.3333%;">producto</td>-->
+      </tbody>
+  </table>
+
   <p style="text-align: center;"><button name="home"><a href="/">Inicio</a></button></p>
 </body>
 </html>

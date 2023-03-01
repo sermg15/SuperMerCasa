@@ -12,19 +12,25 @@ public class Usuario {
     private String email;
     private String contraseña;
     private String direction;
-   /* @OneToMany
-    private List<Carrito> carritos;*/
+    @OneToOne
+    private Carrito carrito;
+    @OneToMany
+    private List<Pedido> pedidos;
 
     public Usuario(){}
 
-    public Usuario(long iden, String nombreUsuario, String email, String direction, String contraseña){
+
+
+
+    public Usuario(long iden, String nombreUsuario, String email, String direction, String contraseña, Carrito carrito, List<Pedido> pedidos){
 
         this.iden = iden;
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
         this.email = email;
         this.direction = direction;
-        //this.carritos= carritos;
+        this.carrito = carrito;
+        this.pedidos = pedidos;
     }
 
     public long getId() {
@@ -67,7 +73,13 @@ public class Usuario {
         this.direction = direction;
     }
 
+    public Carrito getCarrito() {return carrito;}
 
+    public void setCarritos(Carrito carrito) {this.carrito = carrito;}
+
+    public List<Pedido> getPedidos() { return pedidos;}
+
+    public void setPedidos(List<Pedido> pedidos) {this.pedidos = pedidos;}
 
 
 }

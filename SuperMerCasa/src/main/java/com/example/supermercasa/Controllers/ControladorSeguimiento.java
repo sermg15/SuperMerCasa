@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 
 import com.example.supermercasa.Repositorios.RepositorioCarrito;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 import java.util.List;
@@ -29,23 +31,31 @@ public class ControladorSeguimiento {
     Carrito carrito;
     Pedido pedido;
 
+    List<Pedido> pedidos;
 
-    @GetMapping("/seguimiento")
+    @GetMapping("/seguimientoPedido")
     public String Seguimiento(Model model){
 
         Optional<Usuario> user = repositorioUsuario.findById(28L);
-        pedido = repositorioPedido.findByUser(user.get());
+        pedidos = user.get().getPedidos();
+        model.addAttribute("pedidos",pedidos);
+        return "seguimientoPedidosEleccion";
+    }
 
+    @GetMapping("/seguimientoPedido/{id}")
+    public String SeguimientoPedido(Model model,@PathVariable long id){
+        Optional<Usuario> user = repositorioUsuario.findById(28L);
+        pedido = repositorioPedido.findByUserAndId(user.get(),id);
         if(pedido == null){
             model.addAttribute("id", "NO HAY PEDIDOS");
             model.addAttribute("estado","Pedido no encontrado");
 
         }else{
-
             model.addAttribute("id", pedido.getId());
+            model.addAttribute("productos",pedido.getProductos());
+            model.addAttribute("precios",pedido.getProductos());
             model.addAttribute("estado",pedido.getEstado());
         }
-
         return "seguimientoPedidos";
     }
 

@@ -22,7 +22,7 @@ public class UserLogSignController {
     }
     @PostConstruct
     public void init(){
-        repositorioUsuario.save(new Usuario( 1, "Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", "1234"));
+        repositorioUsuario.save(new Usuario( 1, "Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", "1234",null,null));
     }
 
     @GetMapping("/perfilusuario")
@@ -64,7 +64,7 @@ public class UserLogSignController {
     public String RegistroLogin(Model model, @RequestParam String registername, @RequestParam String registerpassword, @RequestParam String email, @RequestParam String direction){
 
         if (repositorioUsuario.findByEmail(email).isEmpty()){
-            repositorioUsuario.save(new Usuario(numusuarios,registername, email, direction, registerpassword));
+            repositorioUsuario.save(new Usuario(numusuarios,registername, email, direction, registerpassword,null,null));
             numusuarios++;
 
             model.addAttribute("mensaje", "USUARIO REGISTRADO DE FORMA CORRECTA");
