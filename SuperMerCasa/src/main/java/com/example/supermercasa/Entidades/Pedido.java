@@ -18,15 +18,19 @@ public class Pedido {
     private Usuario user;
 
     private String estado;
+    private double precioTotal;
 
     public Pedido(){}
 
-    public Pedido(long id, List<Producto> productos, Usuario user, String estado){
+
+
+    public Pedido(long id, List<Producto> productos, Usuario user, String estado, double precioTotal){
 
         this.id = id;
         this.productos.addAll(productos);
         this.user = user;
         this.estado = estado;
+        this.precioTotal=precioTotal;
 
     }
 
@@ -65,4 +69,8 @@ public class Pedido {
     public void cambiarEstado (String estado){
         this.estado = estado;
     }
+
+    public double getPrecioTotal() {return precioTotal;}
+
+    public void setPrecioTotal(double precioTotal) {this.precioTotal = precioTotal;}
 }

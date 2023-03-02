@@ -32,6 +32,7 @@ public class ControladorSeguimiento {
     Pedido pedido;
 
     List<Pedido> pedidos;
+    double precioTotal;
 
     @GetMapping("/seguimientoPedido")
     public String Seguimiento(Model model){
@@ -46,6 +47,7 @@ public class ControladorSeguimiento {
     public String SeguimientoPedido(Model model,@PathVariable long id){
         Optional<Usuario> user = repositorioUsuario.findById(28L);
         pedido = repositorioPedido.findByUserAndId(user.get(),id);
+
         if(pedido == null){
             model.addAttribute("id", "NO HAY PEDIDOS");
             model.addAttribute("estado","Pedido no encontrado");
@@ -55,6 +57,7 @@ public class ControladorSeguimiento {
             model.addAttribute("productos",pedido.getProductos());
             model.addAttribute("precios",pedido.getProductos());
             model.addAttribute("estado",pedido.getEstado());
+            model.addAttribute("precioTotal", pedido.getPrecioTotal());
         }
         return "seguimientoPedidos";
     }
