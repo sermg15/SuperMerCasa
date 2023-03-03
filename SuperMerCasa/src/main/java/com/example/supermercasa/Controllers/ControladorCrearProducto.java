@@ -17,10 +17,10 @@ public class ControladorCrearProducto {
     int id = 0;
     @GetMapping("/nuevoProducto")
     public String nuevoProducto(Model model, @RequestParam String nameProd, @RequestParam String description,
-                                @RequestParam String price, @RequestParam int nstock){
+                                @RequestParam String price, @RequestParam int nstock, @RequestParam String categoria){
         if(repositorioOferta.getProductoByName(nameProd) == null){
             //el producto no existe, por lo que se puede crear
-            repositorioOferta.save(new Producto(id, nameProd, nstock, description, Double.parseDouble(price), null));
+            repositorioOferta.save(new Producto(id, nameProd, nstock, description, Double.parseDouble(price), null, repositorioOferta.getCategoriaByName(categoria)));
             model.addAttribute("mensajeAddProd", "Producto añadido con éxito");
         }else{
             //el producto existe, por lo que no se puede crear

@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment=",">
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorCrearProducto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/administrarProductos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/a90ec828-9b09-449e-9dc9-d314d26e3709/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a90ec828-9b09-449e-9dc9-d314d26e3709/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/CatOfertProdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/CatOfertProdController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorCrearProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorCrearProducto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Entidades/Producto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Repositorios/RepositorioOferta.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Repositorios/RepositorioOferta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/inicio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/administrarProductos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/administrarProductos.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +109,8 @@
       <workItem from="1677521988462" duration="2694000" />
       <workItem from="1677587256999" duration="3818000" />
       <workItem from="1677623618192" duration="6077000" />
+      <workItem from="1677797602905" duration="224000" />
+      <workItem from="1677798043776" duration="3950000" />
     </task>
     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
       <created>1675942223502</created>
