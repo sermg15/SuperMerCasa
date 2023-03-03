@@ -25,12 +25,12 @@ public class Producto {
 
     private String imagen;
 
-    @OneToMany
+    @ManyToMany(mappedBy = "productos")
     private List<Categoria> categorias;
 
 
 
-    public Producto(long id, String name, int stock, String descripcion, double precio, String imagen, Categoria categorias){
+    public Producto(long id, String name, int stock, String descripcion, double precio, String imagen){
 
         this.id = id;
         this.name = name;
@@ -39,7 +39,7 @@ public class Producto {
         this.precio = precio;
         this.imagen = imagen;
         this.categorias = new ArrayList<>();
-        this.categorias.add(categorias);
+
     }
 
     public Producto() {
@@ -90,6 +90,6 @@ public class Producto {
         this.imagen = imagen;
     }
 
-
+    public void addCategoria(Categoria categoria){this.categorias.add(categoria);}
 }
 

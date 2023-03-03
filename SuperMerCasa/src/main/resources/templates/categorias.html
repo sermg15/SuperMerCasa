@@ -6,32 +6,17 @@
 </head>
 <body style="background-color:rgb(39, 69, 42);text-align: center; color: white">
 <h1>{{categoria}}:</h1>
-    <h3>
-        <a href="/producto?id=0">
-            <img src="{{producto1}}" width="400" height="350"/></a></h3>
-    <h2>{{nombre1}}</h2>
-    <h3>{{precio1}}&euro;</h3>
-    <p>&nbsp;</p>
-    <h3>
-        <a href="/producto?id=1">
-            <img src="{{producto2}}" width="400" height="350"/></a></h3>
-    <h2>{{nombre2}}</h2>
-    <h3>{{precio2}}&euro;</h3>
-    <p>&nbsp;</p>
-    <h3>
-        <a href="/producto?id=2">
-            <img src="{{producto3}}" width="400" height="350"/></a></h3>
-    <h2>{{nombre3}}</h2>
-    <h3>{{precio3}}&euro;</h3>
-    <p>&nbsp;</p>
-    <h3>
-        <a href="/producto?id=3">
-            <img src="{{producto4}}" width="400" height="350"/></a></h3>
-    <h2>{{nombre4}}</h2>
-    <h3>{{precio4}}&euro;</h3>
-    <p>&nbsp;</p>
-    <p style="text-align: center;">
+{{#productos}}
+<div class="producto">
+    <ul><img src="{{imagen}}" width="400" height="350"/></ul>
+    <ul>{{name}}</ul>
+    <ul>{{precio}}&euro;</ul>
+    <p></p>
+</div>
+{{/productos}}
     <button name="home"><a href="/">Inicio</a></button>
 </p>
+
+<h1>{{mensajeBucle}}</h1>
 </body>
 </html>

@@ -3,13 +3,7 @@ package com.example.supermercasa.Entidades;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Categoria {
@@ -19,16 +13,19 @@ public class Categoria {
     private long id;
 
     private String nombre;
-    @OneToMany
+    @ManyToMany
+    @JoinTable(
+            name = "categoria_producto",
+            joinColumns = @JoinColumn(name = "categoria_id"),
+            inverseJoinColumns = @JoinColumn(name = "producto_id"))
     private List<Producto> productos;
 
     public Categoria(){}
 
-    public Categoria (String nombre, Producto productos){
+    public Categoria (String nombre){
 
         this.nombre = nombre;
         this.productos = new ArrayList<>();
-        this.productos.add(productos);
     }
 
     public long getId() {
@@ -47,5 +44,5 @@ public class Categoria {
 
     public void setProductos (List<Producto> productos) {this.productos = productos;}
 
-    public void añadirProducto (Producto producto) {this.productos.add(producto);}
+    public void addProducto (Producto producto) {this.productos.add(producto);}
 }

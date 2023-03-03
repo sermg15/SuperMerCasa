@@ -998,6 +998,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
     <schema id="289" parent="1" name="mysql">
+      <Grants>user|||mysql.session|localhost|SELECT|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="290" parent="1" name="performance_schema">
@@ -1007,9 +1008,10 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="smc">
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="293" parent="1" name="sys">
+      <Grants>sys_config|||mysql.sys|localhost|SELECT|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="294" parent="1" name="world">
@@ -1036,336 +1038,409 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </user>
     <table id="299" parent="292" name="carrito">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="300" parent="292" name="carrito_lista_productos">
+    <table id="300" parent="292" name="carrito_cantidad_productos">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="301" parent="292" name="categoria">
+    <table id="301" parent="292" name="carrito_lista_productos">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="302" parent="292" name="categoria_productos">
+    <table id="302" parent="292" name="categoria">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="303" parent="292" name="hibernate_sequence">
+    <table id="303" parent="292" name="categoria_producto">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="304" parent="292" name="ofertas">
+    <table id="304" parent="292" name="hibernate_sequence">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="305" parent="292" name="ofertas_productos">
+    <table id="305" parent="292" name="ofertas">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="306" parent="292" name="pedido">
+    <table id="306" parent="292" name="ofertas_productos">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="307" parent="292" name="pedido_productos">
+    <table id="307" parent="292" name="pedido">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="308" parent="292" name="producto">
+    <table id="308" parent="292" name="pedido_productos">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="309" parent="292" name="usuario">
+    <table id="309" parent="292" name="producto">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb3_general_ci</CollationName>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="310" parent="299" name="id">
+    <table id="310" parent="292" name="usuario">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="311" parent="292" name="usuario_pedidos">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="312" parent="299" name="id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="311" parent="299" name="user_iden">
+    <column id="313" parent="299" name="user_iden">
       <DasType>bigint|0s</DasType>
       <Position>2</Position>
     </column>
-    <foreign-key id="312" parent="299" name="FKc1l60941ia03bd419ky4u8udy">
+    <foreign-key id="314" parent="299" name="FKc1l60941ia03bd419ky4u8udy">
       <ColNames>user_iden</ColNames>
       <RefColNames>iden</RefColNames>
       <RefTableName>usuario</RefTableName>
     </foreign-key>
-    <index id="313" parent="299" name="PRIMARY">
+    <index id="315" parent="299" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="314" parent="299" name="FKc1l60941ia03bd419ky4u8udy">
+    <index id="316" parent="299" name="FKc1l60941ia03bd419ky4u8udy">
       <ColNames>user_iden</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="315" parent="299" name="PRIMARY">
+    <key id="317" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="316" parent="300" name="carrito_id">
+    <column id="318" parent="300" name="carrito_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="317" parent="300" name="lista_productos_id">
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="319" parent="300" name="cantidad_productos">
+      <DasType>int|0s</DasType>
       <Position>2</Position>
     </column>
-    <foreign-key id="318" parent="300" name="FKgww7up4smr4t2v6gk599thog9">
+    <foreign-key id="320" parent="300" name="FKo5jlnv75wlot5bymopa5diy5w">
       <ColNames>carrito_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>carrito</RefTableName>
     </foreign-key>
-    <foreign-key id="319" parent="300" name="FKmrwtr9r2t6s932nanre79u8yc">
+    <index id="321" parent="300" name="FKo5jlnv75wlot5bymopa5diy5w">
+      <ColNames>carrito_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="322" parent="301" name="carrito_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="323" parent="301" name="lista_productos_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="324" parent="301" name="FKgww7up4smr4t2v6gk599thog9">
+      <ColNames>carrito_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>carrito</RefTableName>
+    </foreign-key>
+    <foreign-key id="325" parent="301" name="FKmrwtr9r2t6s932nanre79u8yc">
       <ColNames>lista_productos_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>producto</RefTableName>
     </foreign-key>
-    <index id="320" parent="300" name="UK_aik5fmu1bo91fovo5qfs56mb0">
+    <index id="326" parent="301" name="UK_aik5fmu1bo91fovo5qfs56mb0">
       <ColNames>lista_productos_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="321" parent="300" name="FKgww7up4smr4t2v6gk599thog9">
+    <index id="327" parent="301" name="FKgww7up4smr4t2v6gk599thog9">
       <ColNames>carrito_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="322" parent="300" name="UK_aik5fmu1bo91fovo5qfs56mb0">
+    <key id="328" parent="301" name="UK_aik5fmu1bo91fovo5qfs56mb0">
       <UnderlyingIndexName>UK_aik5fmu1bo91fovo5qfs56mb0</UnderlyingIndexName>
     </key>
-    <column id="323" parent="301" name="id">
+    <column id="329" parent="302" name="id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="324" parent="301" name="nombre">
+    <column id="330" parent="302" name="nombre">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <index id="325" parent="301" name="PRIMARY">
+    <index id="331" parent="302" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="326" parent="301" name="PRIMARY">
+    <key id="332" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="327" parent="302" name="categoria_id">
+    <column id="333" parent="303" name="categoria_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="328" parent="302" name="productos_id">
+    <column id="334" parent="303" name="producto_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="329" parent="302" name="FKbbg1fda8exnsh8rbx2r8399xk">
+    <foreign-key id="335" parent="303" name="FKbnwin3ixyqbm9o7nrhlu1erid">
       <ColNames>categoria_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>categoria</RefTableName>
     </foreign-key>
-    <foreign-key id="330" parent="302" name="FKt7dre0uo1s0h24iqg8d3qh16b">
-      <ColNames>productos_id</ColNames>
+    <foreign-key id="336" parent="303" name="FKgvmdtll6l6oyhcxnclgju8uio">
+      <ColNames>producto_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>producto</RefTableName>
     </foreign-key>
-    <index id="331" parent="302" name="UK_mkteyg4p8ugjph362shh10kda">
-      <ColNames>productos_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="332" parent="302" name="FKbbg1fda8exnsh8rbx2r8399xk">
+    <index id="337" parent="303" name="FKbnwin3ixyqbm9o7nrhlu1erid">
       <ColNames>categoria_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="333" parent="302" name="UK_mkteyg4p8ugjph362shh10kda">
-      <UnderlyingIndexName>UK_mkteyg4p8ugjph362shh10kda</UnderlyingIndexName>
-    </key>
-    <column id="334" parent="303" name="next_val">
+    <index id="338" parent="303" name="FKgvmdtll6l6oyhcxnclgju8uio">
+      <ColNames>producto_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="339" parent="304" name="next_val">
       <DasType>bigint|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="335" parent="304" name="id">
+    <column id="340" parent="305" name="id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <index id="336" parent="304" name="PRIMARY">
+    <index id="341" parent="305" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="337" parent="304" name="PRIMARY">
+    <key id="342" parent="305" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="338" parent="305" name="ofertas_id">
+    <column id="343" parent="306" name="ofertas_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="339" parent="305" name="productos_id">
+    <column id="344" parent="306" name="productos_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="340" parent="305" name="FK64cwfxs0y2wapsn2bqfnk8v2j">
+    <foreign-key id="345" parent="306" name="FK64cwfxs0y2wapsn2bqfnk8v2j">
       <ColNames>ofertas_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>ofertas</RefTableName>
     </foreign-key>
-    <foreign-key id="341" parent="305" name="FKck0utx5rby7rojxw01i9e3o0l">
+    <foreign-key id="346" parent="306" name="FKck0utx5rby7rojxw01i9e3o0l">
       <ColNames>productos_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>producto</RefTableName>
     </foreign-key>
-    <index id="342" parent="305" name="UK_6sccv6ij7ye2io3psh88pf5xf">
+    <index id="347" parent="306" name="UK_6sccv6ij7ye2io3psh88pf5xf">
       <ColNames>productos_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="343" parent="305" name="FK64cwfxs0y2wapsn2bqfnk8v2j">
+    <index id="348" parent="306" name="FK64cwfxs0y2wapsn2bqfnk8v2j">
       <ColNames>ofertas_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="344" parent="305" name="UK_6sccv6ij7ye2io3psh88pf5xf">
+    <key id="349" parent="306" name="UK_6sccv6ij7ye2io3psh88pf5xf">
       <UnderlyingIndexName>UK_6sccv6ij7ye2io3psh88pf5xf</UnderlyingIndexName>
     </key>
-    <column id="345" parent="306" name="id">
+    <column id="350" parent="307" name="id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="346" parent="306" name="estado">
+    <column id="351" parent="307" name="estado">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="347" parent="306" name="user_iden">
-      <DasType>bigint|0s</DasType>
+    <column id="352" parent="307" name="precio_total">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="348" parent="306" name="FK88s7xi2et934y2hoxi14s9cpy">
+    <column id="353" parent="307" name="user_iden">
+      <DasType>bigint|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="354" parent="307" name="FK88s7xi2et934y2hoxi14s9cpy">
       <ColNames>user_iden</ColNames>
       <RefColNames>iden</RefColNames>
       <RefTableName>usuario</RefTableName>
     </foreign-key>
-    <index id="349" parent="306" name="PRIMARY">
+    <index id="355" parent="307" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="350" parent="306" name="FK88s7xi2et934y2hoxi14s9cpy">
+    <index id="356" parent="307" name="FK88s7xi2et934y2hoxi14s9cpy">
       <ColNames>user_iden</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="351" parent="306" name="PRIMARY">
+    <key id="357" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="352" parent="307" name="pedido_id">
+    <column id="358" parent="308" name="pedido_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="353" parent="307" name="productos_id">
+    <column id="359" parent="308" name="productos_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="354" parent="307" name="FKv1xsxti8g695nhdlbdluwo88">
+    <foreign-key id="360" parent="308" name="FKv1xsxti8g695nhdlbdluwo88">
       <ColNames>pedido_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>pedido</RefTableName>
     </foreign-key>
-    <foreign-key id="355" parent="307" name="FK9q00p33elayx84wl4im8ehr4x">
+    <foreign-key id="361" parent="308" name="FK9q00p33elayx84wl4im8ehr4x">
       <ColNames>productos_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>producto</RefTableName>
     </foreign-key>
-    <index id="356" parent="307" name="FKv1xsxti8g695nhdlbdluwo88">
+    <index id="362" parent="308" name="FKv1xsxti8g695nhdlbdluwo88">
       <ColNames>pedido_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="357" parent="307" name="FK9q00p33elayx84wl4im8ehr4x">
+    <index id="363" parent="308" name="FK9q00p33elayx84wl4im8ehr4x">
       <ColNames>productos_id</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="358" parent="308" name="id">
+    <column id="364" parent="309" name="id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="359" parent="308" name="descripcion">
+    <column id="365" parent="309" name="descripcion">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="360" parent="308" name="imagen">
+    <column id="366" parent="309" name="imagen">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="361" parent="308" name="name">
+    <column id="367" parent="309" name="name">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="362" parent="308" name="precio">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="368" parent="309" name="precio">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="363" parent="308" name="stock">
+    <column id="369" parent="309" name="stock">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <index id="364" parent="308" name="PRIMARY">
+    <index id="370" parent="309" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="365" parent="308" name="PRIMARY">
+    <key id="371" parent="309" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="366" parent="309" name="iden">
+    <column id="372" parent="310" name="iden">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="367" parent="309" name="contraseña">
+    <column id="373" parent="310" name="contraseña">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="368" parent="309" name="direction">
+    <column id="374" parent="310" name="direction">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="369" parent="309" name="email">
+    <column id="375" parent="310" name="email">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="370" parent="309" name="nombre_usuario">
+    <column id="376" parent="310" name="nombre_usuario">
       <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
-    <index id="371" parent="309" name="PRIMARY">
+    <column id="377" parent="310" name="carrito_id">
+      <DasType>bigint|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="378" parent="310" name="FK2qdshlu9x2jn0uibbghqifjcl">
+      <ColNames>carrito_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>carrito</RefTableName>
+    </foreign-key>
+    <index id="379" parent="310" name="PRIMARY">
       <ColNames>iden</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="372" parent="309" name="PRIMARY">
+    <index id="380" parent="310" name="FK2qdshlu9x2jn0uibbghqifjcl">
+      <ColNames>carrito_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="381" parent="310" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="382" parent="311" name="usuario_iden">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="383" parent="311" name="pedidos_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="384" parent="311" name="FK5x7jutxj7eqo7dlrqunqhoq5g">
+      <ColNames>usuario_iden</ColNames>
+      <RefColNames>iden</RefColNames>
+      <RefTableName>usuario</RefTableName>
+    </foreign-key>
+    <foreign-key id="385" parent="311" name="FK9bo25bq1pvajfdnifv59m2vdt">
+      <ColNames>pedidos_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>pedido</RefTableName>
+    </foreign-key>
+    <index id="386" parent="311" name="UK_sk43kbqobi4osmkrce4my8tpr">
+      <ColNames>pedidos_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="387" parent="311" name="FK5x7jutxj7eqo7dlrqunqhoq5g">
+      <ColNames>usuario_iden</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="388" parent="311" name="UK_sk43kbqobi4osmkrce4my8tpr">
+      <UnderlyingIndexName>UK_sk43kbqobi4osmkrce4my8tpr</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

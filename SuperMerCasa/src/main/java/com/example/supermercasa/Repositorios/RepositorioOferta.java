@@ -5,10 +5,13 @@ import com.example.supermercasa.Entidades.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface RepositorioOferta extends JpaRepository<Producto, Long> {
 
     Producto getProductoByName(String nombre);
 
-    Categoria getCategoriaByName (String nombre);
+    List<Producto> findByCategoriasNombre(String nombre);
+
 }

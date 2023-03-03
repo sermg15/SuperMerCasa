@@ -8,29 +8,16 @@
     <h1>&iexcl;&iexcl;OFERTAS SEMANALES!!</h1>
     <p><b>En esta secci&oacute;n podr&aacute;s encontrar los mejores precios para tus productos favoritos</b></p>
     <hr/>
-    <h3>
-        <a href="/producto?id=0">
-        <img src="/images/imgCarneOFERTA.jpg" alt="imagen carne" width="400" height="400"/></a></h3>
 
-
-    <h2><strong><em>CARNE DE RES&nbsp;</em></strong></h2>
-    <h2><span style="color: #ff0000;"><em>&nbsp;15&euro;</em></span><strong><span style="color: #ff0000;">&nbsp;<span style="color: #000000;">-&gt; <span style="color: #99cc00;">12.99&euro;</span></span></span></strong></h2>
+    <h1>{{categoria}}:</h1>
+    {{#productos}}
+    <img src="{{producto}}" width="400" height="350"/></a></h3>
+    <h2>{{nombre}}</h2>
+    <h3>{{precio}}&euro;</h3>
     <p>&nbsp;</p>
+    {{/productos}}
+    <button name="home"><a href="/">Inicio</a></button>
+    </p>
 
-    <h3>
-        <a href="/producto?id=1">
-        <img src="/images/imgPlatanosOFERTA.jpg" alt="imagen carne" width="400" height="400"/></a></h3>
-
-    <h2><strong><em>&nbsp; PLATANOS DE CANARIAS</em></strong></h2>
-    <h2><span style="color: #ff0000;"><em>&nbsp; &nbsp; &nbsp;5.99&euro;</em></span><strong><span style="color: #ff0000;">&nbsp;<span style="color: #000000;">-&gt; <span style="color: #99cc00;">4.5&euro;</span></span></span></strong></h2>
-    <p>&nbsp;</p>
-    <h3>
-        <a href="/producto?id=2">
-            <img src="/images/imgDetergenteOFERTA.jpg" alt="imagen carne" width="400" height="400"/></a></h3>
-
-    <h2><strong><span style="color: white;"><em>DETERGENTE AROMAFLOR</em></span></strong></h2>
-    <h2><span style="color: #ff0000;"><em>&nbsp; &nbsp; &nbsp;8&euro;</em></span><strong><span style="color: #ff0000;">&nbsp;<span style="color: #000000;">-&gt; <span style="color: #99cc00;">6.99&euro;</span></span></span></strong></h2>
-
-    <p style="text-align: center;"><button name="home"><a href="/">Inicio</a></button></p>
 </body>
 </html>
