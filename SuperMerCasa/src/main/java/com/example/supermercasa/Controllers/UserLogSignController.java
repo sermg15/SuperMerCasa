@@ -49,7 +49,7 @@ public class UserLogSignController {
 
             model.addAttribute("mensajeLog", "LOGEADO DE FORMA CORRECTA");
             model.addAttribute("mensaje", "");
-            users_id = repositorioUsuario.findByNombreUsuario(username).get(0).getId();
+            users_id = repositorioUsuario.findByNombreUsuario(username).get().getId();
 
         }else{
 

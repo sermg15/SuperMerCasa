@@ -7,13 +7,10 @@
 <body style="background-color:rgb(39, 69, 42);text-align: center; color: white">
     <h1>&iexcl;&iexcl;OFERTAS SEMANALES!!</h1>
     <p><b>En esta secci&oacute;n podr&aacute;s encontrar los mejores precios para tus productos favoritos</b></p>
-    <hr/>
-
-    <h1>{{categoria}}:</h1>
     {{#productos}}
-    <img src="{{producto}}" width="400" height="350"/></a></h3>
-    <h2>{{nombre}}</h2>
-    <h3>{{precio}}&euro;</h3>
+    <ul><a title="{{id}}" href="/producto/{{id}}"><img src="{{imagen}}" width="400" height="350"/></a></h3></ul>
+    <ul><h2>{{name}}</h2></ul>
+    <ul><h3>{{precio}}&euro;</h3></ul>
     <p>&nbsp;</p>
     {{/productos}}
     <button name="home"><a href="/">Inicio</a></button>

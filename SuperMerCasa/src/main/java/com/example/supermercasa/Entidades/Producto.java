@@ -1,14 +1,9 @@
 package com.example.supermercasa.Entidades;
 
-import com.example.supermercasa.Repositorios.RepositorioOferta;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
-import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.supermercasa.Entidades.Carrito;
-import com.example.supermercasa.Repositorios.RepositorioOferta;
+
 @Entity
 public class Producto {
 
@@ -25,12 +20,12 @@ public class Producto {
 
     private String imagen;
 
-    @ManyToMany(mappedBy = "productos")
+    @ManyToMany
     private List<Categoria> categorias;
 
 
 
-    public Producto(long id, String name, int stock, String descripcion, double precio, String imagen){
+    public Producto(String name, int stock, String descripcion, double precio, String imagen, Categoria categoria){
 
         this.id = id;
         this.name = name;
@@ -39,6 +34,7 @@ public class Producto {
         this.precio = precio;
         this.imagen = imagen;
         this.categorias = new ArrayList<>();
+        this.categorias.add(categoria);
 
     }
 
@@ -91,5 +87,13 @@ public class Producto {
     }
 
     public void addCategoria(Categoria categoria){this.categorias.add(categoria);}
+
+    public List<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
+    }
 }
 

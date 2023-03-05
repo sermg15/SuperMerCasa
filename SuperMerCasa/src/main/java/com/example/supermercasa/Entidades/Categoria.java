@@ -14,10 +14,6 @@ public class Categoria {
 
     private String nombre;
     @ManyToMany
-    @JoinTable(
-            name = "categoria_producto",
-            joinColumns = @JoinColumn(name = "categoria_id"),
-            inverseJoinColumns = @JoinColumn(name = "producto_id"))
     private List<Producto> productos;
 
     public Categoria(){}
@@ -25,7 +21,7 @@ public class Categoria {
     public Categoria (String nombre){
 
         this.nombre = nombre;
-        this.productos = new ArrayList<>();
+        productos = new ArrayList<>();
     }
 
     public long getId() {
@@ -44,5 +40,7 @@ public class Categoria {
 
     public void setProductos (List<Producto> productos) {this.productos = productos;}
 
-    public void addProducto (Producto producto) {this.productos.add(producto);}
+    public void addProductos(Producto producto) {
+        this.productos.add(producto);
+    }
 }

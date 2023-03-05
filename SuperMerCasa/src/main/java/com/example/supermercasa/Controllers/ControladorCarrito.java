@@ -5,26 +5,23 @@ import com.example.supermercasa.Entidades.Pedido;
 import com.example.supermercasa.Entidades.Producto;
 import com.example.supermercasa.Entidades.Usuario;
 import com.example.supermercasa.Repositorios.RepositorioCarrito;
-import com.example.supermercasa.Repositorios.RepositorioOferta;
+import com.example.supermercasa.Repositorios.RepositorioProducto;
 import com.example.supermercasa.Repositorios.RepositorioPedido;
 import com.example.supermercasa.Repositorios.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ReactiveAdapterRegistry;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.text.DecimalFormat;
 import java.util.*;
 
 @Controller
 public class ControladorCarrito {
 
     @Autowired
-    private RepositorioOferta repositorioOferta;
+    private RepositorioProducto repositorioProducto;
     @Autowired
     private RepositorioCarrito repositorioCarrito;
     @Autowired
@@ -68,8 +65,8 @@ public class ControladorCarrito {
     @GetMapping("/addProducto/{id}")
     public String addProducto(Model model, @PathVariable long id, @RequestParam int cantidad){
 
-        Optional<Usuario> user = repositorioUsuario.findById(28L);
-        producto = repositorioOferta.findById(id).get();
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
+        producto = repositorioProducto.findById(id).get();
         carrito = repositorioCarrito.findByUser(user.get());
 
         if(carrito == null){
@@ -110,7 +107,7 @@ public class ControladorCarrito {
     @GetMapping("/addSeguimiento")
     public String addSeguimiento(Model model, @RequestParam String comprado){
 
-        Optional<Usuario> user = repositorioUsuario.findById(28L);
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
         carrito = repositorioCarrito.findByUser(user.get());
 
 

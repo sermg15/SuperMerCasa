@@ -8,7 +8,7 @@
 <h1>{{categoria}}:</h1>
 {{#productos}}
 <div class="producto">
-    <ul><img src="{{imagen}}" width="400" height="350"/></ul>
+    <ul><a title="{{id}}" href="/producto/{{id}}"><img src="{{imagen}}" width="400" height="350"/></a></h3></ul>
     <ul>{{name}}</ul>
     <ul>{{precio}}&euro;</ul>
     <p></p>
@@ -17,6 +17,5 @@
     <button name="home"><a href="/">Inicio</a></button>
 </p>
 
-<h1>{{mensajeBucle}}</h1>
 </body>
 </html>
