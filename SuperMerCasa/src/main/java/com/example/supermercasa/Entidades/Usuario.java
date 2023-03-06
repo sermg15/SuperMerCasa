@@ -79,6 +79,13 @@ public class Usuario {
 
     public List<Pedido> getPedidos() { return pedidos;}
 
+    public Pedido getPedido(long id) { return pedidos.get((int) id);}
+
+
+    public void addPedidos(Pedido pedido){
+        pedidos.add(pedido);
+    }
+
     public void setPedidos(List<Pedido> pedidos) {this.pedidos = pedidos;}
 
 

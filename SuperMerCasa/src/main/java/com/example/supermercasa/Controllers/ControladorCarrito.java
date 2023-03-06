@@ -30,7 +30,6 @@ public class ControladorCarrito {
     private RepositorioPedido repositorioPedido;
 
     Carrito carrito;
-    //Usuario user;
     Producto producto;
     Pedido pedido;
 
@@ -120,15 +119,19 @@ public class ControladorCarrito {
             model.addAttribute("comprado", "NO HAY PRODUCTOS SUFICIENTES PARA REALIZAR UN PEDIDO");
 
         }else{
-            repositorioPedido.save(new Pedido(1, carrito.getListaProductos(), user.get(),"Recibido",precioTotal));
-            user.get().getPedidos().add(repositorioPedido.findByUser(user.get()));
-            repositorioCarrito.deleteById(carrito.getId());
+
+            user.get().addPedidos(repositorioPedido.save(new Pedido(carrito.getListaProductos(),
+                    user.get(),"Recibido",precioTotal, carrito.getCantidadProductos())));
+
+
 
             model.addAttribute("productos", null);
             model.addAttribute("precios",null);
             model.addAttribute("cantidad", "");
             model.addAttribute("precioTotal", "0");
             model.addAttribute("comprado", comprado);
+
+            repositorioCarrito.deleteById(carrito.getId());
 
         }
 

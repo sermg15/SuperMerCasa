@@ -14,23 +14,28 @@ public class Pedido {
     @ManyToMany
     private List<Producto> productos = new ArrayList<>();
 
+    @ElementCollection
+    private List<Integer> cantidades = new ArrayList<>();
+
     @ManyToOne
     private Usuario user;
 
     private String estado;
     private double precioTotal;
 
+
+
     public Pedido(){}
 
 
 
-    public Pedido(long id, List<Producto> productos, Usuario user, String estado, double precioTotal){
+    public Pedido(List<Producto> productos, Usuario user, String estado, double precioTotal, List<Integer> cantidadProductos){
 
-        this.id = id;
         this.productos.addAll(productos);
         this.user = user;
         this.estado = estado;
         this.precioTotal=precioTotal;
+        this.cantidades.addAll(cantidadProductos);
 
     }
 
@@ -73,4 +78,11 @@ public class Pedido {
     public double getPrecioTotal() {return precioTotal;}
 
     public void setPrecioTotal(double precioTotal) {this.precioTotal = precioTotal;}
+
+    public List<Integer> getCantidades() {return cantidades;}
+
+    public void setCantidades(List<Integer> cantidadProductos) {this.cantidades = cantidadProductos;}
+
+
+
 }

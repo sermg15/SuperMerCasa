@@ -3,21 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Historial de Pedidos</title>
-    <h1> {{name}} , estos son tus pedidos</h1>
-    <p>{{pedido1}}</p>
-    <p>{{fecha1}}; {{precio1}}</p>
-    <p>{{listadoproductos1}}</p>
-    <p>{{pedido2}}</p>
-    <p>{{fecha2}}; {{precio2}}</p>
-    <p>{{listadoproductos2}}</p>
-    <p>{{pedido3}}</p>
-    <p>{{fecha3}}; {{precio3}}</p>
-    <p>{{listadoproductos3}}</p>
-    <p>{{pedido4}}</p>
-    <p>{{fecha4}}; {{precio4}}</p>
-    <p>{{listadoproductos4}}</p>
+
 </head>
 <body style="background-color:rgb(39, 69, 42);text-align: center; color: white">
-<p style="text-align: center;"><button name="home"><a href="/">Inicio</a></button></p>
+<h1> {{name}} , estos son tus pedidos</h1>
+<h2><strong>{{#pedidos}}<ul><a href="/seguimientoPedido/{{id}}">{{id}}</a></ul>{{/pedidos}}</strong></h2>
+<p><button name="home"><a href="/">Inicio</a></button></p>
 </body>
 </html>
