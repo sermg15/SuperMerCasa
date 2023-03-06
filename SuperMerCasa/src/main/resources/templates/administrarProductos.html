@@ -25,6 +25,7 @@
       <option value="Ofertas">Ofertas</option>
     </select><br/><br/>
 
+
     <label for="nstock">Stock:</label>
     <input id="nstock" name="nstock" type="number"/><br/><br/>
 
@@ -32,55 +33,8 @@
   </p>
 
   <h2>{{mensajeAddProd}}</h2>
+  <button name="home"><a href="/">Inicio</a></button>
 </form>
-<!--
-<form action="modificarProducto">
-  <label for="prodName">Indica el nombre del producto a modificar:</label>
-  <select name="prodName" id="prodName">
-    {{#productos}}
-    <option value="{{nombre}}">{{nombre}}</option>
-    {{/productos}}
-  </select>
-    <p>
-      <label for="nombreProd">Nombre del producto:</label>
-      <input id="nombreProd" name="nombreProd" type="text"/><br/><br/>
-
-      <label for="descriptionProd">Descripci&oacute;n del producto:</label>
-      <textarea id="descriptionProd" name="descriptionProd"></textarea><br/><br/>
-
-      <label for="priceProd">Precio:</label>
-      <input id="priceProd" name="priceProd" type="text"/><br/><br/>
-
-      <label for="categorieProd">Categorias:</label>
-      <select id="categorieProd" name="categorieProd" multiple>
-        <option value="Carnes y Pescados">Carne y pescado</option>
-        <option value="Frutas y Verduras">Fruta y verdura</option>
-        <option value="Panaderia y Reposteria">Panaderia y reposteria</option>
-        <option value="Bebidas">Bebidas</option>
-        <option value="Productos de Limpieza">Productos de limpieza</option>
-        <option value="Congelados">Congelados</option>
-        <option value="Ofertas">Ofertas</option>
-      </select><br/><br/>
-
-      <label for="stockProd">Stock:</label>
-      <input id="stockProd" name="stockProd" type="number"/><br/><br/>
-
-      <input type="submit" value="Modificar producto"/>
-    </p>
-
-</form>
--->
-<form action="eliminarProducto">
-  <label for="productName">Indica el nombre del producto a eliminar:</label>
-  <input name="productName" id="productName" type="text"><br/><br/>
-  </input>
-  <br>
-  <input type="submit" value="Eliminar producto"/>
-  {{mensajeEliminar}}
-</form>
-
-<button name="home"><a href="/">Inicio</a></button>
-
 
 </body>
 </html>
