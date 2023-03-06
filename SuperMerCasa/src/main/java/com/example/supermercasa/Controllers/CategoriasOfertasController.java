@@ -17,9 +17,6 @@ public class CategoriasOfertasController {
     @Autowired
     private RepositorioProducto repositorioProducto;
 
-    @Autowired
-    private RepositorioCategoria repositorioCategoria;
-
     @GetMapping("/categoria")
     public String Categorias(Model model, String cat) {
 

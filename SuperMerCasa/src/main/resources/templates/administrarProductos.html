@@ -31,10 +31,20 @@
 
     <input type="submit" value="Crear producto"/>
   </p>
-
   <h2>{{mensajeAddProd}}</h2>
-  <button name="home"><a href="/">Inicio</a></button>
 </form>
 
+<form action="eliminarProducto">
+  <p>
+    <label for="prodName">Nombre del producto a eliminar:</label>
+    <input id="prodName" name="prodName" type="text"/><br/><br/>
+
+    <input type="submit" value="Eliminar producto"/>
+  </p>
+  <h2>{{mensajeEliminar}}</h2>
+</form>
+
+
+<button name="home"><a href="/">Inicio</a></button>
 </body>
 </html>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.PostConstruct;
@@ -189,12 +190,36 @@ public class ProductController {
             //el producto existe, por lo que no se puede crear
             model.addAttribute("mensajeAddProd", "Producto ya existente en la base de datos");
         }
+
+        model.addAttribute("mensajeEliminar", "");
+        return "administrarProductos";
+    }
+
+    @PostMapping("/eliminarProducto")
+    public String eliminarProducto(Model model, @RequestParam String prodName){
+
+        Producto prod = repositorioProducto.getProductoByName(prodName);
+
+        if(prod == null){
+            model.addAttribute("mensajeEliminar", "El producto no existe");
+        }else{
+            for(Categoria categorias : prod.getCategorias()){
+                categorias.getProductos().remove(prod);
+                repositorioCategoria.save(categorias);
+            }
+            prod.getCategorias().clear();
+            repositorioProducto.delete(prod);
+            model.addAttribute("mensajeEliminar", "El producto ha sido eliminado con éxito");
+        }
+
+        model.addAttribute("mensajeAddProd", "");
         return "administrarProductos";
     }
 
     @GetMapping("/administrarProductos")
     public String administrarProductos(Model model){
         model.addAttribute("mensajeAddProd", "");
+        model.addAttribute("mensajeEliminar", "");
 
         return "administrarProductos";
     }

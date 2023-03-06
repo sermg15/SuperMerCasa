@@ -43,4 +43,6 @@ public class Categoria {
     public void addProductos(Producto producto) {
         this.productos.add(producto);
     }
+
+    public void deleteProducto(Producto producto){this.productos.remove(producto);}
 }
