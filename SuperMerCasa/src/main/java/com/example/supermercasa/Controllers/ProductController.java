@@ -195,7 +195,7 @@ public class ProductController {
         return "administrarProductos";
     }
 
-    @PostMapping("/eliminarProducto")
+    @GetMapping("/eliminarProducto")
     public String eliminarProducto(Model model, @RequestParam String prodName){
 
         Producto prod = repositorioProducto.getProductoByName(prodName);

@@ -11,5 +11,5 @@ public interface RepositorioCategoria extends JpaRepository<Categoria, Long> {
 
     Categoria findByNombre(String nombre);
 
-    Categoria findByProducto (Producto producto);
+    Categoria findByProductos(Producto producto);
 }

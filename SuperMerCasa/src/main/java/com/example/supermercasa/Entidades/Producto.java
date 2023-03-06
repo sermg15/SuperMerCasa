@@ -20,7 +20,7 @@ public class Producto {
 
     private String imagen;
 
-    @ManyToMany(mappedBy="categoria", cascade=CascadeType.ALL)
+    @ManyToMany
     private List<Categoria> categorias;
 
 
