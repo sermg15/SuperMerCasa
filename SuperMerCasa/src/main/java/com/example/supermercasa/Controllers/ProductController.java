@@ -192,6 +192,7 @@ public class ProductController {
         }
 
         model.addAttribute("mensajeEliminar", "");
+        model.addAttribute("mensajeModificar", "");
         return "administrarProductos";
     }
 
@@ -213,6 +214,50 @@ public class ProductController {
         }
 
         model.addAttribute("mensajeAddProd", "");
+        model.addAttribute("mensajeModificar", "");
+        return "administrarProductos";
+    }
+
+    @GetMapping("/modificarProducto")
+    public String modificarProducto(Model model, @RequestParam String productoAModificar, @RequestParam String nameProducto,
+                                    @RequestParam String descriptionProd, @RequestParam String priceProd, @RequestParam int stockProd,
+                                    @RequestParam String categoriesProd){
+
+        Producto prodAModificar = repositorioProducto.getProductoByName(productoAModificar);
+        if(prodAModificar == null){
+            model.addAttribute("mensajeModificar", "El producto buscado no existe");
+        }else{
+            if(nameProducto != ""){
+                prodAModificar.setName(nameProducto);
+            }else{
+                prodAModificar.setName(prodAModificar.getName());
+            }
+            if(descriptionProd != ""){
+                prodAModificar.setDescripcion(descriptionProd);
+            }else{
+                prodAModificar.setDescripcion(prodAModificar.getDescripcion());
+            }
+            if(priceProd != ""){
+                prodAModificar.setPrecio(Double.parseDouble(priceProd));
+            }else{
+                prodAModificar.setPrecio(prodAModificar.getPrecio());
+            }
+            if(stockProd != 0){
+                prodAModificar.setStock(stockProd);
+            }else{
+                prodAModificar.setStock(prodAModificar.getStock());
+            }
+            if(categoriesProd != null){
+                prodAModificar.addCategoria(repositorioCategoria.findByNombre(categoriesProd));;
+            }else{
+                prodAModificar.setCategorias(prodAModificar.getCategorias());
+            }
+            repositorioProducto.save(prodAModificar);
+            model.addAttribute("mensajeModificar", "Elemento modificado de forma correcta");
+        }
+
+        model.addAttribute("mensajeAddProd", "");
+        model.addAttribute("mensajeEliminar", "");
         return "administrarProductos";
     }
 
@@ -220,6 +265,7 @@ public class ProductController {
     public String administrarProductos(Model model){
         model.addAttribute("mensajeAddProd", "");
         model.addAttribute("mensajeEliminar", "");
+        model.addAttribute("mensajeModificar", "");
 
         return "administrarProductos";
     }

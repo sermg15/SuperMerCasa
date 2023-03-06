@@ -34,6 +34,7 @@
   <h2>{{mensajeAddProd}}</h2>
 </form>
 
+<h1>Eliminar un producto</h1>
 <form action="eliminarProducto">
   <p>
     <label for="prodName">Nombre del producto a eliminar:</label>
@@ -44,6 +45,39 @@
   <h2>{{mensajeEliminar}}</h2>
 </form>
 
+<h1>Modificar un producto</h1>
+<form action="modificarProducto">
+  <label for="productoAModificar">Nombre del producto a modificar:</label>
+  <input id="productoAModificar" name="productoAModificar" type="text"/><br/><br/>
+  <p>
+    <label for="nameProducto">Nombre nuevo del producto:</label>
+    <input id="nameProducto" name="nameProducto" type="text"/><br/><br/>
+
+    <label for="descriptionProd">Descripci&oacute;n nueva del producto:</label>
+    <textarea id="descriptionProd" name="descriptionProd"></textarea><br/><br/>
+
+    <label for="priceProd">Precio:</label>
+    <input id="priceProd" name="priceProd" type="text"/><br/><br/>
+
+    <label for="categoriesProd">Categoria nueva del producto:</label>
+    <select id="categoriesProd" name="categoriesProd" multiple>
+      <option value="Carnes y Pescados">Carne y pescado</option>
+      <option value="Frutas y Verduras">Fruta y verdura</option>
+      <option value="Panaderia y Reposteria">Panaderia y reposteria</option>
+      <option value="Bebidas">Bebidas</option>
+      <option value="Productos de Limpieza">Productos de limpieza</option>
+      <option value="Congelados">Congelados</option>
+      <option value="Ofertas">Ofertas</option>
+    </select><br/><br/>
+
+
+    <label for="stockProd">Stock:</label>
+    <input id="stockProd" name="stockProd" type="number"/><br/><br/>
+
+    <input type="submit" value="ModificarProducto"/>
+  </p>
+  <h2>{{mensajeModificar}}</h2>
+</form>
 
 <button name="home"><a href="/">Inicio</a></button>
 </body>
