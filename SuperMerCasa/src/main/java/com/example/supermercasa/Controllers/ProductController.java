@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.PostConstruct;
@@ -179,7 +180,7 @@ public class ProductController {
     public String nuevoProducto(Model model, @RequestParam String nameProd, @RequestParam String description,
                                 @RequestParam String price, @RequestParam int nstock, @RequestParam String categories){
 
-        if(repositorioProducto.getProductoByName(nameProd) == null){
+        if(repositorioProducto.findProductoByNombre(nameProd) == null){
             //el producto no existe, por lo que se puede crear
             aux = new Producto(nameProd, nstock, description, Double.parseDouble(price), "/images/imagenPorDefecto.jpg", repositorioCategoria.findByNombre(categories));
             repositorioProducto.save(aux);
@@ -189,12 +190,40 @@ public class ProductController {
             //el producto existe, por lo que no se puede crear
             model.addAttribute("mensajeAddProd", "Producto ya existente en la base de datos");
         }
+
+        model.addAttribute("mensajeEliminar", "");
         return "administrarProductos";
     }
+
+    @PostMapping("/eliminarProducto")
+    public String eliminarProducto(Model model, @RequestParam String productName){
+
+        Producto productoAEliminar = repositorioProducto.findProductoByNombre(productName);
+        if(productoAEliminar != null){
+            repositorioProducto.delete(productoAEliminar);
+            model.addAttribute("mensajeEliminar", "Producto eliminado con éxito");
+        }else{
+            model.addAttribute("mensajeEliminar", "Producto no encontrado en la base de datos");
+        }
+
+        return "administrarProductos";
+    }
+
+    /*@GetMapping("/modificarProducto")
+    public String modificarProducto(Model model, @RequestParam String nameProd, @RequestParam String description,
+                                    @RequestParam String price, @RequestParam int nstock, @RequestParam String categories){
+
+        if(nameProd != null){
+
+        }
+
+        return "administrarProductos";
+    }*/
 
     @GetMapping("/administrarProductos")
     public String administrarProductos(Model model){
         model.addAttribute("mensajeAddProd", "");
+        model.addAttribute("mensajeEliminar", "");
 
         return "administrarProductos";
     }
