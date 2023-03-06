@@ -170,6 +170,7 @@ public class ProductController {
             model.addAttribute("descripcion", p.getDescripcion());
             model.addAttribute("imagen", p.getImagen());
             model.addAttribute("id", p.getId());
+            model.addAttribute("stock", "");
 
         }
 

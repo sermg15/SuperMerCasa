@@ -36,7 +36,7 @@ public class ControladorCarrito {
     @GetMapping("/carrito")
     public String Carrito(Model model, @RequestParam String comprado) {
 
-        Optional<Usuario> user = repositorioUsuario.findById(28L);
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
         carrito = repositorioCarrito.findByUser(user.get());
 
         if(carrito == null){
@@ -72,34 +72,84 @@ public class ControladorCarrito {
 
             precioTotal = 0;
 
-            repositorioCarrito.save(new Carrito(user.get(),producto, cantidad));
-            carrito = repositorioCarrito.findByUser(user.get());
+            if(producto.getStock() >= cantidad){
+                repositorioCarrito.save(new Carrito(user.get(),producto, cantidad));
+                producto.subStock(cantidad);
+                repositorioProducto.flush();
+                carrito = repositorioCarrito.findByUser(user.get());
 
-            precioTotal = producto.getPrecio() * cantidad;
-            precioTotal = (double)Math.round(precioTotal * 100) / 100;
+                precioTotal = producto.getPrecio() * cantidad;
+                precioTotal = (double)Math.round(precioTotal * 100) / 100;
 
-            model.addAttribute("productos", carrito.getListaProductos());
-            model.addAttribute("precios", carrito.getListaProductos());
-            model.addAttribute("cantidad", carrito.getCantidadProductos());
-            model.addAttribute("precioTotal", precioTotal);
-            model.addAttribute("comprado", "");
+                model.addAttribute("productos", carrito.getListaProductos());
+                model.addAttribute("precios", carrito.getListaProductos());
+                model.addAttribute("cantidad", carrito.getCantidadProductos());
+                model.addAttribute("precioTotal", precioTotal);
+                model.addAttribute("comprado", "");
 
+            }else{
+
+                model.addAttribute("nombre",producto.getName());
+                model.addAttribute("precio", producto.getPrecio());
+                model.addAttribute("titulo", producto.getName());
+                model.addAttribute("descripcion", producto.getDescripcion());
+                model.addAttribute("imagen", producto.getImagen());
+                model.addAttribute("id", producto.getId());
+
+                return "producto";
+            }
         }
        else{
 
-            repositorioCarrito.findByUser(user.get()).aniadirProducto(producto, cantidad);
-            repositorioCarrito.flush();
+           if(producto.getStock() >= cantidad){
 
-            carrito = repositorioCarrito.findByUser(user.get());
+               if(carrito.getListaProductos().contains(producto)){
+                   producto.subStock(cantidad);
+                   repositorioProducto.flush();
+                   carrito.addCantidades(cantidad, carrito.getListaProductos().indexOf(producto));
+                   repositorioCarrito.flush();
 
-            precioTotal += producto.getPrecio() * cantidad;
-            precioTotal = (double)Math.round(precioTotal * 100) / 100;
+                   precioTotal += producto.getPrecio() * cantidad;
+                   precioTotal = (double)Math.round(precioTotal * 100) / 100;
 
-            model.addAttribute("productos", carrito.getListaProductos());
-            model.addAttribute("precios", carrito.getListaProductos());
-            model.addAttribute("cantidad", carrito.getCantidadProductos());
-            model.addAttribute("precioTotal", precioTotal);
-            model.addAttribute("comprado", "");
+                   model.addAttribute("productos", carrito.getListaProductos());
+                   model.addAttribute("precios", carrito.getListaProductos());
+                   model.addAttribute("cantidad", carrito.getCantidadProductos());
+                   model.addAttribute("precioTotal", precioTotal);
+                   model.addAttribute("comprado", "");
+
+               }else{
+
+                   repositorioCarrito.findByUser(user.get()).aniadirProducto(producto, cantidad);
+                   producto.subStock(cantidad);
+                   repositorioProducto.flush();
+                   repositorioCarrito.flush();
+
+                   carrito = repositorioCarrito.findByUser(user.get());
+
+                   precioTotal += producto.getPrecio() * cantidad;
+                   precioTotal = (double)Math.round(precioTotal * 100) / 100;
+
+                   model.addAttribute("productos", carrito.getListaProductos());
+                   model.addAttribute("precios", carrito.getListaProductos());
+                   model.addAttribute("cantidad", carrito.getCantidadProductos());
+                   model.addAttribute("precioTotal", precioTotal);
+                   model.addAttribute("comprado", "");
+               }
+
+           }else{
+
+               model.addAttribute("nombre",producto.getName());
+               model.addAttribute("precio", producto.getPrecio());
+               model.addAttribute("titulo", producto.getName());
+               model.addAttribute("descripcion", producto.getDescripcion());
+               model.addAttribute("imagen", producto.getImagen());
+               model.addAttribute("id", producto.getId());
+               model.addAttribute("stock", "NO HAY STOCK SUFICIENTE PARA ESE PRODUCTO, LA CANTIDAD MAXIMA POSIBLE ES DE: " +  producto.getStock() + " UNIDADES");
+
+               return "producto";
+           }
+
        }
         return "carrito";
     }

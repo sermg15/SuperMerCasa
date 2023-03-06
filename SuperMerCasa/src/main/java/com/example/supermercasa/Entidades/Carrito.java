@@ -66,4 +66,10 @@ public class Carrito {
         this.cantidadProductos = cantidadProductos;
     }
 
+    public void addCantidades(int cantidad, int index){
+
+        cantidad += this.cantidadProductos.get(index);
+        this.cantidadProductos.set(index, cantidad);
+    }
+
 }

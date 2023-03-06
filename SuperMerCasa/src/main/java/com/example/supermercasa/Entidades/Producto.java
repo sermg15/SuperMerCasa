@@ -95,5 +95,10 @@ public class Producto {
     public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
     }
+
+    public void subStock(int cantidad){
+
+        this.stock -= cantidad;
+    }
 }
 
