@@ -1,4 +1,89 @@
 </head>
+
+<style>
+  a{
+    text-decoration: none;
+    color:black;
+  }
+  .button {
+    background-color: #B1E402;
+    border: none;
+    color: white;
+    padding: 11px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: "Bell MT";
+    font-weight: bold;
+  }
+
+  .input {
+    background-color: black;
+    border: 2px solid #B1E402;
+    color: white;
+    padding: 11px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: "Bell MT";
+    font-weight: bold;
+  }
+
+  .button1 {
+    background-color: #B1E402;
+    color: black;
+    border: 2px solid white;
+    text-decoration: none;
+  }
+
+  .button1:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+  }
+
+  .input2 {
+    background-color: black;
+    border: 2px solid #B1E402;
+    color: white;
+    text-decoration: none;
+  }
+
+  .input2:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+  }
+
+
+  p {
+    font-size: 16px;
+    font-family: "Bell MT";
+
+  }
+  h1{
+    font-family: "Bell MT";
+    font-size:35px;
+    color: white;
+    text-decoration: underline;
+  }
+  h2{
+    font-family: "Bell MT";
+    font-size:30px;
+    color: white;
+  }
+
+</style>
+
+
 <body style="background-color:rgb(39, 69, 42); text-align: center; color: white">
 <h1>Nuevo Producto</h1>
 <hr/>
@@ -29,7 +114,7 @@
     <label for="nstock">Stock:</label>
     <input id="nstock" name="nstock" type="number"/><br/><br/>
 
-    <input type="submit" value="Crear producto"/>
+    <input class="input input2" type="submit" value="Crear producto"/>
   </p>
   <h2>{{mensajeAddProd}}</h2>
 </form>
@@ -40,7 +125,7 @@
     <label for="prodName">Nombre del producto a eliminar:</label>
     <input id="prodName" name="prodName" type="text"/><br/><br/>
 
-    <input type="submit" value="Eliminar producto"/>
+    <input class="input input2" type="submit" value="Eliminar producto"/>
   </p>
   <h2>{{mensajeEliminar}}</h2>
 </form>
@@ -78,7 +163,7 @@
   <label for="stockProd">Stock:</label>
     <input id="stockProd" name="stockProd" type="text"/><br/><br/>
 
-    <input type="submit" value="ModificarProducto"/>
+    <input class="input input2" type="submit" value="Modificar Producto"/>
   </p>
   <h2>{{mensajeModificar}}</h2>
 </form>
@@ -87,7 +172,7 @@
 <button id="addCat" name="home">Añadir Categoria</button>
 <button id="removeCat" name="home">Eliminar Categorias</button>
 <br/><br/>
-<button name="home"><a href="/">Inicio</a></button>
+<button class="button button1" name="home"><a href="/">Inicio</a></button>
 
 <script>
   var pag = document.getElementById("productoAModificar");

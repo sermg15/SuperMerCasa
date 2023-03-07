@@ -5,9 +5,93 @@
     <title>Historial de Pedidos</title>
 
 </head>
+
+<style>
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    p{
+        font-family: "Bell MT";
+        font-size: 16px;
+    }
+    h1{
+        font-family: "Bell MT";
+        font-size: 30px;
+    }
+
+    h2{
+        font-family: "Bell MT";
+        font-size: 20px;
+        text-align-all: center;
+    }
+    ul{
+        text-align: center;
+        list-style: none;
+        display: list-item;
+        margin: 1px 10px;
+        position: relative;
+    }
+
+
+    ul a {
+        text-decoration: none;
+        color: white;
+        font-family: "Bell MT";
+        font-size: 35px;
+    }
+
+    ul::before {
+        content: "";
+        height: 4px;
+        width: 0%;
+        background:  #B1E402;
+        position: absolute;
+        left: 200px;
+        right: 200px;
+        bottom: -8px;
+        transition: 0.4s ease-out;
+    }
+
+    ul:hover::before {
+        width: 70%;
+    }
+
+    .button {
+        background-color: #B1E402;
+        border: none;
+        color: white;
+        padding: 11px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 1px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: "Bell MT";
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .button1 {
+        background-color: #B1E402;
+        color: black;
+        border: 2px solid white;
+        text-decoration: none;
+    }
+
+    .button1:hover {
+        background-color: white;
+        color: black;
+        text-decoration: none;
+    }
+</style>
+
+<img style="display: block; margin-left: auto; margin-right: auto;" src="/images/logoSupermercasa.png" alt="" width="300" height="90" />
+
 <body style="background-color:rgb(39, 69, 42);text-align: center; color: white">
 <h1> {{name}} , estos son tus pedidos</h1>
 <h2><strong>{{#pedidos}}<ul><a href="/seguimientoPedido/{{id}}">{{id}}</a></ul>{{/pedidos}}</strong></h2>
-<p><button name="home"><a href="/">Inicio</a></button></p>
+<p><button class="button button1" name="home"><a href="/">Inicio</a></button></p>
 </body>
 </html>

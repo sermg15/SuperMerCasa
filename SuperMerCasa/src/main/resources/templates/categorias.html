@@ -4,6 +4,50 @@
     <meta charset="UTF-8">
     <title>{{categoria}}</title>
 </head>
+
+<style>
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    p{
+        font-family: "Bell MT";
+    }
+    h1{
+        font-family: "Bell MT";
+        font-size: 40px;
+        color: #B1E402;
+    }
+    .button {
+        background-color: #B1E402;
+        border: none;
+        color: white;
+        padding: 11px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 1px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: "Bell MT";
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .button1 {
+        background-color: #B1E402;
+        color: black;
+        border: 2px solid white;
+        text-decoration: none;
+    }
+
+    .button1:hover {
+        background-color: white;
+        color: black;
+        text-decoration: none;
+    }
+
+</style>
 <body style="background-color:rgb(39, 69, 42);text-align: center; color: white">
 <h1>{{categoria}}:</h1>
 {{#productos}}
@@ -14,7 +58,7 @@
     <p></p>
 </div>
 {{/productos}}
-    <button name="home"><a href="/">Inicio</a></button>
+    <button class="button button1" name="home"><a href="/">Inicio</a></button>
 </p>
 
 </body>

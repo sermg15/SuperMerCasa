@@ -50,7 +50,7 @@ public class ProductController {
         aux = new Producto( "Carne de Res", 10, "Carne de vacuno con altas propiedades proteicas", 12.99, "/images/imgCarneOFERTA.jpg", categoria);
         repositorioProducto.save(aux);
 
-        aux = new Producto("Platanos de Canarias", 50, "Platano 100% Canario extraido de las mejores plantaciones", 3.5, "/images/imgPlatanosOFERTA.jpg", categoria);
+        aux = new Producto("Platanos de Canarias", 50, "Platano 100% Canario extraido de las mejores plantaciones", 3.50, "/images/imgPlatanosOFERTA.jpg", categoria);
         repositorioProducto.save(aux);
 
         aux = new Producto("Detergente LimpiaFull", 15, "El mejor detergente para tu ropa, olor suave y agradble", 4.99, "/images/imgDetergenteOFERTA.jpg", categoria);
@@ -61,7 +61,7 @@ public class ProductController {
         //Panaderia y reposteria
         categoria = repositorioCategoria.findByNombre("Panaderia y Reposteria");
 
-        aux = new Producto("Donut", 15, "El mejor sabor con la receta original de Donuts", 2.5, "/images/donut.jpg", categoria);
+        aux = new Producto("Donut", 15, "El mejor sabor con la receta original de Donuts", 2.50, "/images/donut.jpg", categoria);
         repositorioProducto.save(aux);
 
         aux = new Producto("Pan", 75, "Pan recien horneado hecho con masa madre", 0.99, "/images/pan.jpg", categoria);
@@ -85,7 +85,7 @@ public class ProductController {
         repositorioProducto.save(aux);
 
 
-        aux = new Producto("Muslos de pollo", 25, "Muslos de pollo de gallina de corral, gran sabor y textura", 6.5, "/images/muslos.jpg", categoria);
+        aux = new Producto("Muslos de pollo", 25, "Muslos de pollo de gallina de corral, gran sabor y textura", 6.50, "/images/muslos.jpg", categoria);
         repositorioProducto.save(aux);
 
 
@@ -105,7 +105,7 @@ public class ProductController {
         aux = new Producto("Tomates de Rama", 15, "Bandeja de 1 kg aproximado. Ideal para ensaladas.", 3.10, "/images/imgTomate.jpg", categoria);
         repositorioProducto.save(aux);
 
-        aux = new Producto("Judías Verdes", 15, "Bolsa de medio kilo. Preparadas para cocer.", 2.10, "/images/imgJudias.jpg", categoria);
+        aux = new Producto("Judías Verdes", 15, "Bolsa de medio kilo. Preparadas para cocer.", 2.09, "/images/imgJudias.jpg", categoria);
         repositorioProducto.save(aux);
 
 
@@ -131,10 +131,10 @@ public class ProductController {
         aux = new Producto("Cepillo rotador", 10, "Cepillo para limpieza facial", 15.99, "/images/cepilloLimpiezaCara.jpg", categoria);
         repositorioProducto.save(aux);
 
-        aux = new Producto("Champú Magic", 50, "Champú especial para deportistas", 3.5, "/images/champuDeportistas.png", categoria);
+        aux = new Producto("Champú Magic", 50, "Champú especial para deportistas", 3.50, "/images/champuDeportistas.png", categoria);
         repositorioProducto.save(aux);
 
-        aux = new Producto("Lociones PielSana", 15, "Lociones especiales para el cuidado de la piel", 20, "/images/locionesPiel.jpg", categoria);
+        aux = new Producto("Lociones PielSana", 15, "Lociones especiales para el cuidado de la piel", 19.99, "/images/locionesPiel.jpg", categoria);
         repositorioProducto.save(aux);
 
         aux = new Producto("Papel Sudoku", 50, "Ppapel higiénico con dibujos de sudoku", 2.35, "/images/papelHigienicoSudoku.jpg", categoria);
@@ -144,13 +144,13 @@ public class ProductController {
         //Congelados
         categoria = repositorioCategoria.findByNombre("Congelados");
 
-        aux = new Producto("Patatas fritas", 10, "Patatas fritas para calentar al horno (1 kg)", 3.6, "/images/patatasFritas.jpg", categoria);
+        aux = new Producto("Patatas fritas", 10, "Patatas fritas para calentar al horno (1 kg)", 3.60, "/images/patatasFritas.jpg", categoria);
         repositorioProducto.save(aux);
 
         aux = new Producto("Pizza cuatro quesos", 50, "Pizza cuatro quesos calidad gourmet", 6.99, "/images/pizzaCuatroQuesos.jpg", categoria);
         repositorioProducto.save(aux);
 
-        aux = new Producto("Alitas barbacoa", 15, "Alitas de pollo con salsa barocoa (12 piezas)", 5.5, "/images/alitasBarbacoa.jpg", categoria);
+        aux = new Producto("Alitas barbacoa", 15, "Alitas de pollo con salsa barocoa (12 piezas)", 5.50, "/images/alitasBarbacoa.jpg", categoria);
         repositorioProducto.save(aux);
 
         aux = new Producto("Polos de naranja", 50, "Caja de 12 polos helados sabor naranja", 4.25, "/images/poloHelado.jpg", categoria);

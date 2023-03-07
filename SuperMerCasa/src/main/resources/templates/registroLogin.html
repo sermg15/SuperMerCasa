@@ -4,8 +4,97 @@
     <meta charset="UTF-8">
     <title>Inicio de sesión y registro</title>
 </head>
+
+<style>
+    a{
+        text-decoration: none;
+        color:black;
+    }
+    .button {
+        background-color: #B1E402;
+        border: none;
+        color: white;
+        padding: 11px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 1px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: "Bell MT";
+        font-weight: bold;
+    }
+
+    .input {
+        background-color: black;
+        border: 2px solid #B1E402;
+        color: white;
+        padding: 11px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 1px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: "Bell MT";
+        font-weight: bold;
+    }
+
+    .button1 {
+        background-color: #B1E402;
+        color: black;
+        border: 2px solid white;
+        text-decoration: none;
+    }
+
+    .button1:hover {
+        background-color: white;
+        color: black;
+        text-decoration: none;
+    }
+
+    .input2 {
+        background-color: black;
+        border: 2px solid #B1E402;
+        color: white;
+        text-decoration: none;
+    }
+
+    .input2:hover {
+        background-color: white;
+        color: black;
+        text-decoration: none;
+    }
+
+
+    p {
+        font-size: 16px;
+        font-family: "Bell MT";
+
+    }
+    h1{
+        font-family: "Bell MT";
+        font-size:35px;
+        color: white;
+        text-decoration: underline;
+    }
+    h2{
+        font-family: "Bell MT";
+        font-size:30px;
+        color: white;
+    }
+    h3{
+        font-family: "Bell MT";
+        font-size:40px;
+        color: white;
+    }
+
+</style>
+
 <body style="background-color:rgb(39, 69, 42); text-align: center; color: white">
-<h1>&iexcl;&Uacute;nete a la gran familia de SuperMerCasa!</h1>
+<h3>&iexcl;&Uacute;nete a la gran familia de SuperMerCasa!</h3>
 <hr/>
 <h1>Inicia sesi&oacute;n</h1>
 <form action="login">
@@ -15,11 +104,11 @@
       <label for="password">Contrase&ntilde;a:</label> <input id="password" name="password" type="password"/>
 
       <br/><br/>
-      <input type="submit" value="Iniciar sesi&oacute;n"/>
+      <input class="input input2" type="submit" value="Iniciar sesi&oacute;n"/>
     </p>
 </form>
 <h2>{{mensajeLog}}</h2>
-<h1>&nbsp;</h1>
+
 <h1>Registrate&nbsp;</h1>
 <form action="registro">
     <p>
@@ -27,12 +116,12 @@
         <br/><br/><label for="email">Correo electr&oacute;nico:</label> <input id="email" name="email" type="text"/>
         <br/><br/><label for="password">Contrase&ntilde;a:</label> <input id="registerpassword" name="registerpassword" type="password"/>
         <br/><br/><label for="direction">Dirección:</label> <input id="direction" name="direction" type="text"/> <br/><br/>
-        <input type="submit" value="Registrarse"/>
+        <input class="input input2" type="submit" value="Registrarse"/>
     </p>
 </form>
 <h2>{{mensaje}}</h2>
 <p>
-    <button name="home"><a href="/">Inicio</a></button>
+    <button class="button button1" name="home"><a href="/">Inicio</a></button>
 </p>
 </body>
 </html>

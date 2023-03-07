@@ -3,32 +3,140 @@
 <head>
     <meta charset="UTF-8">
 
-    <h1 style="text-align: center;"><span style="color: #ffffff;"><strong>SUPERMERCASA</strong></span></h1>
+<!--    <h1 style="text-align: center;"><span style="color: #ffffff;"><strong>SUPERMERCASA</strong></span></h1>-->
+<!--    <h1><img style="display: block; margin-left: 0; margin-right: auto;" src="/images/logoSupermercasa.png" alt="" width="500" height="105" /></h1>-->
 
 </head>
+<style>
+    .button {
+        background-color: #B1E402;
+        border: none;
+        color: white;
+        padding: 11px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 1px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: "Bell MT";
+        font-weight: bold;
+    }
+
+    .button2 {
+        background-color: whitesmoke;
+        border: none;
+        color: white;
+        padding: 11px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 1px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: "Bell MT";
+        font-weight: bold;
+    }
+
+    .button3 {
+        background-color: #8A0000;
+        border: none;
+        color: white;
+        padding: 11px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 1px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: "Bell MT";
+        font-weight: bold;
+    }
+
+    .navbar {
+        width: 100%;
+        margin: auto;
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 10px;
+        position: relative;
+
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        color: white;
+        font-family: "Bell MT";
+        font-size: 16px;
+    }
+
+    .navbar ul li::before {
+        content: "";
+        height: 4px;
+        width: 0%;
+        background: yellowgreen;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.4s ease-out;
+    }
+
+    .navbar ul li:hover::before {
+        width: 100%;
+    }
+    p {
+        font-size: 16px;
+        font-family: "Bell MT";
+
+    }
+
+</style>
 <body style="background-color:rgb(39, 69, 42);">
-<p style="text-align: center;"><span style="color: #ffffff;"><em>El supermercado en casa</em></span></p>
+
+
+
+<div class="navbar">
+
+
+    <img style="display: block; margin-left: 0; margin-right: auto;" src="/images/logoSupermercasa.png" alt="" width="500" height="144" />
+
+    <ul>
+        <li><a href="/centros">Centros Físicos</a></li>
+        <li><a href="/atencionalcliente">FAQ</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+        <li><a href="/registroLogin">Login</a></li>
+        <li><a href="/perfilusuario">Mi Perfil</a></li>
+        <li><a href="/historial">Historial de Pedidos</a></li>
+        <li><a href="/carrito?comprado="><img style="vertical-align: bottom" src="/images/carrito.png" alt="" width="55" height="50" /></a></li>
+
+    </ul>
+
+</div>
+
+
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/images/ImagenSupermercadoInicio.jpg" alt="" width="600" height="400" /></p>
 <p style="text-align: center;">
-    <button name="centros"><a href="/centros">Centros físicos</a></button>
-    <button name="faq"><a href="/atencionalcliente">FAQ</a></button>
-    <button name="contact"><a href="/contacto">Contacto</a></button>
-    <button name="login"><a href="/registroLogin">Login</a></button>
-    <button name="user"><a href="/perfilusuario">Mi Perfil</a></button>
-<!--    <button name="seguimiento"><a href="/seguimientoPedido/">Seguimiento de Pedidos</a></button>-->
-    <button name="historial"><a href="/historial">Historial de Pedidos</a></button>
-    <button name="carrito"><a href="/carrito?comprado=">Carrito de Compra</a></button>
-    <button name="gestionProd"><a href="/administrarProductos">Gestion de Productos</a></button>
+    <button class="button3"; name="offers"><a href="/ofertas" style="color:#ffffff;">Ofertas</a></button>
+    <button class="button2"; name="pan"><a href="/categoria?cat=Panaderia y reposteria" style="color:#27452A;">Panadería y Repostería</a></button>
+    <button class="button2"; name="carnes"><a href="/categoria?cat=Carnes y pescados" style="color:#27452A;">Carnes y Pescados</a></button>
+    <button class="button2"; name="frutas"><a href="/categoria?cat=Frutas y verduras" style="color:#27452A;">Frutas y Verduras</a></button>
+    <button class="button2"; name="bebida"><a href="/categoria?cat=Bebidas" style="color:#27452A;">Bebidas</a></button>
+    <button class="button2"; name="limpieza"><a href="/categoria?cat=Productos de limpieza" style="color:#27452A;">Limpieza</a></button>
+    <button class="button2"; name="congelados"><a href="/categoria?cat=Congelados" style="color:#27452A;">Congelados</a></button></p>
+<p style="text-align: center;">
+    <button class="button"; name="gestionProd"><a href="/administrarProductos">Gestion de Productos</a></button>
 </p>
-<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://cdn.pixabay.com/photo/2017/08/09/09/50/shopping-2613984_960_720.jpg" alt="" width="600" height="400" /></p>
-<p style="text-align: center;"><span style="color: #ffffff;">Visita nuestros centros para obtener los mejores productos a los mejores precios.</span></p>
-<p style="text-align: center;">
-    <button name="offers"><a href="/ofertas">Ofertas</a></button>
-    <button name="pan"><a href="/categoria?cat=Panaderia y reposteria">Panadería y Repostería</a></button>
-    <button name="carnes"><a href="/categoria?cat=Carnes y pescados">Carnes y Pescados</a></button>
-    <button name="frutas"><a href="/categoria?cat=Frutas y verduras">Frutas y Verduras</a></button>
-    <button name="bebida"><a href="/categoria?cat=Bebidas">Bebidas</a></button>
-    <button name="limpieza"><a href="/categoria?cat=Productos de limpieza">Limpieza</a></button>
-    <button name="congelados"><a href="/categoria?cat=Congelados">Congelados</a></button></p>
 </body>
 </html>
 

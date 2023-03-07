@@ -4,6 +4,71 @@
     <meta charset="UTF-8">
     <title>Carrito de Compra</title>
 </head>
+
+<style>
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  p{
+    font-family: "Bell MT";
+    font-size: 25px;
+    font-weight: bold;
+  }
+  h1{
+    font-family: "Bell MT";
+    font-size:35px;
+    color: white
+  }
+
+  h2{
+      font-family: "Bell MT";
+      font-size:35px;
+      color: #B1E402
+  }
+  h3{
+    font-family: "Bell MT";
+  }
+  td{
+    font-family: "Bell MT";
+    font-size:18px;
+  }
+  ul{
+      text-align: center;
+  }
+
+  .button {
+    background-color: #B1E402;
+    border: none;
+    color: white;
+    padding: 11px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: "Bell MT";
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .button1 {
+    background-color: #B1E402;
+    color: black;
+    border: 2px solid white;
+    text-decoration: none;
+  }
+
+  .button1:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+  }
+
+  </style>
+
 <body style="background-color:rgb(39, 69, 42);text-align: center; color: white">
 <h1>Carrito</h1>
 <!--<h2>id</h2>-->
@@ -25,11 +90,11 @@
   </tbody>
 </table>
 <p><strong>Precio total: <span style="color: #ffffff; font-size: larger">{{precioTotal}}&euro;</span></strong></p>
-<p style="text-align: center;"><button name="buy"><a href="/addSeguimiento?comprado=PEDIDO REALIZADO">COMPRAR</a></button></p>
+<p style="text-align: center;"><button class="button button1" name="buy"><a href="/addSeguimiento?comprado=PEDIDO REALIZADO">COMPRAR</a></button></p>
 
-<h1>{{comprado}}</h1>
+<h2>{{comprado}}</h2>
 
-<p style="text-align: center;"><button name="home"><a href="/">Inicio</a></button></p>
+<p style="text-align: center;"><button class="button button1" name="home"><a href="/">Inicio</a></button></p>
 
 </body>
 </html>

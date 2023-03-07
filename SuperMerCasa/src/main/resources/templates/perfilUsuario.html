@@ -4,12 +4,59 @@
   <meta charset="UTF-8">
   <title>PerfilUsuario</title>
 </head>
+
+<style>
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  p{
+    font-family: "Bell MT";
+    font-size: 16px;
+  }
+  h1{
+    font-family: "Bell MT";
+    font-size: 20px;
+  }
+
+
+  .button {
+    background-color: #B1E402;
+    border: none;
+    color: white;
+    padding: 11px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: "Bell MT";
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .button1 {
+    background-color: #B1E402;
+    color: black;
+    border: 2px solid white;
+    text-decoration: none;
+  }
+
+  .button1:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+  }
+
+</style>
+
 <body style="background-color:rgb(39, 69, 42);text-align: center;">
 <h1><span style="color: red;">{{mensaje}}</span></h1>
 <h1><span style="color: white;">Perfil del usuario {{name}}</span></h1>
 <p><span style="color: white;">Nombre: {{name}}</span></p>
 <p><span style="color: white;">Email: {{email}}</span></p>
 <p><span style="color: white;">Dirección: {{direction}}</span></p>
-<p style="text-align: center;"><span style="color: white;"><button name="home"><a href="/">Inicio</a></button></span></p>
+<p style="text-align: center;"><span style="color: white;"><button class="button button1" name="home"><a href="/">Inicio</a></button></span></p>
 </body>
 </html>

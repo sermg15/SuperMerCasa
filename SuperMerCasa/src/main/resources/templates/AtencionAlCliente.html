@@ -4,6 +4,104 @@
     <meta charset="UTF-8">
     <title>Atención al cliente</title>
 </head>
+
+<style>
+
+    .button {
+        background-color: #B1E402;
+        border: none;
+        color: white;
+        padding: 11px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 1px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: "Bell MT";
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .button1 {
+        background-color: #B1E402;
+        color: black;
+        border: 2px solid white;
+        text-decoration: none;
+    }
+
+    .button1:hover {
+        background-color: white;
+        color: black;
+        text-decoration: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    p{
+        font-family: "Bell MT";
+    }
+    h1{
+        font-family: "Bell MT";
+    }
+
+    h2{
+        font-family: "Bell MT";
+        word-spacing: 25em;
+        font-size: 14px;
+    }
+
+    h3{
+        font-family: "Bell MT";
+    }
+
+    .navbar {
+        width: 100%;
+        margin: fill;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 10px;
+        position: relative;
+        text-align: center;
+
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        color: white;
+        font-family: "Bell MT";
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .navbar ul li::before {
+        content: "";
+        height: 4px;
+        width: 0%;
+        background: yellowgreen;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.4s ease-out;
+        text-align: center;
+    }
+
+    .navbar ul li:hover::before {
+        width: 100%;
+    }
+
+</style>
+
 <body style="background-color:rgb(39, 69, 42);text-align: center; color: white">
 <h1>Atención al cliente</h1>
 <h2>FAQ:</h2>
@@ -25,9 +123,12 @@
                 dirección, nombre...)</pa>
 
 <br></br>
-
-<a class="enlace" href="http://localhost:8080/contacto">Contacto</a>
-<a class="enlace" href="http://localhost:8080/centros">Centros físicos</a>
-<p style="text-align: center;"><button name="home"><a href="/">Inicio</a></button></p>
+<div class="navbar"; >
+<ul>
+    <li><a class="enlace" href="http://localhost:8080/contacto">Contacto</a></li>
+    <li><a class="enlace" href="http://localhost:8080/centros">Centros físicos</a></li>
+</ul>
+</div>
+<p style="text-align: center;"><button class="button button1"; name="home"><a href="/">Inicio</a></button></p>
 </body>
 </html>
