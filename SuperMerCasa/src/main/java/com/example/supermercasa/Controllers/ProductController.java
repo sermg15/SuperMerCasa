@@ -194,6 +194,7 @@ public class ProductController {
 
         model.addAttribute("mensajeEliminar", "");
         model.addAttribute("mensajeModificar", "");
+        model.addAttribute("productos", "");
         return "administrarProductos";
     }
 
@@ -216,12 +217,13 @@ public class ProductController {
 
         model.addAttribute("mensajeAddProd", "");
         model.addAttribute("mensajeModificar", "");
+        model.addAttribute("productos", "");
         return "administrarProductos";
     }
 
     @GetMapping("/modificarProducto")
     public String modificarProducto(Model model, @RequestParam String productoAModificar, @RequestParam String nameProducto,
-                                    @RequestParam String descriptionProd, @RequestParam String priceProd, @RequestParam int stockProd,
+                                    @RequestParam String descriptionProd, @RequestParam String priceProd, @RequestParam String stockProd,
                                     @RequestParam String categoriesProd){
 
         Producto prodAModificar = repositorioProducto.getProductoByName(productoAModificar);
@@ -243,12 +245,12 @@ public class ProductController {
             }else{
                 prodAModificar.setPrecio(prodAModificar.getPrecio());
             }
-            if(stockProd != 0){
-                prodAModificar.setStock(stockProd);
+            if(stockProd != ""){
+                prodAModificar.setStock(Integer.parseInt(stockProd));
             }else{
                 prodAModificar.setStock(prodAModificar.getStock());
             }
-            if(categoriesProd != null){
+            if(categoriesProd != ""){
                 prodAModificar.addCategoria(repositorioCategoria.findByNombre(categoriesProd));;
             }else{
                 prodAModificar.setCategorias(prodAModificar.getCategorias());
@@ -259,6 +261,60 @@ public class ProductController {
 
         model.addAttribute("mensajeAddProd", "");
         model.addAttribute("mensajeEliminar", "");
+        model.addAttribute("productos", "");
+        return "administrarProductos";
+    }
+
+    @GetMapping("/verCategorias")
+    public String verCategorias(Model model, @RequestParam String productoAModificar){
+
+        Producto prodAModificar = repositorioProducto.getProductoByName(productoAModificar);
+        if(prodAModificar == null){
+            model.addAttribute("mensajeModificar", "Producto no encontrado");
+        }else{
+            model.addAttribute("producto", prodAModificar);
+            model.addAttribute("mensajeModificar", "");
+        }
+        model.addAttribute("mensajeAddProd", "");
+        model.addAttribute("mensajeEliminar", "");
+
+        return "administrarProductos";
+    }
+
+    @GetMapping("/addCategorias")
+    public String addCategorias(Model model, @RequestParam String categoria, @RequestParam String producto){
+
+        Producto prodAModificar = repositorioProducto.getProductoByName(producto);
+        Categoria cat = repositorioCategoria.findByNombre(categoria);
+        if(prodAModificar == null){
+            model.addAttribute("mensajeModificar", "Producto no encontrado");
+        }else{
+            prodAModificar.addCategoria(cat);
+            repositorioProducto.flush();
+            model.addAttribute("producto", prodAModificar);
+            model.addAttribute("mensajeModificar", "");
+        }
+        model.addAttribute("mensajeAddProd", "");
+        model.addAttribute("mensajeEliminar", "");
+
+        return "administrarProductos";
+    }
+
+    @GetMapping("/eliminarCategorias")
+    public String eliminarCategorias(Model model, @RequestParam String producto){
+
+        Producto prodAModificar = repositorioProducto.getProductoByName(producto);
+        if(prodAModificar == null){
+            model.addAttribute("mensajeModificar", "Producto no encontrado");
+        }else{
+            prodAModificar.getCategorias().clear();
+            repositorioProducto.flush();
+            model.addAttribute("producto", prodAModificar);
+            model.addAttribute("mensajeModificar", "");
+        }
+        model.addAttribute("mensajeAddProd", "");
+        model.addAttribute("mensajeEliminar", "");
+
         return "administrarProductos";
     }
 
@@ -267,6 +323,7 @@ public class ProductController {
         model.addAttribute("mensajeAddProd", "");
         model.addAttribute("mensajeEliminar", "");
         model.addAttribute("mensajeModificar", "");
+        model.addAttribute("productos", "");
 
         return "administrarProductos";
     }

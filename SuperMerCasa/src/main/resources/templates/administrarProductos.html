@@ -60,7 +60,8 @@
     <input id="priceProd" name="priceProd" type="text"/><br/><br/>
 
     <label for="categoriesProd">Categoria nueva del producto:</label>
-    <select id="categoriesProd" name="categoriesProd" multiple>
+    <select id="categoriesProd" name="categoriesProd" require>
+      <option value="">None</option>
       <option value="Carnes y Pescados">Carne y pescado</option>
       <option value="Frutas y Verduras">Fruta y verdura</option>
       <option value="Panaderia y Reposteria">Panaderia y reposteria</option>
@@ -70,15 +71,40 @@
       <option value="Ofertas">Ofertas</option>
     </select><br/><br/>
 
+    {{#producto}}
+     {{#categorias}}<ul>{{nombre}}</ul>{{/categorias}}
+    {{/producto}}
 
-    <label for="stockProd">Stock:</label>
-    <input id="stockProd" name="stockProd" type="number"/><br/><br/>
+  <label for="stockProd">Stock:</label>
+    <input id="stockProd" name="stockProd" type="text"/><br/><br/>
 
     <input type="submit" value="ModificarProducto"/>
   </p>
   <h2>{{mensajeModificar}}</h2>
 </form>
 
+<button id="verCat" name="home">Ver Categorias</button>
+<button id="addCat" name="home">Añadir Categoria</button>
+<button id="removeCat" name="home">Eliminar Categorias</button>
+<br/><br/>
 <button name="home"><a href="/">Inicio</a></button>
+
+<script>
+  var pag = document.getElementById("productoAModificar");
+  document.getElementById("verCat").addEventListener("click", function() {
+    pag = "/verCategorias?productoAModificar="+ pag.value;
+    location.href=pag;
+  });
+  var pag1 = document.getElementById("categoriesProd");
+  document.getElementById("addCat").addEventListener("click", function() {
+    pag = "/addCategorias?categoria="+ pag1.value + "&producto=" + pag.value;
+    location.href=pag;
+  });
+  document.getElementById("removeCat").addEventListener("click", function() {
+    pag = "/eliminarCategorias?producto=" + pag.value;
+    location.href=pag;
+  });
+</script>
+
 </body>
 </html>
