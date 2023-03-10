@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 import java.util.*;
 
 @Controller
@@ -34,9 +36,11 @@ public class ControladorCarrito {
     Pedido pedido;
 
     @GetMapping("/carrito")
-    public String Carrito(Model model, @RequestParam String comprado) {
+    public String Carrito(Model model, @RequestParam String comprado, HttpServletRequest request) {
 
-        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
+        Principal principal = request.getUserPrincipal();
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario(principal.getName());
+
         carrito = repositorioCarrito.findByUser(user.get());
 
         if(carrito == null){
@@ -62,9 +66,11 @@ public class ControladorCarrito {
     double precioTotal;
 
     @GetMapping("/addProducto/{id}")
-    public String addProducto(Model model, @PathVariable long id, @RequestParam int cantidad){
+    public String addProducto(Model model, @PathVariable long id, @RequestParam int cantidad, HttpServletRequest request){
 
-        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
+        Principal principal = request.getUserPrincipal();
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario(principal.getName());
+
         producto = repositorioProducto.findById(id).get();
         carrito = repositorioCarrito.findByUser(user.get());
 
@@ -154,9 +160,11 @@ public class ControladorCarrito {
         return "carrito";
     }
     @GetMapping("/addSeguimiento")
-    public String addSeguimiento(Model model, @RequestParam String comprado){
+    public String addSeguimiento(Model model, @RequestParam String comprado, HttpServletRequest request){
 
-        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
+        Principal principal = request.getUserPrincipal();
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario(principal.getName());
+
         carrito = repositorioCarrito.findByUser(user.get());
 
 

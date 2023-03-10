@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.example.supermercasa.Repositorios.RepositorioUsuario;
 
+import javax.servlet.http.HttpServletRequest;
+import java.net.http.HttpRequest;
+import java.security.Principal;
 import java.util.Optional;
 
 @Controller
@@ -19,9 +22,11 @@ public class ControladorHistorial {
 
 
     @GetMapping("/historial")
-    public String historialPedidos(Model model){
+    public String historialPedidos(Model model, HttpServletRequest request){
 
-        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
+        Principal principal = request.getUserPrincipal();
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario(principal.getName());
+
         model.addAttribute("name",user.get().getNombreUsuario());
         model.addAttribute("pedidos",user.get().getPedidos());
         return "historialPedidos";

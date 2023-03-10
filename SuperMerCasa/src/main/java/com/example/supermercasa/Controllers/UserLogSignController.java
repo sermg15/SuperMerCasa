@@ -7,10 +7,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
+import java.util.Optional;
 
 @Controller
 public class UserLogSignController {
@@ -19,24 +23,29 @@ public class UserLogSignController {
     public RepositorioUsuario repositorioUsuario;
     @Autowired
     private PasswordEncoder passwordEncoder;
-    public long users_id;
 
-    public long getId(){
-        return users_id;
-    }
     @PostConstruct
     public void init(){
         repositorioUsuario.save(new Usuario("Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", passwordEncoder.encode("1234"),null,null, "ADMIN", "USER"));
     }
+    @ModelAttribute
+    public void addAttributes(Model model, HttpServletRequest request) {
+
+        Principal principal = request.getUserPrincipal();
+
+    }
 
     @GetMapping("/perfilusuario")
-    public String PerfilUsuario(Model model){
+    public String PerfilUsuario(Model model, HttpServletRequest request){
 
-        if(repositorioUsuario.findById(users_id).isPresent()){
+        Principal principal = request.getUserPrincipal();
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario(principal.getName());
+
+        if(principal != null){
             model.addAttribute("mensaje", "");
-            model.addAttribute("name", repositorioUsuario.findById(users_id).get().getNombreUsuario());
-            model.addAttribute("email", repositorioUsuario.findById(users_id).get().getEmail());
-            model.addAttribute("direction", repositorioUsuario.findById(users_id).get().getDirecction());
+            model.addAttribute("name", user.get().getNombreUsuario());
+            model.addAttribute("email", user.get().getEmail());
+            model.addAttribute("direction", user.get().getDirecction());
         }else{
             model.addAttribute("mensaje", "NO HAY NINGUN USUARIO LOGUEADO");
             model.addAttribute("name", "");

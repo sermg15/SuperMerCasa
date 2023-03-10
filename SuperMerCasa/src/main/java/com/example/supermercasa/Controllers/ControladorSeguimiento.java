@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,17 +38,22 @@ public class ControladorSeguimiento {
 
 
     @GetMapping("/seguimientoPedido")
-    public String Seguimiento(Model model){
+    public String Seguimiento(Model model, HttpServletRequest request){
 
-        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
+        Principal principal = request.getUserPrincipal();
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario(principal.getName());
+
         pedidos = user.get().getPedidos();
         model.addAttribute("pedidos",pedidos);
         return "seguimientoPedidosEleccion";
     }
 
     @GetMapping("/seguimientoPedido/{id}")
-    public String SeguimientoPedido(Model model,@PathVariable long id){
-        Optional<Usuario> user = repositorioUsuario.findById(35L);
+    public String SeguimientoPedido(Model model,@PathVariable long id, HttpServletRequest request){
+
+        Principal principal = request.getUserPrincipal();
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario(principal.getName());
+
         pedido = repositorioPedido.findByUserAndId(user, id);
 
         if(pedido == null){
