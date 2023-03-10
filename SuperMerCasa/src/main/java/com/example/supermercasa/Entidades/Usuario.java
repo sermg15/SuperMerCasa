@@ -1,6 +1,7 @@
 package com.example.supermercasa.Entidades;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,27 +11,32 @@ public class Usuario {
     private long iden;
     private String nombreUsuario;
     private String email;
-    private String contraseña;
+    private String contraseñaCifrada;
     private String direction;
     @OneToOne
     private Carrito carrito;
     @OneToMany
     private List<Pedido> pedidos;
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> roles;
+
     public Usuario(){}
 
 
 
 
-    public Usuario(long iden, String nombreUsuario, String email, String direction, String contraseña, Carrito carrito, List<Pedido> pedidos){
+    public Usuario(String nombreUsuario, String email, String direction, String contraseña, Carrito carrito, List<Pedido> pedidos, String... rol){
 
         this.iden = iden;
         this.nombreUsuario = nombreUsuario;
-        this.contraseña = contraseña;
+        this.contraseñaCifrada = contraseña;
         this.email = email;
         this.direction = direction;
         this.carrito = carrito;
         this.pedidos = pedidos;
+        roles = List.of(rol);
+
     }
 
     public long getId() {
@@ -41,20 +47,18 @@ public class Usuario {
         this.iden = id;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
+    public String getNombreUsuario() { return nombreUsuario; }
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContraseñaCifrada() {
+        return contraseñaCifrada;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContraseñaCifrada(String contraseña) {
+        this.contraseñaCifrada = contraseña;
     }
 
     public String getEmail() {
@@ -88,5 +92,11 @@ public class Usuario {
 
     public void setPedidos(List<Pedido> pedidos) {this.pedidos = pedidos;}
 
+    public List<String> getRoles() {
+        return roles;
+    }
 
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
 }

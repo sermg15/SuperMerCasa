@@ -38,7 +38,7 @@ public class ControladorSeguimiento {
     @GetMapping("/seguimientoPedido")
     public String Seguimiento(Model model){
 
-        Optional<Usuario> user = repositorioUsuario.findById(35L);
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
         pedidos = user.get().getPedidos();
         model.addAttribute("pedidos",pedidos);
         return "seguimientoPedidosEleccion";

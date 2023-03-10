@@ -21,7 +21,7 @@ public class ControladorHistorial {
     @GetMapping("/historial")
     public String historialPedidos(Model model){
 
-        Optional<Usuario> user = repositorioUsuario.findById(35L);
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
         model.addAttribute("name",user.get().getNombreUsuario());
         model.addAttribute("pedidos",user.get().getPedidos());
         return "historialPedidos";

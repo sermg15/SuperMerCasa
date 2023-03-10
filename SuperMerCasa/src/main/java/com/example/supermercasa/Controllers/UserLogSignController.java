@@ -3,9 +3,11 @@ package com.example.supermercasa.Controllers;
 import com.example.supermercasa.Entidades.*;
 import com.example.supermercasa.Repositorios.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.PostConstruct;
@@ -15,6 +17,8 @@ public class UserLogSignController {
 
     @Autowired
     public RepositorioUsuario repositorioUsuario;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     public long users_id;
 
     public long getId(){
@@ -22,7 +26,7 @@ public class UserLogSignController {
     }
     @PostConstruct
     public void init(){
-        repositorioUsuario.save(new Usuario( 1, "Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", "1234",null,null));
+        repositorioUsuario.save(new Usuario("Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", passwordEncoder.encode("1234"),null,null, "ADMIN", "USER"));
     }
 
     @GetMapping("/perfilusuario")
@@ -42,30 +46,37 @@ public class UserLogSignController {
         return "perfilUsuario";
     }
 
-    @GetMapping("/login")
-    public String RegistroLogin(Model model, @RequestParam String username, @RequestParam String password){
+    @GetMapping("/loginSuccess")
+    public String LoginSuccess(Model model){
 
-        if (!repositorioUsuario.findByNombreUsuario(username).isEmpty()){
+        model.addAttribute("mensajeLog", "LOGEADO DE FORMA CORRECTA");
+        model.addAttribute("mensaje", "");
 
-            model.addAttribute("mensajeLog", "LOGEADO DE FORMA CORRECTA");
-            model.addAttribute("mensaje", "");
-            users_id = repositorioUsuario.findByNombreUsuario(username).get().getId();
-
-        }else{
-
-            model.addAttribute("mensajeLog", "USUARIO O CONTRASEÑA INCORRECTOS");
-            model.addAttribute("mensaje", "");
-
-        }
-        return "registroLogin";
+        return "login";
     }
-    long numusuarios = 6000;
+
+    @GetMapping("/login")
+    public String login(Model model) {
+        model.addAttribute("mensajeLog", "");
+        model.addAttribute("mensaje", "");
+
+        return "login";
+    }
+
+    @GetMapping("/loginerror")
+    public String loginerror(Model model){
+
+        model.addAttribute("mensajeLog", "USUARIO O CONTRASEÑA INCORRECTOS");
+        model.addAttribute("mensaje", "");
+
+        return "login";
+    }
+
     @GetMapping("/registro")
     public String RegistroLogin(Model model, @RequestParam String registername, @RequestParam String registerpassword, @RequestParam String email, @RequestParam String direction){
 
         if (repositorioUsuario.findByEmail(email).isEmpty()){
-            repositorioUsuario.save(new Usuario(numusuarios,registername, email, direction, registerpassword,null,null));
-            numusuarios++;
+            repositorioUsuario.save(new Usuario(registername, email, direction, passwordEncoder.encode(registerpassword),null,null, "USER"));
 
             model.addAttribute("mensaje", "USUARIO REGISTRADO DE FORMA CORRECTA");
             model.addAttribute("mensajeLog", "");
@@ -74,7 +85,7 @@ public class UserLogSignController {
             model.addAttribute("mensajeLog", "");
         }
 
-        return "registroLogin";
+        return "login";
     }
 
     @GetMapping ("/registroLogin")
@@ -82,7 +93,7 @@ public class UserLogSignController {
         model.addAttribute("mensaje", "");
         model.addAttribute("mensajeLog", "");
 
-        return "registroLogin";
+        return "login";
     }
 
 
