@@ -72,6 +72,15 @@ public class UserLogSignController {
         return "login";
     }
 
+//    @GetMapping("/logout")
+//    public String logout(Model model) {
+//        model.addAttribute("notLogged",true);
+//        model.addAttribute("logged",false);
+//        model.addAttribute("admin",false);
+//
+//        return "inicio";
+//    }
+
     @GetMapping("/loginerror")
     public String loginerror(Model model){
 

@@ -56,6 +56,26 @@
         font-weight: bold;
     }
 
+    .button4 {
+        background-color: transparent;
+        border: none;
+
+        padding: 0px 0px;
+        text-align: center;
+        display: inline-block;
+
+        margin: 0.5px 0.5px;
+        cursor: pointer;
+        border-radius: 8px;
+
+
+
+        text-decoration: none;
+        color: white;
+        font-family: "Bell MT";
+        font-size: 16px;
+    }
+
     .navbar {
         width: 100%;
         margin: auto;
@@ -115,7 +135,16 @@
         <li><a href="/centros">Centros Físicos</a></li>
         <li><a href="/atencionalcliente">FAQ</a></li>
         <li><a href="/contacto">Contacto</a></li>
+        {{^logged}}
         <li><a href="/login">Login</a></li>
+        {{/logged}}
+        {{#logged}}
+
+        <li> <form action="/logout" method="post">
+            <button class="button4" type="submit">Cerrar Sesión</button>
+            <input type="hidden" name="_csrf" value="{{token}}" />
+        </form></li>
+        {{/logged}}
         <li><a href="/perfilusuario">Mi Perfil</a></li>
         <li><a href="/historial">Historial de Pedidos</a></li>
         <li><a href="/carrito?comprado="><img style="vertical-align: bottom" src="/images/carrito.png" alt="" width="55" height="50" /></a></li>
@@ -135,7 +164,10 @@
     <button class="button2"; name="limpieza"><a href="/categoria?cat=Productos de limpieza" style="color:#27452A;">Limpieza</a></button>
     <button class="button2"; name="congelados"><a href="/categoria?cat=Congelados" style="color:#27452A;">Congelados</a></button></p>
 <p style="text-align: center;">
+    {{#admin}}
     <button class="button"; name="gestionProd"><a href="/administrarProductos">Gestion de Productos</a></button>
+    {{/admin}}
+<!--    <button class="button"; name="gestionProd"><a href="/administrarProductos">Gestion de Productos</a></button>-->
 </p>
 </body>
 </html>
