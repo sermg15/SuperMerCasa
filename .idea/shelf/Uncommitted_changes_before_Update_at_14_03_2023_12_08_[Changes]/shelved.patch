@@ -1,0 +1,80 @@
+Index: SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.supermercasa.Controllers;\r\n\r\nimport com.example.supermercasa.Entidades.Usuario;\r\nimport com.example.supermercasa.Repositorios.RepositorioPedido;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\nimport com.example.supermercasa.Repositorios.RepositorioUsuario;\r\n\r\nimport java.util.Optional;\r\n\r\n@Controller\r\npublic class ControladorHistorial {\r\n    @Autowired\r\n    private RepositorioUsuario repositorioUsuario;\r\n    @Autowired\r\n    private RepositorioPedido repositorioPedido;\r\n\r\n\r\n    @GetMapping(\"/historial\")\r\n    public String historialPedidos(Model model){\r\n\r\n        Optional<Usuario> user = repositorioUsuario.findById(35L);\r\n        model.addAttribute(\"name\",user.get().getNombreUsuario());\r\n        model.addAttribute(\"pedidos\",user.get().getPedidos());\r\n        return \"historialPedidos\";\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java b/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java
+--- a/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java	(revision 32d78afd1e4dc2b9702219f39e8a2fdc435a0437)
++++ b/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java	(date 1678191207633)
+@@ -21,7 +21,7 @@
+     @GetMapping("/historial")
+     public String historialPedidos(Model model){
+ 
+-        Optional<Usuario> user = repositorioUsuario.findById(35L);
++        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
+         model.addAttribute("name",user.get().getNombreUsuario());
+         model.addAttribute("pedidos",user.get().getPedidos());
+         return "historialPedidos";
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2e384b51-4c5f-4de3-8612-c143a7523455\" name=\"Changes\" comment=\",\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ProductController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ProductController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/administrarProductos.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/administrarProductos.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"Interface\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2LUwJtypjhcSVPkqmng0H7Chrpl\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\r\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\r\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\r\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\r\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;F:/Universidad/CUARTO/2º Cuatrimestre/DAD/proyecto/SuperMerCasa/SuperMerCasa/src/main/resources/static&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,\r\n    &quot;spring.configuration.checksum&quot;: &quot;75d478183de47fc35393cfb8d4580c2f&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"F:\\Universidad\\CUARTO\\2º Cuatrimestre\\DAD\\proyecto\\SuperMerCasa\\SuperMerCasa\\src\\main\\resources\\static\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"SuperMerCasaApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" nameIsGenerated=\"true\">\r\n      <module name=\"SuperMerCasa\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.example.supermercasa.SuperMerCasaApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2e384b51-4c5f-4de3-8612-c143a7523455\" name=\"Changes\" comment=\"HistorialPedidos Final\" />\r\n      <created>1675938906173</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1675167767478</updated>\r\n      <workItem from=\"1675167779570\" duration=\"1809000\" />\r\n      <workItem from=\"1675939504872\" duration=\"2429000\" />\r\n      <workItem from=\"1675943032324\" duration=\"89000\" />\r\n      <workItem from=\"1676145597981\" duration=\"3651000\" />\r\n      <workItem from=\"1676328054248\" duration=\"2160000\" />\r\n      <workItem from=\"1676451631116\" duration=\"1351000\" />\r\n      <workItem from=\"1676541482672\" duration=\"5448000\" />\r\n      <workItem from=\"1676890479937\" duration=\"3589000\" />\r\n      <workItem from=\"1677000151302\" duration=\"1305000\" />\r\n      <workItem from=\"1677008177430\" duration=\"1715000\" />\r\n      <workItem from=\"1677010139698\" duration=\"1078000\" />\r\n      <workItem from=\"1677059361981\" duration=\"1100000\" />\r\n      <workItem from=\"1677090601611\" duration=\"5732000\" />\r\n      <workItem from=\"1677147171154\" duration=\"2813000\" />\r\n      <workItem from=\"1677453803243\" duration=\"646000\" />\r\n      <workItem from=\"1677456821590\" duration=\"3077000\" />\r\n      <workItem from=\"1677521988462\" duration=\"2694000\" />\r\n      <workItem from=\"1677587256999\" duration=\"3818000\" />\r\n      <workItem from=\"1677623618192\" duration=\"6077000\" />\r\n      <workItem from=\"1677797602905\" duration=\"224000\" />\r\n      <workItem from=\"1677798043776\" duration=\"4098000\" />\r\n      <workItem from=\"1677834073323\" duration=\"3780000\" />\r\n      <workItem from=\"1677837893334\" duration=\"10440000\" />\r\n      <workItem from=\"1678121724882\" duration=\"5752000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Páginas y controladores Ignacio\">\r\n      <created>1675942223502</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675942223502</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"static\">\r\n      <created>1675942372248</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675942372248</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"cambios historial\">\r\n      <created>1675942739711</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675942739711</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente\">\r\n      <created>1676377888289</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676377888289</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"HistorialPedidos Final\">\r\n      <created>1676379444030</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676379444030</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Cambios Fondos y mejoras\">\r\n      <created>1676541728495</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676541728495</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\",\">\r\n      <created>1677151314837</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1677151314837</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Páginas y controladores Ignacio\" />\r\n    <MESSAGE value=\"static\" />\r\n    <MESSAGE value=\"cambios historial\" />\r\n    <MESSAGE value=\"Página Inicio Final.&#10;Página Centros Físicos Final.&#10;Correccion Atención al Cliente\" />\r\n    <MESSAGE value=\"HistorialPedidos Final\" />\r\n    <MESSAGE value=\"Cambios Fondos y mejoras\" />\r\n    <MESSAGE value=\",\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\",\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 32d78afd1e4dc2b9702219f39e8a2fdc435a0437)
++++ b/.idea/workspace.xml	(date 1678192903161)
+@@ -4,10 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment=",">
++    <list default="true" id="2e384b51-4c5f-4de3-8612-c143a7523455" name="Changes" comment="Actualización HTMLs y CSS.&#10;Versión Final">
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a90ec828-9b09-449e-9dc9-d314d26e3709/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a90ec828-9b09-449e-9dc9-d314d26e3709/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ProductController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/administrarProductos.html" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/resources/templates/administrarProductos.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/SuperMerCasa/src/main/java/com/example/supermercasa/Controllers/ControladorHistorial.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -110,6 +110,10 @@
+       <workItem from="1677834073323" duration="3780000" />
+       <workItem from="1677837893334" duration="10440000" />
+       <workItem from="1678121724882" duration="5752000" />
++      <workItem from="1678176709150" duration="3575000" />
++      <workItem from="1678183425974" duration="4662000" />
++      <workItem from="1678188449148" duration="1011000" />
++      <workItem from="1678190258337" duration="2192000" />
+     </task>
+     <task id="LOCAL-00001" summary="Páginas y controladores Ignacio">
+       <created>1675942223502</created>
+@@ -160,7 +164,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1677151314837</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="Actualización HTMLs y CSS.&#10;Versión Final">
++      <created>1678189453679</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1678189453679</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -174,6 +185,7 @@
+     <MESSAGE value="HistorialPedidos Final" />
+     <MESSAGE value="Cambios Fondos y mejoras" />
+     <MESSAGE value="," />
+-    <option name="LAST_COMMIT_MESSAGE" value="," />
++    <MESSAGE value="Actualización HTMLs y CSS.&#10;Versión Final" />
++    <option name="LAST_COMMIT_MESSAGE" value="Actualización HTMLs y CSS.&#10;Versión Final" />
+   </component>
+ </project>
+\ No newline at end of file

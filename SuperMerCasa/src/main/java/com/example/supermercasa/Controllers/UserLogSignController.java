@@ -2,6 +2,7 @@ package com.example.supermercasa.Controllers;
 
 import com.example.supermercasa.Entidades.*;
 import com.example.supermercasa.Repositorios.RepositorioUsuario;
+import com.example.supermercasa.ServicioInterno.servInternoMail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.text.html.Option;
 import java.security.Principal;
 import java.util.Optional;
 
@@ -93,11 +95,19 @@ public class UserLogSignController {
     @GetMapping("/registro")
     public String RegistroLogin(Model model, @RequestParam String registername, @RequestParam String registerpassword, @RequestParam String email, @RequestParam String direction){
 
+        Optional<Usuario> usuario;
         if (repositorioUsuario.findByEmail(email).isEmpty()){
             repositorioUsuario.save(new Usuario(registername, email, direction, passwordEncoder.encode(registerpassword),null,null, "USER"));
+            usuario = repositorioUsuario.findByNombreUsuario(registername);
 
-            model.addAttribute("mensaje", "USUARIO REGISTRADO DE FORMA CORRECTA");
-            model.addAttribute("mensajeLog", "");
+            if(servInternoMail.sendRegisterEmail(usuario.get())){
+                model.addAttribute("mensaje", "USUARIO REGISTRADO DE FORMA CORRECTA(CORREO ENVIADO)");
+                model.addAttribute("mensajeLog", "");
+            }else{
+                model.addAttribute("mensaje", "USUARIO REGISTRADO DE FORMA CORRECTA(CORREO NO ENVIADO)");
+                model.addAttribute("mensajeLog", "");
+            }
+
         }else{
             model.addAttribute("mensaje", "USUARIO YA REGISTRADO");
             model.addAttribute("mensajeLog", "");

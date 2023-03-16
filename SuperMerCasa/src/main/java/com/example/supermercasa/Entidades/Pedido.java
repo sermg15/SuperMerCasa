@@ -51,6 +51,15 @@ public class Pedido {
         return productos;
     }
 
+    public String printPedido()
+    {
+        String productoCantidadPrecio ="LISTA DE PRODUCTOS: <br />";
+        for(int i = 0; i < productos.size(); i++){
+            productoCantidadPrecio += ("Producto: " + productos.get(i).getName() + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unidades: " + cantidades.get(i) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precio/unidad: " + productos.get(i).getPrecio() + "<br />");
+        }
+        return productoCantidadPrecio;
+    }
+
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }

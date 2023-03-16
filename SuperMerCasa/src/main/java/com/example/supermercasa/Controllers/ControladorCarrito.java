@@ -8,6 +8,7 @@ import com.example.supermercasa.Repositorios.RepositorioCarrito;
 import com.example.supermercasa.Repositorios.RepositorioProducto;
 import com.example.supermercasa.Repositorios.RepositorioPedido;
 import com.example.supermercasa.Repositorios.RepositorioUsuario;
+import com.example.supermercasa.ServicioInterno.servInternoMail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -178,16 +179,30 @@ public class ControladorCarrito {
 
         }else{
 
-            user.get().addPedidos(repositorioPedido.save(new Pedido(carrito.getListaProductos(),
-                    user.get(),"Recibido",precioTotal, carrito.getCantidadProductos())));
+            Pedido pedido = new Pedido(carrito.getListaProductos(), user.get(),"Recibido",precioTotal, carrito.getCantidadProductos());
+            user.get().addPedidos(repositorioPedido.save(pedido));
+
+            if(servInternoMail.sendPedidoEmail(user.get(),pedido)){
+                model.addAttribute("productos", null);
+                model.addAttribute("precios",null);
+                model.addAttribute("cantidad", "");
+                model.addAttribute("precioTotal", "0");
+                model.addAttribute("comprado", comprado);
+            }else{
+                model.addAttribute("productos", null);
+                model.addAttribute("precios",null);
+                model.addAttribute("cantidad", "");
+                model.addAttribute("precioTotal", "0");
+                model.addAttribute("comprado", "ERROR AL CONFIRMAR TU PEDIDO");
+            }
 
 
 
-            model.addAttribute("productos", null);
-            model.addAttribute("precios",null);
-            model.addAttribute("cantidad", "");
-            model.addAttribute("precioTotal", "0");
-            model.addAttribute("comprado", comprado);
+//            model.addAttribute("productos", null);
+//            model.addAttribute("precios",null);
+//            model.addAttribute("cantidad", "");
+//            model.addAttribute("precioTotal", "0");
+//            model.addAttribute("comprado", comprado);
 
             repositorioCarrito.deleteById(carrito.getId());
 
