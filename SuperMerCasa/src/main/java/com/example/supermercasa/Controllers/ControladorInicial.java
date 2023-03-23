@@ -64,18 +64,18 @@ public class ControladorInicial {
         model.addAttribute("admin",false);
 
 
-        if(principal!=null){
+        if(principal!=null) {
             user = repositorioUsuario.findByNombreUsuario(principal.getName());
             System.out.println("----------------------------------------------------------" + principal.getName());
-            model.addAttribute("logged",true);
-//            for(int i =0; i<user.get().getRoles().size();i++){
-//                System.out.println("------------------------------------------------------"+user.get().getRoles().get(i)+"---------------"+i);
-//                if(user.get().getRoles().get(i).equals("ADMIN")){
-//                    model.addAttribute("admin",true);
-//                    System.out.println("--------------------------------------------if"+user.get().getRoles().get(i));
+            model.addAttribute("logged", true);
+            for (int i = 0; i < user.get().getRoles().size(); i++) {
+                System.out.println("------------------------------------------------------" + user.get().getRoles().get(i) + "---------------" + i);
+                if (user.get().getRoles().get(i).equals("ADMIN")) {
+                    model.addAttribute("admin", true);
+                    System.out.println("--------------------------------------------if" + user.get().getRoles().get(i));
                 }
-
-
+            }
+        }
         return "inicio";
     }
 }
