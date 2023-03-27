@@ -52,25 +52,32 @@
 
 - **Capturas de pantalla**
  - Página principal: página de inicio donde se ofrecen todas las opciones al usuario, y se ofrecen las distintas categorías de productos.
-  ![image](https://user-images.githubusercontent.com/79744800/220876031-fcab4e26-b8c0-45d6-9bf9-208821caafc0.png)
+  ![image](https://user-images.githubusercontent.com/104427191/228036257-356be32c-09d3-47fb-aa78-84763f53b3cd.png)
  - Categorías: página con el título de la categoría y distintos productos.
   ![image](https://user-images.githubusercontent.com/79744800/220876146-3051bdb5-b758-462f-8309-a842887d02df.png)
  - Productos: página con el nombre del producto, una fotografía, descripción, selección de la cantidad, botón para añadir al carrito, y botón para la vuelta al inicio.
   ![image](https://user-images.githubusercontent.com/79744800/220876247-2aff8ce9-8451-4109-a4a2-dcd1b065a70d.png)
  - Login/Register: página para registrar y loguearse con un usuario.
-  ![image](https://user-images.githubusercontent.com/79744800/220876315-4ec384a4-4de3-4637-b8c2-795b22b531f3.png)
+  ![image](https://user-images.githubusercontent.com/104427191/228036690-02f1365b-94bc-43e7-b64e-0e97cb283d54.png)
  - Centros físicos: página que muestra tres fotografías y mapas de los distintos supermercados físicos.
-  ![image](https://user-images.githubusercontent.com/79744800/220876415-08556d96-928a-4b78-8ad3-eb2c2677caa6.png)
+  ![image](https://user-images.githubusercontent.com/104427191/228036339-1b50dad9-1616-49a3-82c7-9a3685d9bb2a.png)
  - Opciones de contacto: página con opciones de contacto como teléfono, mail, etc.
   ![image](https://user-images.githubusercontent.com/79744800/220876489-0e04834f-1995-46a7-a8f3-b9d17dd99fbc.png)
  - FAQ: página para consultar dudas frecuentes.
-  ![image](https://user-images.githubusercontent.com/79744800/220876542-1e948e87-27db-424b-80ac-cd55383d4902.png)
+  ![image](https://user-images.githubusercontent.com/104427191/228036523-c4a7a93b-080a-4c80-92b7-5a84eae961b2.png)
  - Seguimiento de pedidos: página para consultar el estado del proceso del pedido y su envío.
-  ![image](https://user-images.githubusercontent.com/79744800/220876590-dc3d3bda-eaa9-44a6-91fb-11dace74e1e6.png)
+  ![image](https://user-images.githubusercontent.com/104427191/228037971-722a4074-c6d4-4e94-92e3-e67f321a3c93.png)
  - Historial de pedidios: página en la que se consultan pedidos anteriores.
-  ![image](https://user-images.githubusercontent.com/79744800/220876640-46b9a9d3-63d6-4639-affe-49261a825fb1.png)
+  ![image](https://user-images.githubusercontent.com/104427191/228037847-c82379a9-0ebe-418f-90c9-1ffcc21cd559.png)
  - Carrito: página con listado de productos añadidos al carrito.
-  ![image](https://user-images.githubusercontent.com/79744800/220876698-fa9f09fb-2c4a-492c-80f8-6bbad9018bbc.png)
+  ![image](https://user-images.githubusercontent.com/104427191/228037494-9db9db55-a6ba-41ef-b956-32e612c8584b.png)
+ - Ofertas: página en la que aparecen las ofertas semanales con los productos con el precio reducido
+  ![image](https://user-images.githubusercontent.com/104427191/228036970-0d7ca467-bd70-4c11-ad62-0b909fdc885f.png)
+ - Gestión de productos: página para poder crear productos nuevos; o modificar o borrar los ya creados.
+  ![image](https://user-images.githubusercontent.com/104427191/228037289-41abe3a9-4813-45f9-9502-66b98e5c77f0.png)
+ - Perfil de usuario: en la cual aparecen los datos del usuario. 
+  ![image](https://user-images.githubusercontent.com/104427191/228037753-f78b6ce9-9b78-4dbd-aa44-d31b38db4ea9.png)
+
 
 
 - **Instrucciones para desplegar la aplicación en OpenStack**:
