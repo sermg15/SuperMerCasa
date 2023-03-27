@@ -56,7 +56,7 @@
  - Categorías: página con el título de la categoría y distintos productos.
   ![image](https://user-images.githubusercontent.com/79744800/220876146-3051bdb5-b758-462f-8309-a842887d02df.png)
  - Productos: página con el nombre del producto, una fotografía, descripción, selección de la cantidad, botón para añadir al carrito, y botón para la vuelta al inicio.
-  ![image](https://user-images.githubusercontent.com/79744800/220876247-2aff8ce9-8451-4109-a4a2-dcd1b065a70d.png)
+  ![image](https://user-images.githubusercontent.com/104427191/228038592-41f38a51-f150-4bf2-a168-9589838107ce.png)
  - Login/Register: página para registrar y loguearse con un usuario.
   ![image](https://user-images.githubusercontent.com/104427191/228036690-02f1365b-94bc-43e7-b64e-0e97cb283d54.png)
  - Centros físicos: página que muestra tres fotografías y mapas de los distintos supermercados físicos.
