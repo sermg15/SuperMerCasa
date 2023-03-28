@@ -84,12 +84,34 @@
 - **Instrucciones para desplegar la aplicación en OpenStack**:
    - Compilación: para compilar la aplicación y obtener el .jar tanto de la aplicación como del servicio interno se ha usado la opción Maven->Lifecycle->Package de IntellIJ. 
    - Subir los archivos .jar a la máquina (el de la aplicación y el del servicio interno).
-   - Con la máquina desplegada, y haciendo uso del comando "scp -i 'ubicación de la clave ssh' 'ubicación del archivo a subir' ubuntu@10.100.139.249:'ubicacion a la que se sube el archivo'".
+   - Con la máquina desplegada, y haciendo uso del comando 
+    ````
+   scp -i 'ubicación de la clave ssh' 'ubicación del archivo a subir' ubuntu@10.100.139.249:'ubicacion a la que se sube el archivo'
+   ````
 
 - **Configuración de la máquina para la correcta ejecución de la aplicación**:
-   - Lo primero de todo es actualizar el repositorio de paquetes con el siguiente comando "sudo apt update". 
-   - Hay que instalar Java 19 (ya que es el que usamos en el desarollo de nuestro proyecto). Para instalar Java usamos el comando "sudo apt install ./jdk-19_linux-x64_bin.deb".
+   - Lo primero de todo es actualizar el repositorio de paquetes con el siguiente comando 
+   ````
+   sudo apt update
+   ````
+   - Hay que instalar Java 19 (ya que es el que usamos en el desarollo de nuestro proyecto). Para instalar Java usamos el comando 
+    ````
+   sudo apt install ./jdk-19_linux-x64_bin.deb"
+   ````
    - Instalación de MySQL con el comando 
-   ´sudo apt-get install mysql-server´
-   También hay que instalar un paquete de seguridad para proteger la base de datos, usando el comando "sudo mysql_secure_installation".
-   - Una vez instalado y configurado MySQL, debemos conectarnos al servidor de MySQL con el comando "sudo mysql" y, una vez dentro, crear la base de datos que se usará en el proyecto con el comando "CREATE DATABASE smc" ('smc' es el nombre de la base de datos que se usa en esta aplicación).
+   ````
+   sudo apt-get install mysql-server
+   ````
+   También hay que instalar un paquete de seguridad para proteger la base de datos, usando el comando 
+   ````
+   sudo mysql_secure_installation
+   ````
+   - Una vez instalado y configurado MySQL, debemos conectarnos al servidor de MySQL con el comando 
+   ````
+   sudo mysql
+   ````
+   y, una vez dentro, crear la base de datos que se usará en el proyecto con el comando 
+   ````
+   CREATE DATABASE smc
+   ````
+   ('smc' es el nombre de la base de datos que se usa en esta aplicación).
