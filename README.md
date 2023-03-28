@@ -89,5 +89,7 @@
 - **Configuración de la máquina para la correcta ejecución de la aplicación**:
    - Lo primero de todo es actualizar el repositorio de paquetes con el siguiente comando "sudo apt update". 
    - Hay que instalar Java 19 (ya que es el que usamos en el desarollo de nuestro proyecto). Para instalar Java usamos el comando "sudo apt install ./jdk-19_linux-x64_bin.deb".
-   - Instalación de MySQL con el comando "sudo apt-get install mysql-server". También hay que instalar un paquete de seguridad para proteger la base de datos, usando el comando "sudo mysql_secure_installation".
+   - Instalación de MySQL con el comando 
+   ´sudo apt-get install mysql-server´
+   También hay que instalar un paquete de seguridad para proteger la base de datos, usando el comando "sudo mysql_secure_installation".
    - Una vez instalado y configurado MySQL, debemos conectarnos al servidor de MySQL con el comando "sudo mysql" y, una vez dentro, crear la base de datos que se usará en el proyecto con el comando "CREATE DATABASE smc" ('smc' es el nombre de la base de datos que se usa en esta aplicación).
