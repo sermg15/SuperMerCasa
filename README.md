@@ -115,3 +115,9 @@
    CREATE DATABASE smc
    ````
    ('smc' es el nombre de la base de datos que se usa en esta aplicación).
+   
+   Una vez configurada la base de datos y subidos los archivos .jar a la máquina, podremos ejecutarlos desde la consola de comandos con el comando:
+   ````
+   java -jar NombreArchivo.jar
+   ````
+   Todo esto se realiza estando conectado a la máquina.
