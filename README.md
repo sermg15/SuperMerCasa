@@ -120,4 +120,4 @@
    ````
    java -jar NombreArchivo.jar
    ````
-   Todo esto se realiza estando conectado a la máquina.
+   Todo esto se realiza estando conectado a la máquina. Para que todo funcione correctamente se debe ejecutar el archivo .jar tanto de la aplicación principal como del servicio interno.
