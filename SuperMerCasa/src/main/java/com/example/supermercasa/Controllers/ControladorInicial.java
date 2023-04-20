@@ -31,8 +31,9 @@ public class ControladorInicial {
     public String inicio(Model model, HttpServletRequest request){
         Principal principal = request.getUserPrincipal();
         Optional<Usuario> user;
+        System.out.println(repositorioCategoria.findByNombre("Ofertas").getProductos());
 
-        if(firsTime){
+        if(firsTime && repositorioCategoria.findByNombre("Ofertas").getProductos().isEmpty()){
 
             firsTime = false;
             List<Producto> productos = repositorioProducto.findByCategoriasNombre("Ofertas");

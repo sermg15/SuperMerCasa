@@ -28,7 +28,10 @@ public class UserLogSignController {
 
     @PostConstruct
     public void init(){
-        repositorioUsuario.save(new Usuario("Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", passwordEncoder.encode("1234"),null,null, "ADMIN", "USER"));
+        Optional<Usuario> user = repositorioUsuario.findByNombreUsuario("Sergio");
+        if(user.isEmpty()) {
+            repositorioUsuario.save(new Usuario("Sergio", "sergio@ejemplo.es", "Calle Ejemplo, 3", passwordEncoder.encode("1234"), null, null, "ADMIN", "USER"));
+        }
     }
     @ModelAttribute
     public void addAttributes(Model model, HttpServletRequest request) {
