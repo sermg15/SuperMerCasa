@@ -36,6 +36,7 @@ public class ControladorCarrito {
     Producto producto;
     Pedido pedido;
 
+
     @GetMapping("/carrito")
     public String Carrito(Model model, @RequestParam String comprado, HttpServletRequest request) {
 
@@ -62,7 +63,6 @@ public class ControladorCarrito {
 
         return "carrito";
     }
-
 
     double precioTotal;
 

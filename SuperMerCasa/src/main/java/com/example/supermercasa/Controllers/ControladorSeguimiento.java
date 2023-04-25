@@ -7,6 +7,7 @@ import com.example.supermercasa.Entidades.Usuario;
 import com.example.supermercasa.Repositorios.RepositorioPedido;
 import com.example.supermercasa.Repositorios.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
