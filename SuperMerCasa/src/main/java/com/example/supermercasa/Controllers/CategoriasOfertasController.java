@@ -5,6 +5,7 @@ import com.example.supermercasa.Entidades.Producto;
 import com.example.supermercasa.Repositorios.RepositorioCategoria;
 import com.example.supermercasa.Repositorios.RepositorioProducto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ public class CategoriasOfertasController {
     @Autowired
     private RepositorioProducto repositorioProducto;
 
+    @Cacheable
     @GetMapping("/categoria")
     public String Categorias(Model model, String cat) {
 
@@ -31,7 +33,7 @@ public class CategoriasOfertasController {
 
         return "categorias";
     }
-
+    @Cacheable
     @GetMapping("/ofertas")
     public String ofertas(Model model){
 

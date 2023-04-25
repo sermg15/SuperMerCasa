@@ -160,6 +160,7 @@ public class ControladorCarrito {
        }
         return "carrito";
     }
+
     @GetMapping("/addSeguimiento")
     public String addSeguimiento(Model model, @RequestParam String comprado, HttpServletRequest request){
 
@@ -198,11 +199,6 @@ public class ControladorCarrito {
 
 
 
-//            model.addAttribute("productos", null);
-//            model.addAttribute("precios",null);
-//            model.addAttribute("cantidad", "");
-//            model.addAttribute("precioTotal", "0");
-//            model.addAttribute("comprado", comprado);
 
             repositorioCarrito.deleteById(carrito.getId());
 
