@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ControladorCentrosFisicos {
-    @Cacheable
     @GetMapping("/centros")
     public String centrosFisicos(Model model){
 

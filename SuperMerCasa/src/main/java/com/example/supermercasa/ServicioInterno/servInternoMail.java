@@ -11,7 +11,7 @@ import com.example.supermercasa.Entidades.Usuario;
 
 @Service
 public class servInternoMail  {
-    private static final String MAIL_SERVICE_URL = "http://192.168.20.12:8445";
+    private static final String MAIL_SERVICE_URL = "http://localhost:8445";
     public static boolean sendRegisterEmail(Usuario user) {
         try {
             Email email = new Email(user.getEmail(), "Registro Supermercasa","¡Gracias "+ user.getNombreUsuario() + " por ser parte de Supermercasa! :)");

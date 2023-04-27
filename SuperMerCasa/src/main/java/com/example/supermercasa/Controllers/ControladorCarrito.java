@@ -10,6 +10,7 @@ import com.example.supermercasa.Repositorios.RepositorioPedido;
 import com.example.supermercasa.Repositorios.RepositorioUsuario;
 import com.example.supermercasa.ServicioInterno.servInternoMail;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -160,6 +161,7 @@ public class ControladorCarrito {
        }
         return "carrito";
     }
+
 
     @GetMapping("/addSeguimiento")
     public String addSeguimiento(Model model, @RequestParam String comprado, HttpServletRequest request){

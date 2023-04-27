@@ -5,6 +5,8 @@ import com.example.supermercasa.Entidades.Producto;
 import com.example.supermercasa.Repositorios.RepositorioCategoria;
 import com.example.supermercasa.Repositorios.RepositorioProducto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -160,7 +162,7 @@ public class ProductController {
         }
 
     }
-    @Cacheable
+
     @GetMapping("/producto/{id}")
     public String Producto(Model model, @PathVariable long id){
 
@@ -180,6 +182,7 @@ public class ProductController {
         return "producto";
     }
     //ELIMINAR CACHE DE LA CATEGORIA A LA QUE PERTENEZCA EL PRODUCTO
+
     @GetMapping("/nuevoProducto")
     public String nuevoProducto(Model model, @RequestParam String nameProd, @RequestParam String description,
                                 @RequestParam String price, @RequestParam int nstock, @RequestParam String categories){
@@ -201,6 +204,7 @@ public class ProductController {
         return "administrarProductos";
     }
     //ELIMINAR CACHE DE LA CATEGORIA A LA QUE PERTENEZCA EL PRODUCTO
+
     @GetMapping("/eliminarProducto")
     public String eliminarProducto(Model model, @RequestParam String prodName){
 
@@ -224,6 +228,7 @@ public class ProductController {
         return "administrarProductos";
     }
     //MODIFICAR CACHE DEL PRODUCTO ESPECIFICO
+
     @GetMapping("/modificarProducto")
     public String modificarProducto(Model model, @RequestParam String productoAModificar, @RequestParam String nameProducto,
                                     @RequestParam String descriptionProd, @RequestParam String priceProd, @RequestParam String stockProd,
@@ -284,6 +289,7 @@ public class ProductController {
         return "administrarProductos";
     }
     //ELIMINAR LA CACHE DE LA CATEGORIA A LA QUE HAS AÑADIDO EL PRODUCTO
+
     @GetMapping("/addCategorias")
     public String addCategorias(Model model, @RequestParam String categoria, @RequestParam String producto){
 
@@ -303,6 +309,7 @@ public class ProductController {
         return "administrarProductos";
     }
     //ELIMINAR CAHCE DE LA CATEGORIA DE LA QUE ELIMINAS EL PRODUCTO
+
     @GetMapping("/eliminarCategorias")
     public String eliminarCategorias(Model model, @RequestParam String producto){
 

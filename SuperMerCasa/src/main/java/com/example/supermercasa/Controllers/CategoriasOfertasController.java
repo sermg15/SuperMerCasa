@@ -18,7 +18,6 @@ public class CategoriasOfertasController {
     @Autowired
     private RepositorioProducto repositorioProducto;
 
-    @Cacheable
     @GetMapping("/categoria")
     public String Categorias(Model model, String cat) {
 
@@ -33,7 +32,7 @@ public class CategoriasOfertasController {
 
         return "categorias";
     }
-    @Cacheable
+
     @GetMapping("/ofertas")
     public String ofertas(Model model){
 

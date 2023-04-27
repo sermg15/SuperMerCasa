@@ -47,7 +47,7 @@ public class ControladorSeguimiento {
         model.addAttribute("pedidos",pedidos);
         return "seguimientoPedidosEleccion";
     }
-    @Cacheable
+
     @GetMapping("/seguimientoPedido/{id}")
     public String SeguimientoPedido(Model model,@PathVariable long id, HttpServletRequest request){
 
