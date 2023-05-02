@@ -191,6 +191,7 @@ public class ProductController {
             //el producto no existe, por lo que se puede crear
             aux = new Producto(nameProd, nstock, description, Double.parseDouble(price), "/images/imagenPorDefecto.jpg", repositorioCategoria.findByNombre(categories));
             repositorioProducto.save(aux);
+            //eliminarCachesEspecificas(aux.getCatNombres());
             repositorioCategoria.findByNombre(categories).addProductos(aux);
             model.addAttribute("mensajeAddProd", "Producto añadido con éxito");
         }else{
@@ -217,6 +218,7 @@ public class ProductController {
                 categorias.getProductos().remove(prod);
                 repositorioCategoria.save(categorias);
             }
+            //eliminarCachesEspecificas(prod.getCatNombres());
             prod.getCategorias().clear();
             repositorioProducto.delete(prod);
             model.addAttribute("mensajeEliminar", "El producto ha sido eliminado con éxito");
@@ -263,7 +265,9 @@ public class ProductController {
             }else{
                 prodAModificar.setCategorias(prodAModificar.getCategorias());
             }
+
             repositorioProducto.save(prodAModificar);
+            //eliminarCachesEspecificas(prodAModificar.getCatNombres());
             model.addAttribute("mensajeModificar", "Elemento modificado de forma correcta");
         }
 
@@ -336,6 +340,11 @@ public class ProductController {
         model.addAttribute("productos", "");
 
         return "administrarProductos";
+    }
+
+    @CacheEvict(allEntries = true)
+    public void eliminarCachesEspecificas(List<String> catNombres){
+
     }
 
 }

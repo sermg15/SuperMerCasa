@@ -96,6 +96,19 @@ public class Producto {
         this.categorias = categorias;
     }
 
+    public List<String> getCatNombres(){
+
+        List<String> catNombres = new ArrayList<String>();
+
+        for(int i = 0; i < categorias.size(); i++){
+            catNombres.add(categorias.get(i).getNombre());
+        }
+
+        System.out.println(catNombres);
+
+        return catNombres;
+    }
+
     public void subStock(int cantidad){
 
         this.stock -= cantidad;
