@@ -50,6 +50,9 @@
 - **Diagrama UML**:
 ![2SuperMerCasapng](https://user-images.githubusercontent.com/79744800/236018273-ac21da86-5748-4667-9eca-a03a197a9700.png)
 
+- **Diagrama con la infraestructura de Azure**:
+![Diagrama en blanco (5)](https://user-images.githubusercontent.com/104427191/236027724-27dd1177-0a07-48a7-b722-d3fb5b50ca30.png)
+
 
 - **Capturas de pantalla**
  - Página principal: página de inicio donde se ofrecen todas las opciones al usuario, y se ofrecen las distintas categorías de productos.
