@@ -9,14 +9,14 @@ public class Email {
 
     public Email(String destinatario, String asunto, String mensaje) {
         this.destinatario = destinatario;
-        this.origen = "supermercasa.33@outlook.es";
+        this.origen = "supermercasadad@outlook.es";
         this.mensaje = mensaje;
         this.asunto = asunto;
     }
 
     public Email(String destinatario,  String asunto) {
         this.destinatario = destinatario;
-        this.origen = "supermercasa.33@outlook.es";
+        this.origen = "supermercasadad@outlook.es";
         this.asunto = asunto;
     }
 

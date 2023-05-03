@@ -17,7 +17,6 @@ public interface RepositorioProducto extends JpaRepository<Producto, Long> {
     @CacheEvict(key = "#product.categorias.get(0).getNombre()")
     Producto save(Producto product);
 
-//    @CacheEvict(allEntries = true)
     @CacheEvict(key = "#product.getCatNombres()")
     void delete(Producto product);
 
