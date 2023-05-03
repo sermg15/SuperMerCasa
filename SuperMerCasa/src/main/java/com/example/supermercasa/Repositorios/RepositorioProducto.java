@@ -20,8 +20,7 @@ public interface RepositorioProducto extends JpaRepository<Producto, Long> {
 //
 //        c = p.getCategorias();
 //    }
-
-    @CacheEvict(key = "nombre")
+    @CacheEvict(allEntries = true)
     Producto save(Producto product);
 
     @CacheEvict(allEntries = true)

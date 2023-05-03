@@ -27,6 +27,7 @@ public class ControladorInicial {
     @Autowired
     private RepositorioUsuario repositorioUsuario;
 
+
     @GetMapping("/")
     public String inicio(Model model, HttpServletRequest request){
         Principal principal = request.getUserPrincipal();
