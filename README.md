@@ -1,5 +1,7 @@
 **Nombre: SuperMerCasa**
 
+- **Video explicativo de la aplicación:** https://youtu.be/jexvuxtuTDg
+
 - **Integrantes del grupo:**
    - Sergio Martínez González
    - Ignacio Sainz de la Maza Martín
