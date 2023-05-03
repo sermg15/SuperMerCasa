@@ -51,7 +51,7 @@
 ![2SuperMerCasapng](https://user-images.githubusercontent.com/79744800/236018273-ac21da86-5748-4667-9eca-a03a197a9700.png)
 
 - **Diagrama con la infraestructura de Azure**:
-![Diagrama en blanco (5)](https://user-images.githubusercontent.com/104427191/236027724-27dd1177-0a07-48a7-b722-d3fb5b50ca30.png)
+![Diagrama en blanco (6)](https://user-images.githubusercontent.com/104427191/236028040-4310f0df-572a-40b9-b871-39a6e105e4b0.png)
 
 
 - **Capturas de pantalla**
