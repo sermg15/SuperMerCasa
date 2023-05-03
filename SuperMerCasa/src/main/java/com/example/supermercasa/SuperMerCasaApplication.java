@@ -30,7 +30,7 @@ SuperMerCasaApplication {
 		JoinConfig joinConfig = config.getNetworkConfig().getJoin();
 
 		joinConfig.getMulticastConfig().setEnabled(false);
-		joinConfig.getTcpIpConfig().setEnabled(true).setMembers(Collections.singletonList("127.0.0.0"));
+		joinConfig.getTcpIpConfig().setEnabled(true).setMembers(Collections.singletonList("192.168.20.90"));
 
 		return config;
 	}
