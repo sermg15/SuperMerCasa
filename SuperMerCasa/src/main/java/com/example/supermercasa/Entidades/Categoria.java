@@ -38,9 +38,9 @@ public class Categoria {
         this.id = id;
     }
 
-    public String getNombre () {return nombre;}
+    public String getNombre() {return nombre;}
 
-    public void setNombre (String nombre) {this.nombre = nombre;}
+    public void setNombre(String nombre) {this.nombre = nombre;}
 
     @JsonManagedReference
     public List<Producto> getProductos() {return productos;}
@@ -51,5 +51,11 @@ public class Categoria {
         this.productos.add(producto);
     }
 
-    public void deleteProducto(Producto producto){this.productos.remove(producto);}
+    public void deleteProductoNombre(String productoNombre){
+        for(int i = 0; i < productos.size(); i++){
+            if(productos.get(i).getName() == productoNombre){
+                productos.remove(i);
+            }
+        }
+    }
 }

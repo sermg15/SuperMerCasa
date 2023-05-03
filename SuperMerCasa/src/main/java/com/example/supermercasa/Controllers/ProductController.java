@@ -181,7 +181,6 @@ public class ProductController {
 
         return "producto";
     }
-    //ELIMINAR CACHE DE LA CATEGORIA A LA QUE PERTENEZCA EL PRODUCTO
 
     @GetMapping("/nuevoProducto")
     public String nuevoProducto(Model model, @RequestParam String nameProd, @RequestParam String description,
@@ -191,7 +190,6 @@ public class ProductController {
             //el producto no existe, por lo que se puede crear
             aux = new Producto(nameProd, nstock, description, Double.parseDouble(price), "/images/imagenPorDefecto.jpg", repositorioCategoria.findByNombre(categories));
             repositorioProducto.save(aux);
-            //eliminarCachesEspecificas(aux.getCatNombres());
             repositorioCategoria.findByNombre(categories).addProductos(aux);
             model.addAttribute("mensajeAddProd", "Producto añadido con éxito");
         }else{
@@ -204,7 +202,6 @@ public class ProductController {
         model.addAttribute("productos", "");
         return "administrarProductos";
     }
-    //ELIMINAR CACHE DE LA CATEGORIA A LA QUE PERTENEZCA EL PRODUCTO
 
     @GetMapping("/eliminarProducto")
     public String eliminarProducto(Model model, @RequestParam String prodName){
@@ -218,8 +215,6 @@ public class ProductController {
                 categorias.getProductos().remove(prod);
                 repositorioCategoria.save(categorias);
             }
-            //eliminarCachesEspecificas(prod.getCatNombres());
-            prod.getCategorias().clear();
             repositorioProducto.delete(prod);
             model.addAttribute("mensajeEliminar", "El producto ha sido eliminado con éxito");
         }
@@ -229,7 +224,7 @@ public class ProductController {
         model.addAttribute("productos", "");
         return "administrarProductos";
     }
-    //MODIFICAR CACHE DEL PRODUCTO ESPECIFICO
+
 
     @GetMapping("/modificarProducto")
     public String modificarProducto(Model model, @RequestParam String productoAModificar, @RequestParam String nameProducto,
@@ -292,7 +287,6 @@ public class ProductController {
 
         return "administrarProductos";
     }
-    //ELIMINAR LA CACHE DE LA CATEGORIA A LA QUE HAS AÑADIDO EL PRODUCTO
 
     @GetMapping("/addCategorias")
     public String addCategorias(Model model, @RequestParam String categoria, @RequestParam String producto){
@@ -312,7 +306,6 @@ public class ProductController {
 
         return "administrarProductos";
     }
-    //ELIMINAR CAHCE DE LA CATEGORIA DE LA QUE ELIMINAS EL PRODUCTO
 
     @GetMapping("/eliminarCategorias")
     public String eliminarCategorias(Model model, @RequestParam String producto){
@@ -342,10 +335,6 @@ public class ProductController {
         return "administrarProductos";
     }
 
-    @CacheEvict(allEntries = true)
-    public void eliminarCachesEspecificas(List<String> catNombres){
-
-    }
 
 }
 

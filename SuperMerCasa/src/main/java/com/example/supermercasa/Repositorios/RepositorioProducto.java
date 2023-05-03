@@ -14,24 +14,17 @@ import java.util.List;
 @Repository
 public interface RepositorioProducto extends JpaRepository<Producto, Long> {
 
-//    List<Categorias> c = new Categoria();
-//
-//    void guardar(Producto p){
-//
-//        c = p.getCategorias();
-//    }
-    @CacheEvict(allEntries = true)
+    @CacheEvict(key = "#product.categorias.get(0).getNombre()")
     Producto save(Producto product);
 
-    @CacheEvict(allEntries = true)
+//    @CacheEvict(allEntries = true)
+    @CacheEvict(key = "#product.getCatNombres()")
     void delete(Producto product);
-    
-    @Cacheable
+
     Producto getProductoByName(String nombre);
 
     @Cacheable
     List<Producto> findByCategoriasNombre(String nombre);
-
 
 
 }

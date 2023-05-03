@@ -103,15 +103,13 @@ public class Producto {
         this.categorias = categorias;
     }
 
-    public List<String> getCatNombres(){
+    public String getCatNombres(){
 
-        List<String> catNombres = new ArrayList<String>();
+        String catNombres = categorias.get(0).getNombre();
 
-        for(int i = 0; i < categorias.size(); i++){
-            catNombres.add(categorias.get(i).getNombre());
-        }
-
-        System.out.println(catNombres);
+//        for(int i = 0; i < categorias.size(); i++){
+//            catNombres.add(categorias.get(i).getNombre());
+//        }
 
         return catNombres;
     }
