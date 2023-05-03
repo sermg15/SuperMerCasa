@@ -26,7 +26,7 @@ public interface RepositorioProducto extends JpaRepository<Producto, Long> {
 
     @CacheEvict(allEntries = true)
     void delete(Producto product);
-
+    
     @Cacheable
     Producto getProductoByName(String nombre);
 

@@ -1,5 +1,9 @@
 package com.example.supermercasa.Entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +25,8 @@ public class Producto {
     private String imagen;
 
     @ManyToMany
+    @LazyCollection(LazyCollectionOption.FALSE)
+
     private List<Categoria> categorias;
 
 
@@ -88,6 +94,7 @@ public class Producto {
 
     public void addCategoria(Categoria categoria){this.categorias.add(categoria);}
 
+    @JsonBackReference
     public List<Categoria> getCategorias() {
         return categorias;
     }
